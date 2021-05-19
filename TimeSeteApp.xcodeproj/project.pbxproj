@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,11 @@
 		7D8E4A8B2653744A0095B88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8E4A892653744A0095B88C /* Main.storyboard */; };
 		7D8E4A8D2653744B0095B88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8E4A8C2653744B0095B88C /* Assets.xcassets */; };
 		7D8E4A902653744B0095B88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8E4A8E2653744B0095B88C /* LaunchScreen.storyboard */; };
+		B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeSeteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8E4A802653744A0095B88C /* TimeSeteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeSeteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8E4A832653744A0095B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D8E4A852653744A0095B88C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		7D8E4A8C2653744B0095B88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D8E4A8F2653744B0095B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D8E4A912653744B0095B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.release.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.release.xcconfig"; sourceTree = "<group>"; };
+		CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.debug.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26B36E507015E1454486A1F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D8E4A772653744A0095B88C = {
 			isa = PBXGroup;
 			children = (
 				7D8E4A822653744A0095B88C /* TimeSeteApp */,
 				7D8E4A812653744A0095B88C /* Products */,
+				F038F1B8F6C0BC4EC4DC4CBC /* Pods */,
+				26B36E507015E1454486A1F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +71,80 @@
 		7D8E4A822653744A0095B88C /* TimeSeteApp */ = {
 			isa = PBXGroup;
 			children = (
-				7D8E4A832653744A0095B88C /* AppDelegate.swift */,
-				7D8E4A852653744A0095B88C /* SceneDelegate.swift */,
-				7D8E4A872653744A0095B88C /* ViewController.swift */,
-				7D8E4A892653744A0095B88C /* Main.storyboard */,
-				7D8E4A8C2653744B0095B88C /* Assets.xcassets */,
-				7D8E4A8E2653744B0095B88C /* LaunchScreen.storyboard */,
-				7D8E4A912653744B0095B88C /* Info.plist */,
+				7DCDFBD1265500BA008391BD /* Model */,
+				7DCDFBD0265500B3008391BD /* View */,
+				7DCDFBCF2655009B008391BD /* Presenter */,
+				7DCDFBD426550166008391BD /* Storyboards */,
+				7DCDFBD2265500EE008391BD /* Resources */,
+				7DCDFBD326550111008391BD /* System Delegate */,
+				7DCDFBD6265502AA008391BD /* Supporting Files */,
 			);
 			path = TimeSeteApp;
+			sourceTree = "<group>";
+		};
+		7DCDFBCF2655009B008391BD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7DCDFBD0265500B3008391BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E4A872653744A0095B88C /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DCDFBD1265500BA008391BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DCDFBD2265500EE008391BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E4A8C2653744B0095B88C /* Assets.xcassets */,
+				7D8E4A8E2653744B0095B88C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7DCDFBD326550111008391BD /* System Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E4A832653744A0095B88C /* AppDelegate.swift */,
+				7D8E4A852653744A0095B88C /* SceneDelegate.swift */,
+			);
+			path = "System Delegate";
+			sourceTree = "<group>";
+		};
+		7DCDFBD426550166008391BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E4A892653744A0095B88C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7DCDFBD6265502AA008391BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D8E4A912653744B0095B88C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F038F1B8F6C0BC4EC4DC4CBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */,
+				97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D8E4A942653744B0095B88C /* Build configuration list for PBXNativeTarget "TimeSeteApp" */;
 			buildPhases = (
+				7DCDFBDF26550638008391BD /* ShellScript */,
+				B66002E4DFA2BED8E6DFC2F6 /* [CP] Check Pods Manifest.lock */,
 				7D8E4A7C2653744A0095B88C /* Sources */,
 				7D8E4A7D2653744A0095B88C /* Frameworks */,
 				7D8E4A7E2653744A0095B88C /* Resources */,
+				561329BA2B6C92B60CED3A5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +214,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		561329BA2B6C92B60CED3A5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DCDFBDF26550638008391BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B66002E4DFA2BED8E6DFC2F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeSeteApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D8E4A7C2653744A0095B88C /* Sources */ = {
@@ -283,12 +425,13 @@
 		};
 		7D8E4A952653744B0095B88C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58RN6U59UJ;
-				INFOPLIST_FILE = TimeSeteApp/Info.plist;
+				INFOPLIST_FILE = "TimeSeteApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +445,13 @@
 		};
 		7D8E4A962653744B0095B88C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58RN6U59UJ;
-				INFOPLIST_FILE = TimeSeteApp/Info.plist;
+				INFOPLIST_FILE = "TimeSeteApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
