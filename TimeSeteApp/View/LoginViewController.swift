@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginPresenterDelegate {
-    
+class LoginViewController: UIViewController, LoginPresenterDelegate, LoginViewProtocol {
+     
     private let presenter = LoginPresenter()
 
     override func viewDidLoad() {
@@ -16,10 +16,13 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         // Do any additional setup after loading the view.
         presenter.setViewDelegate(delegate: self)
         presenter.getLogin()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func loadView() {
-        self.view = LoginView()
+        let loginView = LoginView()
+        loginView.delegate = self
+        self.view = loginView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,5 +33,9 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         print("presentLogin")
         print(credentials)
     }
-  
+    
+    // MARK: Actions
+    func signUpButtonTapped() {
+        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+    }
 }

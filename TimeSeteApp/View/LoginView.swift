@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LoginViewProtocol: class {
+    func signUpButtonTapped() 
+}
+
 class LoginView: UIView {
+    
+    weak var delegate: LoginViewProtocol?
     
     // Header
     private lazy var logoImage: UIImageView = {
@@ -160,7 +166,7 @@ class LoginView: UIView {
         signUpButton.setTitleColor(.appGray03, for: .highlighted)
         signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
         return signUpButton
     }()
 
@@ -168,7 +174,7 @@ class LoginView: UIView {
         super.init(frame: .zero)
     
         self.setBackgroundColor(to: .appGray04)
-    
+        
         addSubviews()
         setupConstraints()
         
@@ -183,6 +189,10 @@ class LoginView: UIView {
     // MARK: Actions
     @objc func signInAction(sender: UIButton) {
         
+    }
+    
+    @objc func signUpAction(sender: UIButton) {
+        self.delegate?.signUpButtonTapped()
     }
 }
 
