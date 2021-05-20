@@ -9,19 +9,35 @@ import UIKit
 
 extension UIColor {
     
-    static var pinkMain: UIColor {
-        return UIColor(named: "pink_main") ?? UIColor()
+    static var appBlack: UIColor {
+        return UIColor(named: "appBlack") ?? UIColor()
     }
     
-    static var grayText: UIColor {
-        return UIColor(named: "gray_text") ?? UIColor()
+    static var appCyan: UIColor {
+        return UIColor(named: "appCyan") ?? UIColor()
     }
     
-    static var graySecondary: UIColor {
-        return UIColor(named: "gray_secondary") ?? UIColor()
+    static var appGray01: UIColor {
+        return UIColor(named: "appGray01") ?? UIColor()
     }
     
-    static var redError: UIColor {
-        return UIColor(named: "red_error") ?? UIColor()
+    static var appGray03: UIColor {
+        return UIColor(named: "appGray03") ?? UIColor()
+    }
+    
+    static var appGray04: UIColor {
+        return UIColor(named: "appGray04") ?? UIColor()
+    }
+    
+    static var appGreen: UIColor {
+        return UIColor(named: "appGreen") ?? UIColor()
+    }
+    
+    static var appPurple: UIColor {
+        return UIColor(named: "appPurple") ?? UIColor()
+    }
+    
+    static var appRed: UIColor {
+        return UIColor(named: "appRed") ?? UIColor()
     }
 }

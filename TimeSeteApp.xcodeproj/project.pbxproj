@@ -18,6 +18,7 @@
 		7DB50E2F26553656004A62AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E2E26553656004A62AC /* LoginView.swift */; };
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
+		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
 		B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		7DB50E2E26553656004A62AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.release.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.release.xcconfig"; sourceTree = "<group>"; };
 		CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.debug.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			children = (
 				7DB50E3226553C0D004A62AC /* ColorExtension.swift */,
 				7DB50E3526553C2F004A62AC /* ImageExtension.swift */,
+				7DB50E3926554200004A62AC /* ViewExtension.swift */,
 			);
 			path = "Supporting Extensions";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
 				7DB50E2F26553656004A62AC /* LoginView.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,

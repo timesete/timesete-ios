@@ -9,8 +9,8 @@ import UIKit
 
 extension UIImage {
     
-    static var backgroundHome: UIImage {
-        return UIImage(named: "background_home") ?? UIImage()
+    static var logoLogin: UIImage {
+        return UIImage(named: "logo-login") ?? UIImage()
     }
 
 }

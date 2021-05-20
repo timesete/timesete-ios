@@ -16,7 +16,6 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         // Do any additional setup after loading the view.
         presenter.setViewDelegate(delegate: self)
         presenter.getLogin()
-        
     }
     
     override func loadView() {
