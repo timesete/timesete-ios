@@ -56,6 +56,146 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         return pageImage
     }()
     
+    // Main
+    private lazy var signUpStackView: UIStackView = {
+        let mainStackView = UIStackView()
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
+        mainStackView.spacing = 4
+        mainStackView.backgroundColor = .clear
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        return mainStackView
+    }()
+    
+    private lazy var emailLabel: UILabel = {
+        let emailLabel = UILabel()
+        emailLabel.text = "E-mail"
+        emailLabel.textAlignment = .left
+        emailLabel.textColor = .appBlack
+        emailLabel.font = UIFont.systemFont(ofSize: 16)
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        return emailLabel
+    }()
+    
+    private lazy var emailView: UIView = {
+        let emailView = UIView()
+        emailView.backgroundColor = .white
+        emailView.layer.cornerRadius = 4
+        emailView.layer.borderWidth = 1
+        emailView.layer.borderColor = UIColor.appGray03.cgColor
+        emailView.translatesAutoresizingMaskIntoConstraints = false
+        return emailView
+    }()
+    
+    private lazy var emailTextField: UITextField = {
+        let emailTextField = UITextField()
+        emailTextField.placeholder = "Insira seu e-mail"
+        emailTextField.borderStyle = .none
+        emailTextField.backgroundColor = .clear
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
+        emailTextField.autocorrectionType = .no
+        emailTextField.tintColor = .appPurple
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        return emailTextField
+    }()
+    
+    private lazy var emailWarningLabel: UILabel = {
+        let emailWarningLabel = UILabel()
+        emailWarningLabel.text = "E-mail incorreto"
+        emailWarningLabel.textAlignment = .left
+        emailWarningLabel.textColor = .clear
+        emailWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        emailWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+        return emailWarningLabel
+    }()
+    
+    private lazy var passwordLabel: UILabel = {
+        let passwordLabel = UILabel()
+        passwordLabel.text = "Senha"
+        passwordLabel.textAlignment = .left
+        passwordLabel.textColor = .appBlack
+        passwordLabel.font = UIFont.systemFont(ofSize: 16)
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        return passwordLabel
+    }()
+    
+    private lazy var passwordView: UIView = {
+        let passwordView = UIView()
+        passwordView.backgroundColor = .white
+        passwordView.layer.cornerRadius = 4
+        passwordView.layer.borderWidth = 1
+        passwordView.layer.borderColor = UIColor.appGray03.cgColor
+        passwordView.translatesAutoresizingMaskIntoConstraints = false
+        return passwordView
+    }()
+    
+    private lazy var passwordTextField: UITextField = {
+        let passwordTextField = UITextField()
+        passwordTextField.placeholder = "Insira sua senha"
+        passwordTextField.borderStyle = .none
+        passwordTextField.backgroundColor = .clear
+        passwordTextField.keyboardType = .emailAddress
+        passwordTextField.autocapitalizationType = .none
+        passwordTextField.autocorrectionType = .no
+        passwordTextField.tintColor = .appPurple
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        return passwordTextField
+    }()
+    
+    private lazy var passwordWarningLabel: UILabel = {
+        let passwordWarningLabel = UILabel()
+        passwordWarningLabel.text = "Senha excelente!"
+        passwordWarningLabel.textAlignment = .left
+        passwordWarningLabel.textColor = .clear
+        passwordWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        passwordWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+        return passwordWarningLabel
+    }()
+    
+    private lazy var confirmPasswordLabel: UILabel = {
+        let confirmPasswordLabel = UILabel()
+        confirmPasswordLabel.text = "Confirme sua senha"
+        confirmPasswordLabel.textAlignment = .left
+        confirmPasswordLabel.textColor = .appBlack
+        confirmPasswordLabel.font = UIFont.systemFont(ofSize: 16)
+        confirmPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
+        return confirmPasswordLabel
+    }()
+    
+    private lazy var confirmPasswordView: UIView = {
+        let confirmPasswordView = UIView()
+        confirmPasswordView.backgroundColor = .white
+        confirmPasswordView.layer.cornerRadius = 4
+        confirmPasswordView.layer.borderWidth = 1
+        confirmPasswordView.layer.borderColor = UIColor.appGray03.cgColor
+        confirmPasswordView.translatesAutoresizingMaskIntoConstraints = false
+        return confirmPasswordView
+    }()
+    
+    private lazy var confirmPasswordTextField: UITextField = {
+        let confirmPasswordTextField = UITextField()
+        confirmPasswordTextField.placeholder = "Insira sua senha"
+        confirmPasswordTextField.borderStyle = .none
+        confirmPasswordTextField.backgroundColor = .clear
+        confirmPasswordTextField.keyboardType = .emailAddress
+        confirmPasswordTextField.autocapitalizationType = .none
+        confirmPasswordTextField.autocorrectionType = .no
+        confirmPasswordTextField.tintColor = .appPurple
+        confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        return confirmPasswordTextField
+    }()
+    
+    private lazy var confirmPasswordWarningLabel: UILabel = {
+        let confirmPasswordWarningLabel = UILabel()
+        confirmPasswordWarningLabel.text = "Senha excelente!"
+        confirmPasswordWarningLabel.textAlignment = .left
+        confirmPasswordWarningLabel.textColor = .clear
+        confirmPasswordWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        confirmPasswordWarningLabel.translatesAutoresizingMaskIntoConstraints = false
+        return confirmPasswordWarningLabel
+    }()
+    
     // Footer
     private lazy var signInStackView: UIStackView = {
         let signInStackView = UIStackView()
@@ -102,6 +242,21 @@ extension SignUpViewController {
         self.view.addSubview(headerStackView)
         self.headerStackView.addArrangedSubview(titleLabel)
         self.headerStackView.addArrangedSubview(pageImage)
+        
+        self.view.addSubview(signUpStackView)
+        self.emailView.addSubview(emailTextField)
+        self.signUpStackView.addArrangedSubview(emailLabel)
+        self.signUpStackView.addArrangedSubview(emailView)
+        self.signUpStackView.addArrangedSubview(emailWarningLabel)
+        self.passwordView.addSubview(passwordTextField)
+        self.signUpStackView.addArrangedSubview(passwordLabel)
+        self.signUpStackView.addArrangedSubview(passwordView)
+        self.signUpStackView.addArrangedSubview(passwordWarningLabel)
+        self.confirmPasswordView.addSubview(confirmPasswordTextField)
+        self.signUpStackView.addArrangedSubview(confirmPasswordLabel)
+        self.signUpStackView.addArrangedSubview(confirmPasswordView)
+        self.signUpStackView.addArrangedSubview(confirmPasswordWarningLabel)
+        
         self.view.addSubview(signInStackView)
         self.signInStackView.addArrangedSubview(signInLabel)
         self.signInStackView.addArrangedSubview(signInButton)
@@ -110,16 +265,71 @@ extension SignUpViewController {
     // MARK: Setup Constraints
     func setupConstraints() {
         setupHeaderStackViewConstraints()
+        setupSignUpStackViewConstraints()
+        setupEmailViewConstraints()
+        setupEmailTextFieldConstraints()
+        setupPasswordViewConstraints()
+        setupPasswordTextFieldConstraints()
+        setupConfirmPasswordViewConstraints()
+        setupConfirmPasswordTextFieldConstraints()
         setupSignInStackViewConstraints()
+        
+        self.signUpStackView.setCustomSpacing(8, after: self.emailLabel)
+        self.signUpStackView.setCustomSpacing(20, after: self.emailWarningLabel)
+        self.signUpStackView.setCustomSpacing(8, after: self.passwordLabel)
+        self.signUpStackView.setCustomSpacing(20, after: self.passwordWarningLabel)
+        self.signUpStackView.setCustomSpacing(8, after: self.confirmPasswordLabel)
     }
     
     // Header
     func setupHeaderStackViewConstraints() {
         NSLayoutConstraint.activate([
-            headerStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            headerStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20),
-            headerStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20)
+            headerStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            headerStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            headerStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
         ])
+    }
+    
+    // Main
+    func setupSignUpStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            signUpStackView.topAnchor.constraint(equalTo: self.headerStackView.bottomAnchor, constant: 24),
+            signUpStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            signUpStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
+        ])
+    }
+    
+    func setupEmailViewConstraints() {
+        emailView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+    }
+    
+    func setupEmailTextFieldConstraints() {
+        emailTextField.rightAnchor.constraint(equalTo: self.emailView.rightAnchor, constant: -12).isActive = true
+        emailTextField.leftAnchor.constraint(equalTo: self.emailView.leftAnchor, constant: 12).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: self.emailView.topAnchor, constant: 5).isActive = true
+        emailTextField.bottomAnchor.constraint(equalTo: self.emailView.bottomAnchor, constant: -5).isActive = true
+    }
+    
+    func setupPasswordViewConstraints() {
+        passwordView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+    }
+    
+    func setupPasswordTextFieldConstraints() {
+        passwordTextField.rightAnchor.constraint(equalTo: self.passwordView.rightAnchor, constant: -12).isActive = true
+        passwordTextField.leftAnchor.constraint(equalTo: self.passwordView.leftAnchor, constant: 12).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: self.passwordView.topAnchor, constant: 5).isActive = true
+        passwordTextField.bottomAnchor.constraint(equalTo: self.passwordView.bottomAnchor, constant: -5).isActive = true
+    }
+    
+    func setupConfirmPasswordViewConstraints() {
+        confirmPasswordView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+    }
+    
+    func setupConfirmPasswordTextFieldConstraints() {
+        confirmPasswordTextField.rightAnchor.constraint(equalTo: self.confirmPasswordView.rightAnchor, constant: -12).isActive = true
+        confirmPasswordTextField.leftAnchor.constraint(equalTo: self.confirmPasswordView.leftAnchor, constant: 12).isActive = true
+        confirmPasswordTextField.topAnchor.constraint(equalTo: self.confirmPasswordView.topAnchor, constant: 5).isActive = true
+        confirmPasswordTextField.bottomAnchor.constraint(equalTo: self.confirmPasswordView.bottomAnchor, constant: -5).isActive = true
     }
     
     // Footer
