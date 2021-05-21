@@ -21,6 +21,10 @@ class SecondSignUpPresenter {
         self.delegate = delegate
     }
     
+    public func getViewWidth() -> CGFloat? {
+        self.delegate?.view.frame.size.width
+    }
+    
     public func backToSignUp() {
         self.delegate?.navigationController?.popViewController(animated: true)
     }

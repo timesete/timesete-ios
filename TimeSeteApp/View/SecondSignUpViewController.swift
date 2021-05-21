@@ -16,11 +16,14 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         self.view.setBackgroundColor(to: .appGray04)
         presenter.setViewDelegate(delegate: self)
         addSubviews()
-        setupConstraints()
     }
     
     override func loadView() {
         self.view = UIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupConstraints()
     }
 
     // MARK: Define elements
@@ -50,6 +53,15 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         pageImage.contentMode = .scaleAspectFit
         pageImage.translatesAutoresizingMaskIntoConstraints = false
         return pageImage
+    }()
+    
+    private lazy var pageOneButton: UIButton = {
+        let pageOneButton = UIButton()
+        pageOneButton.backgroundColor = .clear
+        pageOneButton.setTitle(.none, for: .normal)
+        pageOneButton.translatesAutoresizingMaskIntoConstraints = false
+        pageOneButton.addTarget(self, action: #selector(pageOneAction), for: .touchUpInside)
+        return pageOneButton
     }()
     
     // Main
@@ -195,6 +207,10 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     }()
     
     // MARK: Actions
+    @objc func pageOneAction(sender: UIButton) {
+        presenter.backToSignUp()
+    }
+    
     @objc func registerAccountAction(sender: UIButton) {
         // TODO: go to home
     }
@@ -211,6 +227,7 @@ extension SecondSignUpViewController {
         self.view.addSubview(headerStackView)
         self.headerStackView.addArrangedSubview(titleLabel)
         self.headerStackView.addArrangedSubview(pageImage)
+        self.view.insertSubview(pageOneButton, aboveSubview: headerStackView)
         
         self.view.addSubview(questionStackView)
         self.questionView.addSubview(questionTextField)
@@ -231,6 +248,7 @@ extension SecondSignUpViewController {
     // MARK: Setup Constraints
     func setupConstraints() {
         setupHeaderStackViewConstraints()
+        setupPageOneButtonConstraints()
         setupQuestionStackViewConstraints()
         setupQuestionViewConstraints()
         setupQuestionTextFieldConstraints()
@@ -250,6 +268,17 @@ extension SecondSignUpViewController {
             headerStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30),
             headerStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             headerStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
+        ])
+    }
+    
+    func setupPageOneButtonConstraints() {
+        guard let viewWidth = self.presenter.getViewWidth() else { return }
+        
+        NSLayoutConstraint.activate([
+            pageOneButton.bottomAnchor.constraint(equalTo: self.headerStackView.bottomAnchor),
+            pageOneButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -viewWidth/2),
+            pageOneButton.heightAnchor.constraint(equalTo: self.pageImage.heightAnchor),
+            pageOneButton.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
     
