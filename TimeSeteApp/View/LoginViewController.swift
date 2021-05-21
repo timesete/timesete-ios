@@ -14,12 +14,14 @@ class LoginViewController: UIViewController, LoginPresenterDelegate, LoginViewPr
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         presenter.setViewDelegate(delegate: self)
         presenter.getLogin()
         self.navigationController?.isNavigationBarHidden = true
     }
     
     override func loadView() {
+        
         let loginView = LoginView()
         loginView.delegate = self
         self.view = loginView
