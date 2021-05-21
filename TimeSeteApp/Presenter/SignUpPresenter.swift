@@ -9,7 +9,6 @@ import UIKit
 
 protocol SignUpPresenterDelegate: AnyObject {
     func presentSignUp(credentials: Login)
-//    func presentAlert(title: String, message: String)
 }
 
 typealias SignPresenterDelegate = SignUpPresenterDelegate & UIViewController
@@ -28,5 +27,9 @@ class SignUpPresenter {
     
     public func backToLogin() {
         self.delegate?.navigationController?.popViewController(animated: true)
+    }
+    
+    public func goToSecondSignUp() {
+        self.delegate?.navigationController?.pushViewController(SecondSignUpViewController(), animated: true)
     }
 }

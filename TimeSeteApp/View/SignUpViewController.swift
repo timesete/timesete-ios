@@ -247,7 +247,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     }
     
     @objc func proceedAction(sender: UIButton) {
-        // TODO: go to second screen
+        presenter.goToSecondSignUp()
     }
 }
 
