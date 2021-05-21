@@ -143,8 +143,8 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         answerTextField.placeholder = "Insira sua resposta"
         answerTextField.borderStyle = .none
         answerTextField.backgroundColor = .clear
-        answerTextField.keyboardType = .emailAddress
-        answerTextField.autocapitalizationType = .none
+        answerTextField.keyboardType = .default
+        answerTextField.autocapitalizationType = .sentences
         answerTextField.autocorrectionType = .no
         answerTextField.tintColor = .appPurple
         answerTextField.translatesAutoresizingMaskIntoConstraints = false

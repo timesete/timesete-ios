@@ -135,7 +135,8 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         passwordTextField.placeholder = "Insira sua senha"
         passwordTextField.borderStyle = .none
         passwordTextField.backgroundColor = .clear
-        passwordTextField.keyboardType = .emailAddress
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.keyboardType = .default
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
         passwordTextField.tintColor = .appPurple
@@ -178,7 +179,8 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         confirmPasswordTextField.placeholder = "Insira sua senha"
         confirmPasswordTextField.borderStyle = .none
         confirmPasswordTextField.backgroundColor = .clear
-        confirmPasswordTextField.keyboardType = .emailAddress
+        confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.keyboardType = .default
         confirmPasswordTextField.autocapitalizationType = .none
         confirmPasswordTextField.autocorrectionType = .no
         confirmPasswordTextField.tintColor = .appPurple
