@@ -9,6 +9,10 @@ import UIKit
 
 extension UIImage {
     
+    static var cyanButton: UIImage {
+        return UIImage(named: "cyan-button") ?? UIImage()
+    }
+    
     static var logoLogin: UIImage {
         return UIImage(named: "logo-login") ?? UIImage()
     }

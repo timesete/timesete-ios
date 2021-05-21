@@ -197,6 +197,18 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     }()
     
     // Footer
+    private lazy var proceedButton: UIButton = {
+        let proceedButton = UIButton()
+        proceedButton.setBackgroundImage(.cyanButton, for: .normal)
+        proceedButton.setTitle("Avançar", for: .normal)
+        proceedButton.setTitleColor(.white, for: .normal)
+        proceedButton.setTitleColor(.gray, for: .highlighted)
+        proceedButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        proceedButton.translatesAutoresizingMaskIntoConstraints = false
+        proceedButton.addTarget(self, action: #selector(proceedAction), for: .touchUpInside)
+        return proceedButton
+    }()
+    
     private lazy var signInStackView: UIStackView = {
         let signInStackView = UIStackView()
         signInStackView.axis = .horizontal
@@ -233,6 +245,10 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     @objc func signInAction(sender: UIButton) {
         presenter.backToLogin()
     }
+    
+    @objc func proceedAction(sender: UIButton) {
+        // TODO: go to second screen
+    }
 }
 
 extension SignUpViewController {
@@ -257,6 +273,7 @@ extension SignUpViewController {
         self.signUpStackView.addArrangedSubview(confirmPasswordView)
         self.signUpStackView.addArrangedSubview(confirmPasswordWarningLabel)
         
+        self.view.addSubview(proceedButton)
         self.view.addSubview(signInStackView)
         self.signInStackView.addArrangedSubview(signInLabel)
         self.signInStackView.addArrangedSubview(signInButton)
@@ -272,6 +289,7 @@ extension SignUpViewController {
         setupPasswordTextFieldConstraints()
         setupConfirmPasswordViewConstraints()
         setupConfirmPasswordTextFieldConstraints()
+        setupProceedButtonConstraints()
         setupSignInStackViewConstraints()
         
         self.signUpStackView.setCustomSpacing(8, after: self.emailLabel)
@@ -333,6 +351,13 @@ extension SignUpViewController {
     }
     
     // Footer
+    func setupProceedButtonConstraints() {
+        NSLayoutConstraint.activate([
+            proceedButton.bottomAnchor.constraint(equalTo: self.signInStackView.topAnchor, constant: -68),
+            proceedButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+    }
+    
     func setupSignInStackViewConstraints() {
         NSLayoutConstraint.activate([
             signInStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
