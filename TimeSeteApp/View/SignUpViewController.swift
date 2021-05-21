@@ -58,13 +58,13 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     
     // Main
     private lazy var signUpStackView: UIStackView = {
-        let mainStackView = UIStackView()
-        mainStackView.axis = .vertical
-        mainStackView.distribution = .fill
-        mainStackView.spacing = 4
-        mainStackView.backgroundColor = .clear
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        return mainStackView
+        let signUpStackView = UIStackView()
+        signUpStackView.axis = .vertical
+        signUpStackView.distribution = .fill
+        signUpStackView.spacing = 4
+        signUpStackView.backgroundColor = .clear
+        signUpStackView.translatesAutoresizingMaskIntoConstraints = false
+        return signUpStackView
     }()
     
     private lazy var emailLabel: UILabel = {

@@ -21,6 +21,10 @@ class SecondSignUpPresenter {
         self.delegate = delegate
     }
     
+    public func backToSignUp() {
+        self.delegate?.navigationController?.popViewController(animated: true)
+    }
+    
     public func backToLogin() {
         self.delegate?.navigationController?.popToRootViewController(animated: true)
     }
