@@ -24,6 +24,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         setupConstraints()
+        self.answerTextField.delegate = self
     }
 
     // MARK: Define elements
@@ -326,5 +327,17 @@ extension SecondSignUpViewController {
             signInStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             signInStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
+    }
+}
+
+// MARK: Text Field
+extension SecondSignUpViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.setBorderColorIfNeeded(view: textField.superview)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.setBorderColorIfNeeded(view: textField.superview)
     }
 }

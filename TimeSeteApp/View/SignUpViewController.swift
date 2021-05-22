@@ -17,6 +17,9 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         presenter.setViewDelegate(delegate: self)
         addSubviews()
         setupConstraints()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
     }
 
     override func loadView() {
@@ -365,5 +368,17 @@ extension SignUpViewController {
             signInStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
             signInStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
+    }
+}
+
+// MARK: Text Field
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.setBorderColorIfNeeded(view: textField.superview)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.setBorderColorIfNeeded(view: textField.superview)
     }
 }
