@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EAF265840D500FC7822 /* StringExtension.swift */; };
 		7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB22658A42700FC7822 /* TextFieldExtension.swift */; };
+		7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */; };
+		7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */; };
 		7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A832653744A0095B88C /* AppDelegate.swift */; };
 		7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A852653744A0095B88C /* SceneDelegate.swift */; };
 		7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A872653744A0095B88C /* LoginViewController.swift */; };
@@ -32,6 +34,8 @@
 		47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeSeteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D652EAF265840D500FC7822 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7D652EB22658A42700FC7822 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpConstraints.swift; sourceTree = "<group>"; };
+		7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConstraints.swift; sourceTree = "<group>"; };
 		7D8E4A802653744A0095B88C /* TimeSeteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeSeteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8E4A832653744A0095B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D8E4A852653744A0095B88C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 				47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D652EB5265ACADB00FC7822 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */,
+				7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */,
+			);
+			path = Constraints;
 			sourceTree = "<group>";
 		};
 		7D8E4A772653744A0095B88C = {
@@ -132,6 +145,7 @@
 		7DCDFBD0265500B3008391BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D652EB5265ACADB00FC7822 /* Constraints */,
 				7D8E4A872653744A0095B88C /* LoginViewController.swift */,
 				7DB50E2E26553656004A62AC /* LoginView.swift */,
 				7DACFEA726566C9C00FD7853 /* SignUpViewController.swift */,
@@ -325,6 +339,7 @@
 			files = (
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
+				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
 				7DB50E2F26553656004A62AC /* LoginView.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
@@ -336,6 +351,7 @@
 				7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */,
 				7DB50E29265519A4004A62AC /* Presenter.swift in Sources */,
 				7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */,
+				7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */,
 				7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */,
 				7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */,
 			);

@@ -8,8 +8,10 @@
 import UIKit
 
 class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegate {
-
-    private let presenter = SecondSignUpPresenter()
+    let data = ["Toc! Toc! Quem é?", "Qual o sobrenome da sua avó?", "Qual o nome do seu primeiro cachorro?", "Qual é seu nome, broto?"]
+    
+    let presenter = SecondSignUpPresenter()
+    private var pickerView = UIPickerView()
     private let answerCharacterLimit = 16
     
     override func viewDidLoad() {
@@ -26,10 +28,12 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     override func viewWillAppear(_ animated: Bool) {
         setupConstraints()
         self.answerTextField.delegate = self
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
     }
 
     // MARK: Define elements
-    private lazy var headerStackView: UIStackView = {
+    private(set) lazy var headerStackView: UIStackView = {
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
         headerStackView.distribution = .fillEqually
@@ -39,7 +43,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return headerStackView
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.text = "Defina sua recuperação de senha"
         titleLabel.textAlignment = .center
@@ -49,7 +53,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return titleLabel
     }()
     
-    private lazy var pageImage: UIImageView = {
+    private(set) lazy var pageImage: UIImageView = {
         let pageImage = UIImageView()
         pageImage.image = .pageTwo
         pageImage.contentMode = .scaleAspectFit
@@ -57,7 +61,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return pageImage
     }()
     
-    private lazy var pageOneButton: UIButton = {
+    private(set) lazy var pageOneButton: UIButton = {
         let pageOneButton = UIButton()
         pageOneButton.backgroundColor = .clear
         pageOneButton.setTitle(.none, for: .normal)
@@ -67,7 +71,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     }()
     
     // Main
-    private lazy var questionStackView: UIStackView = {
+    private(set) lazy var questionStackView: UIStackView = {
         let questionStackView = UIStackView()
         questionStackView.axis = .vertical
         questionStackView.distribution = .fill
@@ -77,7 +81,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return questionStackView
     }()
     
-    private lazy var questionLabel: UILabel = {
+    private(set) lazy var questionLabel: UILabel = {
         let questionLabel = UILabel()
         questionLabel.text = "Pergunta de segurança para senha"
         questionLabel.textAlignment = .left
@@ -87,30 +91,28 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return questionLabel
     }()
     
-    private lazy var questionView: UIView = {
+    private(set) lazy var questionView: UIView = {
         let questionView = UIView()
         questionView.backgroundColor = .white
         questionView.layer.cornerRadius = 4
         questionView.layer.borderWidth = 1
-        questionView.layer.borderColor = UIColor.appGray03.cgColor
+        questionView.layer.borderColor = UIColor.appPurple.cgColor
         questionView.translatesAutoresizingMaskIntoConstraints = false
         return questionView
     }()
     
-    private lazy var questionTextField: UITextField = {
+    private(set) lazy var questionTextField: UITextField = {
         let questionTextField = UITextField()
-        questionTextField.placeholder = "Insira seu e-mail"
+        questionTextField.text = data[0]
+        questionTextField.inputView = pickerView
         questionTextField.borderStyle = .none
         questionTextField.backgroundColor = .clear
-        questionTextField.keyboardType = .emailAddress
-        questionTextField.autocapitalizationType = .none
-        questionTextField.autocorrectionType = .no
-        questionTextField.tintColor = .appPurple
+        questionTextField.tintColor = .clear
         questionTextField.translatesAutoresizingMaskIntoConstraints = false
         return questionTextField
     }()
     
-    private lazy var questionWarningLabel: UILabel = {
+    private(set) lazy var questionWarningLabel: UILabel = {
         let questionWarningLabel = UILabel()
         questionWarningLabel.text = "Selecione uma pergunta"
         questionWarningLabel.textAlignment = .left
@@ -120,7 +122,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return questionWarningLabel
     }()
     
-    private lazy var answerLabel: UILabel = {
+    private(set) lazy var answerLabel: UILabel = {
         let answerLabel = UILabel()
         answerLabel.text = "Resposta secreta"
         answerLabel.textAlignment = .left
@@ -130,7 +132,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return answerLabel
     }()
     
-    private lazy var answerView: UIView = {
+    private(set) lazy var answerView: UIView = {
         let answerView = UIView()
         answerView.backgroundColor = .white
         answerView.layer.cornerRadius = 4
@@ -140,7 +142,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return answerView
     }()
     
-    private lazy var answerTextField: UITextField = {
+    private(set) lazy var answerTextField: UITextField = {
         let answerTextField = UITextField()
         answerTextField.placeholder = "Insira sua resposta"
         answerTextField.borderStyle = .none
@@ -153,7 +155,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return answerTextField
     }()
     
-    private lazy var characterLimitLabel: UILabel = {
+    private(set) lazy var characterLimitLabel: UILabel = {
         let characterLimitLabel = UILabel()
         characterLimitLabel.text = "0/16"
         characterLimitLabel.textAlignment = .right
@@ -164,7 +166,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     }()
     
     // Footer
-    private lazy var registerAccountButton: UIButton = {
+    private(set) lazy var registerAccountButton: UIButton = {
         let registerAccountButton = UIButton()
         registerAccountButton.setBackgroundImage(.cyanButton, for: .normal)
         registerAccountButton.setTitle("Cadastrar conta", for: .normal)
@@ -176,7 +178,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return registerAccountButton
     }()
     
-    private lazy var signInStackView: UIStackView = {
+    private(set) lazy var signInStackView: UIStackView = {
         let signInStackView = UIStackView()
         signInStackView.axis = .horizontal
         signInStackView.distribution = .equalCentering
@@ -186,7 +188,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return signInStackView
     }()
     
-    private lazy var signInLabel: UILabel = {
+    private(set) lazy var signInLabel: UILabel = {
         let signInLabel = UILabel()
         signInLabel.text = "Já tem uma conta?"
         signInLabel.textAlignment = .center
@@ -196,7 +198,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         return signInLabel
     }()
     
-    private lazy var signInButton: UIButton = {
+    private(set) lazy var signInButton: UIButton = {
         let signInButton = UIButton()
         signInButton.backgroundColor = .clear
         signInButton.setTitle("Entre aqui", for: .normal)
@@ -228,115 +230,6 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     }
 }
 
-extension SecondSignUpViewController {
-    
-    // MARK: Subviews
-    func addSubviews() {
-        self.view.addSubview(headerStackView)
-        self.headerStackView.addArrangedSubview(titleLabel)
-        self.headerStackView.addArrangedSubview(pageImage)
-        self.view.insertSubview(pageOneButton, aboveSubview: headerStackView)
-        
-        self.view.addSubview(questionStackView)
-        self.questionView.addSubview(questionTextField)
-        self.questionStackView.addArrangedSubview(questionLabel)
-        self.questionStackView.addArrangedSubview(questionView)
-        self.questionStackView.addArrangedSubview(questionWarningLabel)
-        self.answerView.addSubview(answerTextField)
-        self.questionStackView.addArrangedSubview(answerLabel)
-        self.questionStackView.addArrangedSubview(answerView)
-        self.questionStackView.addArrangedSubview(characterLimitLabel)
-        
-        self.view.addSubview(registerAccountButton)
-        self.view.addSubview(signInStackView)
-        self.signInStackView.addArrangedSubview(signInLabel)
-        self.signInStackView.addArrangedSubview(signInButton)
-    }
-    
-    // MARK: Setup Constraints
-    func setupConstraints() {
-        setupHeaderStackViewConstraints()
-        setupPageOneButtonConstraints()
-        setupQuestionStackViewConstraints()
-        setupQuestionViewConstraints()
-        setupQuestionTextFieldConstraints()
-        setupAnswerViewConstraints()
-        setupAnswerTextFieldConstraints()
-        setupRegisterAccountButtonConstraints()
-        setupSignInStackViewConstraints()
-        
-        self.questionStackView.setCustomSpacing(8, after: self.questionLabel)
-        self.questionStackView.setCustomSpacing(20, after: self.questionWarningLabel)
-        self.questionStackView.setCustomSpacing(8, after: self.answerLabel)
-    }
-    
-    // Header
-    func setupHeaderStackViewConstraints() {
-        NSLayoutConstraint.activate([
-            headerStackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            headerStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
-            headerStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
-        ])
-    }
-    
-    func setupPageOneButtonConstraints() {
-        guard let viewWidth = self.presenter.getViewWidth() else { return }
-        
-        NSLayoutConstraint.activate([
-            pageOneButton.bottomAnchor.constraint(equalTo: self.headerStackView.bottomAnchor),
-            pageOneButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -viewWidth/2),
-            pageOneButton.heightAnchor.constraint(equalTo: self.pageImage.heightAnchor),
-            pageOneButton.widthAnchor.constraint(equalToConstant: 80)
-        ])
-    }
-    
-    // Main
-    func setupQuestionStackViewConstraints() {
-        NSLayoutConstraint.activate([
-            questionStackView.topAnchor.constraint(equalTo: self.headerStackView.bottomAnchor, constant: 24),
-            questionStackView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
-            questionStackView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
-        ])
-    }
-    
-    func setupQuestionViewConstraints() {
-        questionView.heightAnchor.constraint(equalToConstant: 36).isActive = true
-    }
-    
-    func setupQuestionTextFieldConstraints() {
-        questionTextField.rightAnchor.constraint(equalTo: self.questionView.rightAnchor, constant: -12).isActive = true
-        questionTextField.leftAnchor.constraint(equalTo: self.questionView.leftAnchor, constant: 12).isActive = true
-        questionTextField.topAnchor.constraint(equalTo: self.questionView.topAnchor, constant: 5).isActive = true
-        questionTextField.bottomAnchor.constraint(equalTo: self.questionView.bottomAnchor, constant: -5).isActive = true
-    }
-    
-    func setupAnswerViewConstraints() {
-        answerView.heightAnchor.constraint(equalToConstant: 36).isActive = true
-    }
-    
-    func setupAnswerTextFieldConstraints() {
-        answerTextField.rightAnchor.constraint(equalTo: self.answerView.rightAnchor, constant: -12).isActive = true
-        answerTextField.leftAnchor.constraint(equalTo: self.answerView.leftAnchor, constant: 12).isActive = true
-        answerTextField.topAnchor.constraint(equalTo: self.answerView.topAnchor, constant: 5).isActive = true
-        answerTextField.bottomAnchor.constraint(equalTo: self.answerView.bottomAnchor, constant: -5).isActive = true
-    }
-    
-    // Footer
-    func setupRegisterAccountButtonConstraints() {
-        NSLayoutConstraint.activate([
-            registerAccountButton.bottomAnchor.constraint(equalTo: self.signInStackView.topAnchor, constant: -68),
-            registerAccountButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        ])
-    }
-    
-    func setupSignInStackViewConstraints() {
-        NSLayoutConstraint.activate([
-            signInStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            signInStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        ])
-    }
-}
-
 // MARK: Text Field
 extension SecondSignUpViewController: UITextFieldDelegate {
     
@@ -356,5 +249,25 @@ extension SecondSignUpViewController: UITextFieldDelegate {
         } else {
             characterLimitLabel.text = "\(characterAmount)/\(answerCharacterLimit)"
         }
+    }
+}
+
+// MARK: Picker View
+extension SecondSignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        self.data.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        questionTextField.text = data[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row]
     }
 }
