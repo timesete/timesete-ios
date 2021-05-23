@@ -17,6 +17,10 @@ extension UIImage {
         return UIImage(named: "error-icon") ?? UIImage()
     }
     
+    static var hidePassword: UIImage {
+        return UIImage(named: "hide-password") ?? UIImage()
+    }
+    
     static var logoLogin: UIImage {
         return UIImage(named: "logo-login") ?? UIImage()
     }
@@ -27,6 +31,10 @@ extension UIImage {
     
     static var pageTwo: UIImage {
         return UIImage(named: "page-two") ?? UIImage()
+    }
+    
+    static var showPassword: UIImage {
+        return UIImage(named: "show-password") ?? UIImage()
     }
 
 }

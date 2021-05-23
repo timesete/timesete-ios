@@ -175,6 +175,16 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         return passwordWarningLabel
     }()
     
+    private lazy var showPasswordButton: UIButton = {
+        let showPasswordButton = UIButton()
+        showPasswordButton.backgroundColor = .clear
+        showPasswordButton.setTitle(.none, for: .normal)
+        showPasswordButton.setBackgroundImage(.hidePassword, for: .normal)
+        showPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        showPasswordButton.addTarget(self, action: #selector(showPasswordAction), for: .touchUpInside)
+        return showPasswordButton
+    }()
+    
     private lazy var confirmPasswordLabel: UILabel = {
         let confirmPasswordLabel = UILabel()
         confirmPasswordLabel.text = "Confirme sua senha"
@@ -217,6 +227,16 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         confirmPasswordWarningLabel.font = UIFont.systemFont(ofSize: 12)
         confirmPasswordWarningLabel.translatesAutoresizingMaskIntoConstraints = false
         return confirmPasswordWarningLabel
+    }()
+    
+    private lazy var showConfirmPasswordButton: UIButton = {
+        let showConfirmPasswordButton = UIButton()
+        showConfirmPasswordButton.backgroundColor = .clear
+        showConfirmPasswordButton.setTitle(.none, for: .normal)
+        showConfirmPasswordButton.setBackgroundImage(.hidePassword, for: .normal)
+        showConfirmPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        showConfirmPasswordButton.addTarget(self, action: #selector(showConfirmPasswordAction), for: .touchUpInside)
+        return showConfirmPasswordButton
     }()
     
     // Footer
@@ -265,8 +285,26 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     }()
     
     // MARK: Actions
-    @objc func signInAction(sender: UIButton) {
-        presenter.backToLogin()
+    @objc func showPasswordAction(sender: UIButton) {
+        switch sender.currentBackgroundImage {
+        case UIImage.hidePassword:
+            sender.setBackgroundImage(.showPassword, for: .normal)
+            passwordTextField.isSecureTextEntry = false
+        default:
+            sender.setBackgroundImage(.hidePassword, for: .normal)
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
+    @objc func showConfirmPasswordAction(sender: UIButton) {
+        switch sender.currentBackgroundImage {
+        case UIImage.hidePassword:
+            sender.setBackgroundImage(.showPassword, for: .normal)
+            confirmPasswordTextField.isSecureTextEntry = false
+        default:
+            sender.setBackgroundImage(.hidePassword, for: .normal)
+            confirmPasswordTextField.isSecureTextEntry = true
+        }
     }
     
     @objc func proceedAction(sender: UIButton) {
@@ -287,6 +325,10 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
             confirmPasswordTextField.invalidField(titleLabel: confirmPasswordLabel)
         }
     }
+    
+    @objc func signInAction(sender: UIButton) {
+        presenter.backToLogin()
+    }
 }
 
 extension SignUpViewController {
@@ -299,16 +341,19 @@ extension SignUpViewController {
         
         self.view.addSubview(signUpStackView)
         self.emailView.addSubview(emailTextField)
-        self.emailView.addSubview(emailErrorImage) // erro - imagem
+        self.emailView.addSubview(emailErrorImage)
         self.signUpStackView.addArrangedSubview(emailLabel)
         self.signUpStackView.addArrangedSubview(emailView)
         self.signUpStackView.addArrangedSubview(emailWarningLabel)
         self.passwordView.addSubview(passwordTextField)
-        self.passwordView.addSubview(passwordErrorImage) // erro - imagem
+        self.passwordView.addSubview(passwordErrorImage)
+        self.passwordView.insertSubview(showPasswordButton,
+                                        aboveSubview: passwordErrorImage)
         self.signUpStackView.addArrangedSubview(passwordLabel)
         self.signUpStackView.addArrangedSubview(passwordView)
         self.signUpStackView.addArrangedSubview(passwordWarningLabel)
         self.confirmPasswordView.addSubview(confirmPasswordTextField)
+        self.confirmPasswordView.addSubview(showConfirmPasswordButton)
         self.signUpStackView.addArrangedSubview(confirmPasswordLabel)
         self.signUpStackView.addArrangedSubview(confirmPasswordView)
         self.signUpStackView.addArrangedSubview(confirmPasswordWarningLabel)
@@ -324,12 +369,14 @@ extension SignUpViewController {
         setupHeaderStackViewConstraints()
         setupSignUpStackViewConstraints()
         setupEmailViewConstraints()
-        setupEmailErrorImageConstraints() // error image
+        setupEmailErrorImageConstraints()
         setupEmailTextFieldConstraints()
         setupPasswordViewConstraints()
-        setupPasswordErrorImageConstraints() // error image
+        setupPasswordErrorImageConstraints()
+        setupShowPasswordButtonConstraints()
         setupPasswordTextFieldConstraints()
         setupConfirmPasswordViewConstraints()
+        setupShowConfirmPasswordButtonConstraints()
         setupConfirmPasswordTextFieldConstraints()
         setupProceedButtonConstraints()
         setupSignInStackViewConstraints()
@@ -362,8 +409,7 @@ extension SignUpViewController {
     func setupEmailViewConstraints() {
         emailView.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
-    
-    // error - imagem
+ 
     func setupEmailErrorImageConstraints() {
         NSLayoutConstraint.activate([
             emailErrorImage.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
@@ -386,13 +432,21 @@ extension SignUpViewController {
         passwordView.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
-    // error - imagem
     func setupPasswordErrorImageConstraints() {
         NSLayoutConstraint.activate([
             passwordErrorImage.heightAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
             passwordErrorImage.widthAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
             passwordErrorImage.rightAnchor.constraint(equalTo: self.passwordView.rightAnchor, constant: -12),
             passwordErrorImage.centerYAnchor.constraint(equalTo: self.passwordView.centerYAnchor)
+        ])
+    }
+    
+    func setupShowPasswordButtonConstraints() {
+        NSLayoutConstraint.activate([
+            showPasswordButton.heightAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
+            showPasswordButton.widthAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
+            showPasswordButton.rightAnchor.constraint(equalTo: self.passwordView.rightAnchor, constant: -12),
+            showPasswordButton.centerYAnchor.constraint(equalTo: self.passwordView.centerYAnchor)
         ])
     }
     
@@ -409,8 +463,17 @@ extension SignUpViewController {
         confirmPasswordView.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
+    func setupShowConfirmPasswordButtonConstraints() {
+        NSLayoutConstraint.activate([
+            showConfirmPasswordButton.heightAnchor.constraint(equalTo: self.confirmPasswordTextField.heightAnchor),
+            showConfirmPasswordButton.widthAnchor.constraint(equalTo: self.confirmPasswordTextField.heightAnchor),
+            showConfirmPasswordButton.rightAnchor.constraint(equalTo: self.confirmPasswordView.rightAnchor, constant: -12),
+            showConfirmPasswordButton.centerYAnchor.constraint(equalTo: self.confirmPasswordView.centerYAnchor)
+        ])
+    }
+    
     func setupConfirmPasswordTextFieldConstraints() {
-        confirmPasswordTextField.rightAnchor.constraint(equalTo: self.confirmPasswordView.rightAnchor, constant: -12).isActive = true
+        confirmPasswordTextField.rightAnchor.constraint(equalTo: self.showConfirmPasswordButton.leftAnchor).isActive = true
         confirmPasswordTextField.leftAnchor.constraint(equalTo: self.confirmPasswordView.leftAnchor, constant: 12).isActive = true
         confirmPasswordTextField.topAnchor.constraint(equalTo: self.confirmPasswordView.topAnchor, constant: 5).isActive = true
         confirmPasswordTextField.bottomAnchor.constraint(equalTo: self.confirmPasswordView.bottomAnchor, constant: -5).isActive = true
