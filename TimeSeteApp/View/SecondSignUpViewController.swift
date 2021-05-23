@@ -10,6 +10,7 @@ import UIKit
 class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegate {
 
     private let presenter = SecondSignUpPresenter()
+    private let answerCharacterLimit = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -345,5 +346,15 @@ extension SecondSignUpViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.setBorderColorIfNeeded(titleLabel: answerLabel)
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let characterAmount = textField.text?.count else { return }
+        
+        if characterAmount > answerCharacterLimit {
+            textField.text?.removeLast()
+        } else {
+            characterLimitLabel.text = "\(characterAmount)/\(answerCharacterLimit)"
+        }
     }
 }

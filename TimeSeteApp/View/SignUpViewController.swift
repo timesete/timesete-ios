@@ -321,7 +321,10 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
             emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
         }
         if passwordText.count < 8 {
-            passwordTextField.invalidField(titleLabel: passwordLabel, errorImage: passwordErrorImage, warningLabel: passwordWarningLabel)
+            passwordTextField.invalidField(titleLabel: passwordLabel,
+                                           errorImage: passwordErrorImage,
+                                           warningLabel: passwordWarningLabel,
+                                           showPasswordButton: showPasswordButton)
             confirmPasswordTextField.invalidField(titleLabel: confirmPasswordLabel)
         }
     }
@@ -348,7 +351,7 @@ extension SignUpViewController {
         self.passwordView.addSubview(passwordTextField)
         self.passwordView.addSubview(passwordErrorImage)
         self.passwordView.insertSubview(showPasswordButton,
-                                        aboveSubview: passwordErrorImage)
+                                        belowSubview: passwordErrorImage)
         self.signUpStackView.addArrangedSubview(passwordLabel)
         self.signUpStackView.addArrangedSubview(passwordView)
         self.signUpStackView.addArrangedSubview(passwordWarningLabel)
@@ -514,7 +517,10 @@ extension SignUpViewController: UITextFieldDelegate {
         case emailTextField:
             textField.setBorderColorIfNeeded(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
         case passwordTextField:
-            textField.setBorderColorIfNeeded(titleLabel: passwordLabel, errorImage: passwordErrorImage, warningLabel: passwordWarningLabel)
+            textField.setBorderColorIfNeeded(titleLabel: passwordLabel,
+                                             errorImage: passwordErrorImage,
+                                             warningLabel: passwordWarningLabel,
+                                             showPasswordButton: showPasswordButton)
         default:
             textField.setBorderColorIfNeeded(titleLabel: confirmPasswordLabel)
         }
