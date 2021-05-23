@@ -13,6 +13,10 @@ extension UIImage {
         return UIImage(named: "cyan-button") ?? UIImage()
     }
     
+    static var errorIcon: UIImage {
+        return UIImage(named: "error-icon") ?? UIImage()
+    }
+    
     static var logoLogin: UIImage {
         return UIImage(named: "logo-login") ?? UIImage()
     }

@@ -213,7 +213,13 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     }
     
     @objc func registerAccountAction(sender: UIButton) {
-        // TODO: go to home
+        guard let answerText = answerTextField.text else { return }
+        
+        if answerText.count > 0 {
+            // TODO: go to home
+        } else {
+            answerTextField.invalidField(titleLabel: answerLabel)
+        }
     }
     
     @objc func signInAction(sender: UIButton) {
@@ -334,10 +340,10 @@ extension SecondSignUpViewController {
 extension SecondSignUpViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.setBorderColorIfNeeded(view: textField.superview)
+        textField.setBorderColorIfNeeded(titleLabel: answerLabel)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.setBorderColorIfNeeded(view: textField.superview)
+        textField.setBorderColorIfNeeded(titleLabel: answerLabel)
     }
 }

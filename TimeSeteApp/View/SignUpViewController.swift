@@ -103,6 +103,15 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         return emailTextField
     }()
     
+    private lazy var emailErrorImage: UIImageView = {
+        let emailErrorImage = UIImageView()
+        emailErrorImage.image = .errorIcon
+        emailErrorImage.contentMode = .scaleAspectFit
+        emailErrorImage.isHidden = true
+        emailErrorImage.translatesAutoresizingMaskIntoConstraints = false
+        return emailErrorImage
+    }()
+    
     private lazy var emailWarningLabel: UILabel = {
         let emailWarningLabel = UILabel()
         emailWarningLabel.text = "E-mail incorreto"
@@ -147,9 +156,18 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         return passwordTextField
     }()
     
+    private lazy var passwordErrorImage: UIImageView = {
+        let passwordErrorImage = UIImageView()
+        passwordErrorImage.image = .errorIcon
+        passwordErrorImage.contentMode = .scaleAspectFit
+        passwordErrorImage.isHidden = true
+        passwordErrorImage.translatesAutoresizingMaskIntoConstraints = false
+        return passwordErrorImage
+    }()
+    
     private lazy var passwordWarningLabel: UILabel = {
         let passwordWarningLabel = UILabel()
-        passwordWarningLabel.text = "Senha excelente!"
+        passwordWarningLabel.text = "Senha inválida"
         passwordWarningLabel.textAlignment = .left
         passwordWarningLabel.textColor = .clear
         passwordWarningLabel.font = UIFont.systemFont(ofSize: 12)
@@ -252,7 +270,22 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     }
     
     @objc func proceedAction(sender: UIButton) {
-        presenter.goToSecondSignUp()
+        guard let emailText = emailTextField.text else { return }
+        guard let passwordText = passwordTextField.text else { return }
+        guard let confirmPasswordText = confirmPasswordTextField.text else { return }
+        
+        if emailText.isValidEmail,
+           passwordText.count >= 8,
+           passwordText == confirmPasswordText {
+            presenter.goToSecondSignUp()
+        }
+        if !emailText.isValidEmail {
+            emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
+        }
+        if passwordText.count < 8 {
+            passwordTextField.invalidField(titleLabel: passwordLabel, errorImage: passwordErrorImage, warningLabel: passwordWarningLabel)
+            confirmPasswordTextField.invalidField(titleLabel: confirmPasswordLabel)
+        }
     }
 }
 
@@ -266,10 +299,12 @@ extension SignUpViewController {
         
         self.view.addSubview(signUpStackView)
         self.emailView.addSubview(emailTextField)
+        self.emailView.addSubview(emailErrorImage) // erro - imagem
         self.signUpStackView.addArrangedSubview(emailLabel)
         self.signUpStackView.addArrangedSubview(emailView)
         self.signUpStackView.addArrangedSubview(emailWarningLabel)
         self.passwordView.addSubview(passwordTextField)
+        self.passwordView.addSubview(passwordErrorImage) // erro - imagem
         self.signUpStackView.addArrangedSubview(passwordLabel)
         self.signUpStackView.addArrangedSubview(passwordView)
         self.signUpStackView.addArrangedSubview(passwordWarningLabel)
@@ -289,8 +324,10 @@ extension SignUpViewController {
         setupHeaderStackViewConstraints()
         setupSignUpStackViewConstraints()
         setupEmailViewConstraints()
+        setupEmailErrorImageConstraints() // error image
         setupEmailTextFieldConstraints()
         setupPasswordViewConstraints()
+        setupPasswordErrorImageConstraints() // error image
         setupPasswordTextFieldConstraints()
         setupConfirmPasswordViewConstraints()
         setupConfirmPasswordTextFieldConstraints()
@@ -326,22 +363,46 @@ extension SignUpViewController {
         emailView.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
+    // error - imagem
+    func setupEmailErrorImageConstraints() {
+        NSLayoutConstraint.activate([
+            emailErrorImage.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
+            emailErrorImage.widthAnchor.constraint(equalTo: self.emailTextField.heightAnchor),
+            emailErrorImage.rightAnchor.constraint(equalTo: self.emailView.rightAnchor, constant: -12),
+            emailErrorImage.centerYAnchor.constraint(equalTo: self.emailView.centerYAnchor)
+        ])
+    }
+    
     func setupEmailTextFieldConstraints() {
-        emailTextField.rightAnchor.constraint(equalTo: self.emailView.rightAnchor, constant: -12).isActive = true
-        emailTextField.leftAnchor.constraint(equalTo: self.emailView.leftAnchor, constant: 12).isActive = true
-        emailTextField.topAnchor.constraint(equalTo: self.emailView.topAnchor, constant: 5).isActive = true
-        emailTextField.bottomAnchor.constraint(equalTo: self.emailView.bottomAnchor, constant: -5).isActive = true
+        NSLayoutConstraint.activate([
+            emailTextField.rightAnchor.constraint(equalTo: self.emailErrorImage.leftAnchor),
+            emailTextField.leftAnchor.constraint(equalTo: self.emailView.leftAnchor, constant: 12),
+            emailTextField.topAnchor.constraint(equalTo: self.emailView.topAnchor, constant: 5),
+            emailTextField.bottomAnchor.constraint(equalTo: self.emailView.bottomAnchor, constant: -5)
+        ])
     }
     
     func setupPasswordViewConstraints() {
         passwordView.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
+    // error - imagem
+    func setupPasswordErrorImageConstraints() {
+        NSLayoutConstraint.activate([
+            passwordErrorImage.heightAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
+            passwordErrorImage.widthAnchor.constraint(equalTo: self.passwordTextField.heightAnchor),
+            passwordErrorImage.rightAnchor.constraint(equalTo: self.passwordView.rightAnchor, constant: -12),
+            passwordErrorImage.centerYAnchor.constraint(equalTo: self.passwordView.centerYAnchor)
+        ])
+    }
+    
     func setupPasswordTextFieldConstraints() {
-        passwordTextField.rightAnchor.constraint(equalTo: self.passwordView.rightAnchor, constant: -12).isActive = true
-        passwordTextField.leftAnchor.constraint(equalTo: self.passwordView.leftAnchor, constant: 12).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: self.passwordView.topAnchor, constant: 5).isActive = true
-        passwordTextField.bottomAnchor.constraint(equalTo: self.passwordView.bottomAnchor, constant: -5).isActive = true
+        NSLayoutConstraint.activate([
+            passwordTextField.rightAnchor.constraint(equalTo: self.passwordErrorImage.leftAnchor),
+            passwordTextField.leftAnchor.constraint(equalTo: self.passwordView.leftAnchor, constant: 12),
+            passwordTextField.topAnchor.constraint(equalTo: self.passwordView.topAnchor, constant: 5),
+            passwordTextField.bottomAnchor.constraint(equalTo: self.passwordView.bottomAnchor, constant: -5)
+        ])
     }
     
     func setupConfirmPasswordViewConstraints() {
@@ -375,10 +436,24 @@ extension SignUpViewController {
 extension SignUpViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.setBorderColorIfNeeded(view: textField.superview)
+        switch textField {
+        case emailTextField:
+            textField.setBorderColorIfNeeded(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
+        case passwordTextField:
+            textField.setBorderColorIfNeeded(titleLabel: passwordLabel, errorImage: passwordErrorImage, warningLabel: passwordWarningLabel)
+        default:
+            textField.setBorderColorIfNeeded(titleLabel: confirmPasswordLabel)
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.setBorderColorIfNeeded(view: textField.superview)
+        switch textField {
+        case emailTextField:
+            textField.setBorderColorIfNeeded(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
+        case passwordTextField:
+            textField.setBorderColorIfNeeded(titleLabel: passwordLabel, errorImage: passwordErrorImage, warningLabel: passwordWarningLabel)
+        default:
+            textField.setBorderColorIfNeeded(titleLabel: confirmPasswordLabel)
+        }
     }
 }
