@@ -26,12 +26,11 @@ class LoginPresenter {
         self.delegate = delegate
     }
     
-    public func didTap() {
-//        let title = "Teste"
-//        let message = "Alerta"
-//        
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil) )
-//        delegate?.present(alert, animated: true)
+    public func goToHome() {
+        // TODO: go to home view
+    }
+    
+    public func goToSignUp() {
+        self.delegate?.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
 }

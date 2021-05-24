@@ -26,10 +26,6 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         passwordTextField.delegate = self
         self.navigationController?.isNavigationBarHidden = true
     }
- 
-    override func viewDidAppear(_ animated: Bool) {
-        presenter.didTap()
-    }
 
     func presentLogin(credentials: Login) {
         print("presentLogin")
@@ -275,11 +271,11 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     }
     
     @objc func skipAction(sender: UIButton) {
-        
+        // TODO: go to create a new character
     }
     
     @objc func signUpAction(sender: UIButton) {
-//        presenter.backToLogin()
+        presenter.goToSignUp()
     }
     
 }
