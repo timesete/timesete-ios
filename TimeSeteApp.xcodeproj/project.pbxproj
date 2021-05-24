@@ -27,6 +27,9 @@
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
+		7DEF863F265B8E98006254F1 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */; };
+		7DEF8641265B8E9C006254F1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */; };
+		7DEF8643265B8EA0006254F1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */; };
 		B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.release.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.release.xcconfig"; sourceTree = "<group>"; };
 		CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.debug.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +171,7 @@
 		7DCDFBD2265500EE008391BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DEF863B265B8E70006254F1 /* Fonts */,
 				7D8E4A8C2653744B0095B88C /* Assets.xcassets */,
 				7D8E4A8E2653744B0095B88C /* LaunchScreen.storyboard */,
 			);
@@ -194,6 +201,16 @@
 				7D8E4A912653744B0095B88C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DEF863B265B8E70006254F1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */,
+				7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */,
+				7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F038F1B8F6C0BC4EC4DC4CBC /* Pods */ = {
@@ -265,9 +282,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEF8643265B8EA0006254F1 /* Nunito-Regular.ttf in Resources */,
 				7D8E4A902653744B0095B88C /* LaunchScreen.storyboard in Resources */,
+				7DEF8641265B8E9C006254F1 /* Nunito-Bold.ttf in Resources */,
 				7D8E4A8D2653744B0095B88C /* Assets.xcassets in Resources */,
 				7D8E4A8B2653744A0095B88C /* Main.storyboard in Resources */,
+				7DEF863F265B8E98006254F1 /* Nunito-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

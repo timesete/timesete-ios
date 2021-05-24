@@ -12,3 +12,19 @@ extension String {
         NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
     }
 }
+
+// Fonts
+extension String {
+    
+    static var nunitoRegular: String {
+        return "Nunito-Regular"
+    }
+    
+    static var nunitoBold: String {
+        return "Nunito-Bold"
+    }
+    
+    static var nunitoBlack: String {
+        return "Nunito-Black"
+    }
+}
