@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D322495265AEC360047C9E8 /* LoginConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D322494265AEC360047C9E8 /* LoginConstraints.swift */; };
 		7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EAF265840D500FC7822 /* StringExtension.swift */; };
 		7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB22658A42700FC7822 /* TextFieldExtension.swift */; };
 		7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */; };
@@ -23,7 +24,6 @@
 		7DAEEF582657B2C200379EE3 /* SecondSignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */; };
 		7DB50E29265519A4004A62AC /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E28265519A4004A62AC /* Presenter.swift */; };
 		7DB50E2C26552348004A62AC /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E2B26552348004A62AC /* Login.swift */; };
-		7DB50E2F26553656004A62AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E2E26553656004A62AC /* LoginView.swift */; };
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeSeteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D322494265AEC360047C9E8 /* LoginConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstraints.swift; sourceTree = "<group>"; };
 		7D652EAF265840D500FC7822 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7D652EB22658A42700FC7822 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpConstraints.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpPresenter.swift; sourceTree = "<group>"; };
 		7DB50E28265519A4004A62AC /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		7DB50E2B26552348004A62AC /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		7DB50E2E26553656004A62AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -81,6 +81,7 @@
 		7D652EB5265ACADB00FC7822 /* Constraints */ = {
 			isa = PBXGroup;
 			children = (
+				7D322494265AEC360047C9E8 /* LoginConstraints.swift */,
 				7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */,
 				7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */,
 			);
@@ -147,7 +148,6 @@
 			children = (
 				7D652EB5265ACADB00FC7822 /* Constraints */,
 				7D8E4A872653744A0095B88C /* LoginViewController.swift */,
-				7DB50E2E26553656004A62AC /* LoginView.swift */,
 				7DACFEA726566C9C00FD7853 /* SignUpViewController.swift */,
 				7DAEEF542657B2AE00379EE3 /* SecondSignUpViewController.swift */,
 			);
@@ -340,7 +340,6 @@
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
-				7DB50E2F26553656004A62AC /* LoginView.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
@@ -353,6 +352,7 @@
 				7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */,
 				7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */,
 				7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */,
+				7D322495265AEC360047C9E8 /* LoginConstraints.swift in Sources */,
 				7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

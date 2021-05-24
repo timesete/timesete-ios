@@ -33,8 +33,15 @@ extension UIImage {
         return UIImage(named: "page-two") ?? UIImage()
     }
     
+    static var purpleButton: UIImage {
+        return UIImage(named: "purple-button") ?? UIImage()
+    }
+    
     static var showPassword: UIImage {
         return UIImage(named: "show-password") ?? UIImage()
     }
 
+    static var skipButton: UIImage {
+        return UIImage(named: "skip-button") ?? UIImage()
+    }
 }
