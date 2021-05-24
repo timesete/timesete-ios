@@ -183,9 +183,9 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     private(set) lazy var signInButton: UIButton = {
         let signInButton = UIButton()
         signInButton.setBackgroundImage(.purpleButton, for: .normal)
+        signInButton.setBackgroundImage(.purpleDarkButton, for: .highlighted)
         signInButton.setTitle("Entrar na conta", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
-        signInButton.setTitleColor(.gray, for: .highlighted)
         signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
@@ -195,6 +195,7 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     private(set) lazy var skipButton: UIButton = {
         let skipButton = UIButton()
         skipButton.setBackgroundImage(.skipButton, for: .normal)
+        skipButton.setBackgroundImage(.skipDarkButton, for: .highlighted)
         skipButton.setTitle(.none, for: .normal)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         skipButton.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
@@ -255,7 +256,7 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         
         if emailText.isValidEmail,
            passwordText.count >= 8 {
-//            presenter.goToSecondSignUp()
+//            presenter.goToHome
         }
         
         if !emailText.isValidEmail {

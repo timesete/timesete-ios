@@ -243,9 +243,9 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     private(set) lazy var proceedButton: UIButton = {
         let proceedButton = UIButton()
         proceedButton.setBackgroundImage(.cyanButton, for: .normal)
+        proceedButton.setBackgroundImage(.cyanDarkButton, for: .highlighted)
         proceedButton.setTitle("Avançar", for: .normal)
         proceedButton.setTitleColor(.white, for: .normal)
-        proceedButton.setTitleColor(.gray, for: .highlighted)
         proceedButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         proceedButton.translatesAutoresizingMaskIntoConstraints = false
         proceedButton.addTarget(self, action: #selector(proceedAction), for: .touchUpInside)

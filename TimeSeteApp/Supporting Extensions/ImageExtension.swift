@@ -13,6 +13,10 @@ extension UIImage {
         return UIImage(named: "cyan-button") ?? UIImage()
     }
     
+    static var cyanDarkButton: UIImage {
+        return UIImage(named: "cyan-dark-button") ?? UIImage()
+    }
+    
     static var errorIcon: UIImage {
         return UIImage(named: "error-icon") ?? UIImage()
     }
@@ -37,11 +41,19 @@ extension UIImage {
         return UIImage(named: "purple-button") ?? UIImage()
     }
     
+    static var purpleDarkButton: UIImage {
+        return UIImage(named: "purple-dark-button") ?? UIImage()
+    }
+    
     static var showPassword: UIImage {
         return UIImage(named: "show-password") ?? UIImage()
     }
 
     static var skipButton: UIImage {
         return UIImage(named: "skip-button") ?? UIImage()
+    }
+    
+    static var skipDarkButton: UIImage {
+        return UIImage(named: "skip-dark-button") ?? UIImage()
     }
 }
