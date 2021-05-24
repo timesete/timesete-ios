@@ -45,6 +45,14 @@ extension UIImage {
         return UIImage(named: "purple-dark-button") ?? UIImage()
     }
     
+    static var selectClose: UIImage {
+        return UIImage(named: "select-close") ?? UIImage()
+    }
+    
+    static var selectOpen: UIImage {
+        return UIImage(named: "select-open") ?? UIImage()
+    }
+    
     static var showPassword: UIImage {
         return UIImage(named: "show-password") ?? UIImage()
     }
