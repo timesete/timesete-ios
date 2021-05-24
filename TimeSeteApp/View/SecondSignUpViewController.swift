@@ -48,7 +48,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         titleLabel.text = "Defina sua recuperação de senha"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .appBlack
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.font = UIFont(name: .nunitoBold, size: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
@@ -86,7 +86,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         questionLabel.text = "Pergunta de segurança para senha"
         questionLabel.textAlignment = .left
         questionLabel.textColor = .appBlack
-        questionLabel.font = UIFont.systemFont(ofSize: 16)
+        questionLabel.font = UIFont(name: .nunitoRegular, size: 16)
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         return questionLabel
     }()
@@ -104,6 +104,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     private(set) lazy var questionTextField: UITextField = {
         let questionTextField = UITextField()
         questionTextField.text = data[0]
+        questionTextField.font = UIFont(name: .nunitoRegular, size: 16)
         questionTextField.inputView = pickerView
         questionTextField.borderStyle = .none
         questionTextField.backgroundColor = .clear
@@ -117,7 +118,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         questionWarningLabel.text = "Selecione uma pergunta"
         questionWarningLabel.textAlignment = .left
         questionWarningLabel.textColor = .clear
-        questionWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        questionWarningLabel.font = UIFont(name: .nunitoRegular, size: 12)
         questionWarningLabel.translatesAutoresizingMaskIntoConstraints = false
         return questionWarningLabel
     }()
@@ -127,7 +128,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         answerLabel.text = "Resposta secreta"
         answerLabel.textAlignment = .left
         answerLabel.textColor = .appBlack
-        answerLabel.font = UIFont.systemFont(ofSize: 16)
+        answerLabel.font = UIFont(name: .nunitoRegular, size: 16)
         answerLabel.translatesAutoresizingMaskIntoConstraints = false
         return answerLabel
     }()
@@ -145,6 +146,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     private(set) lazy var answerTextField: UITextField = {
         let answerTextField = UITextField()
         answerTextField.placeholder = "Insira sua resposta"
+        answerTextField.font = UIFont(name: .nunitoRegular, size: 16)
         answerTextField.borderStyle = .none
         answerTextField.backgroundColor = .clear
         answerTextField.keyboardType = .default
@@ -160,7 +162,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         characterLimitLabel.text = "0/16"
         characterLimitLabel.textAlignment = .right
         characterLimitLabel.textColor = .appGray01
-        characterLimitLabel.font = UIFont.systemFont(ofSize: 12)
+        characterLimitLabel.font = UIFont(name: .nunitoRegular, size: 12)
         characterLimitLabel.translatesAutoresizingMaskIntoConstraints = false
         return characterLimitLabel
     }()
@@ -172,7 +174,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         registerAccountButton.setTitle("Cadastrar conta", for: .normal)
         registerAccountButton.setTitleColor(.white, for: .normal)
         registerAccountButton.setTitleColor(.gray, for: .highlighted)
-        registerAccountButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        registerAccountButton.titleLabel?.font = UIFont(name: .nunitoBlack, size: 18)
         registerAccountButton.translatesAutoresizingMaskIntoConstraints = false
         registerAccountButton.addTarget(self, action: #selector(registerAccountAction), for: .touchUpInside)
         return registerAccountButton
@@ -193,7 +195,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         signInLabel.text = "Já tem uma conta?"
         signInLabel.textAlignment = .center
         signInLabel.textColor = .appGray01
-        signInLabel.font = UIFont.systemFont(ofSize: 14)
+        signInLabel.font = UIFont(name: .nunitoRegular, size: 14)
         signInLabel.translatesAutoresizingMaskIntoConstraints = false
         return signInLabel
     }()
@@ -204,7 +206,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         signInButton.setTitle("Entre aqui", for: .normal)
         signInButton.setTitleColor(.appGray01, for: .normal)
         signInButton.setTitleColor(.appGray03, for: .highlighted)
-        signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        signInButton.titleLabel?.font = UIFont(name: .nunitoBold, size: 14)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
         return signInButton

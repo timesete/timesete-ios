@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         titleLabel.text = "Insira suas informações de acesso"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .appBlack
-        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.font = UIFont(name: .nunitoBold, size: 16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         emailLabel.text = "E-mail"
         emailLabel.textAlignment = .left
         emailLabel.textColor = .appBlack
-        emailLabel.font = UIFont.systemFont(ofSize: 16)
+        emailLabel.font = UIFont(name: .nunitoRegular, size: 16)
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         return emailLabel
     }()
@@ -93,6 +93,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     private(set) lazy var emailTextField: UITextField = {
         let emailTextField = UITextField()
         emailTextField.placeholder = "Insira seu e-mail"
+        emailTextField.font = UIFont(name: .nunitoRegular, size: 16)
         emailTextField.borderStyle = .none
         emailTextField.backgroundColor = .clear
         emailTextField.keyboardType = .emailAddress
@@ -117,7 +118,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         emailWarningLabel.text = "E-mail incorreto"
         emailWarningLabel.textAlignment = .left
         emailWarningLabel.textColor = .clear
-        emailWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        emailWarningLabel.font = UIFont(name: .nunitoRegular, size: 12)
         emailWarningLabel.translatesAutoresizingMaskIntoConstraints = false
         return emailWarningLabel
     }()
@@ -127,7 +128,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         passwordLabel.text = "Senha"
         passwordLabel.textAlignment = .left
         passwordLabel.textColor = .appBlack
-        passwordLabel.font = UIFont.systemFont(ofSize: 16)
+        passwordLabel.font = UIFont(name: .nunitoRegular, size: 16)
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         return passwordLabel
     }()
@@ -145,6 +146,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     private(set) lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField()
         passwordTextField.placeholder = "Insira sua senha"
+        passwordTextField.font = UIFont(name: .nunitoRegular, size: 16)
         passwordTextField.borderStyle = .none
         passwordTextField.backgroundColor = .clear
         passwordTextField.isSecureTextEntry = true
@@ -170,7 +172,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         passwordWarningLabel.text = "Senha inválida"
         passwordWarningLabel.textAlignment = .left
         passwordWarningLabel.textColor = .clear
-        passwordWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        passwordWarningLabel.font = UIFont(name: .nunitoRegular, size: 12)
         passwordWarningLabel.translatesAutoresizingMaskIntoConstraints = false
         return passwordWarningLabel
     }()
@@ -190,7 +192,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         confirmPasswordLabel.text = "Confirme sua senha"
         confirmPasswordLabel.textAlignment = .left
         confirmPasswordLabel.textColor = .appBlack
-        confirmPasswordLabel.font = UIFont.systemFont(ofSize: 16)
+        confirmPasswordLabel.font = UIFont(name: .nunitoRegular, size: 16)
         confirmPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
         return confirmPasswordLabel
     }()
@@ -208,6 +210,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
     private(set) lazy var confirmPasswordTextField: UITextField = {
         let confirmPasswordTextField = UITextField()
         confirmPasswordTextField.placeholder = "Insira sua senha"
+        confirmPasswordTextField.font = UIFont(name: .nunitoRegular, size: 16)
         confirmPasswordTextField.borderStyle = .none
         confirmPasswordTextField.backgroundColor = .clear
         confirmPasswordTextField.isSecureTextEntry = true
@@ -224,7 +227,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         confirmPasswordWarningLabel.text = "Senha excelente!"
         confirmPasswordWarningLabel.textAlignment = .left
         confirmPasswordWarningLabel.textColor = .clear
-        confirmPasswordWarningLabel.font = UIFont.systemFont(ofSize: 12)
+        confirmPasswordWarningLabel.font = UIFont(name: .nunitoRegular, size: 12)
         confirmPasswordWarningLabel.translatesAutoresizingMaskIntoConstraints = false
         return confirmPasswordWarningLabel
     }()
@@ -246,7 +249,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         proceedButton.setBackgroundImage(.cyanDarkButton, for: .highlighted)
         proceedButton.setTitle("Avançar", for: .normal)
         proceedButton.setTitleColor(.white, for: .normal)
-        proceedButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        proceedButton.titleLabel?.font = UIFont(name: .nunitoBlack, size: 18)
         proceedButton.translatesAutoresizingMaskIntoConstraints = false
         proceedButton.addTarget(self, action: #selector(proceedAction), for: .touchUpInside)
         return proceedButton
@@ -267,7 +270,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         signInLabel.text = "Já tem uma conta?"
         signInLabel.textAlignment = .center
         signInLabel.textColor = .appGray01
-        signInLabel.font = UIFont.systemFont(ofSize: 14)
+        signInLabel.font = UIFont(name: .nunitoRegular, size: 14)
         signInLabel.translatesAutoresizingMaskIntoConstraints = false
         return signInLabel
     }()
@@ -278,7 +281,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         signInButton.setTitle("Entre aqui", for: .normal)
         signInButton.setTitleColor(.appGray01, for: .normal)
         signInButton.setTitleColor(.appGray03, for: .highlighted)
-        signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        signInButton.titleLabel?.font = UIFont(name: .nunitoBold, size: 14)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
         return signInButton
