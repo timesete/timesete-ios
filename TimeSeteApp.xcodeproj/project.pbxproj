@@ -22,7 +22,7 @@
 		7DACFEAE265687B500FD7853 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DACFEAD265687B500FD7853 /* SignUpPresenter.swift */; };
 		7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEEF542657B2AE00379EE3 /* SecondSignUpViewController.swift */; };
 		7DAEEF582657B2C200379EE3 /* SecondSignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */; };
-		7DB50E29265519A4004A62AC /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E28265519A4004A62AC /* Presenter.swift */; };
+		7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E28265519A4004A62AC /* LoginPresenter.swift */; };
 		7DB50E2C26552348004A62AC /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E2B26552348004A62AC /* Login.swift */; };
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
@@ -52,7 +52,7 @@
 		7DACFEAD265687B500FD7853 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		7DAEEF542657B2AE00379EE3 /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
 		7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpPresenter.swift; sourceTree = "<group>"; };
-		7DB50E28265519A4004A62AC /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		7DB50E28265519A4004A62AC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		7DB50E2B26552348004A62AC /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		7DCDFBCF2655009B008391BD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				7DB50E28265519A4004A62AC /* Presenter.swift */,
+				7DB50E28265519A4004A62AC /* LoginPresenter.swift */,
 				7DACFEAD265687B500FD7853 /* SignUpPresenter.swift */,
 				7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */,
 			);
@@ -368,7 +368,7 @@
 				7DACFEAE265687B500FD7853 /* SignUpPresenter.swift in Sources */,
 				7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */,
 				7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */,
-				7DB50E29265519A4004A62AC /* Presenter.swift in Sources */,
+				7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */,
 				7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */,
 				7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */,
 				7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */,
