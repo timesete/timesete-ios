@@ -9,6 +9,14 @@ import UIKit
 
 extension UIImage {
     
+    static var cancelButton: UIImage {
+        return UIImage(named: "cancel-button") ?? UIImage()
+    }
+    
+    static var cancelDarkButton: UIImage {
+        return UIImage(named: "cancel-dark-button") ?? UIImage()
+    }
+    
     static var cyanButton: UIImage {
         return UIImage(named: "cyan-button") ?? UIImage()
     }

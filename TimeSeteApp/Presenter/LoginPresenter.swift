@@ -26,6 +26,10 @@ class LoginPresenter {
         self.delegate = delegate
     }
     
+    public func goToForgotPassword() {
+        self.delegate?.navigationController?.pushViewController(RecoverPasswordViewController(), animated: true)
+    }
+    
     public func goToHome() {
         // TODO: go to home view
     }

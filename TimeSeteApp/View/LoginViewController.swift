@@ -249,7 +249,7 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     }
     
     @objc func forgotPasswordAction(sender: UIButton) {
-        // TODO: Esqueceu sua senha
+        presenter.goToForgotPassword()
     }
     
     @objc func signInAction(sender: UIButton) {

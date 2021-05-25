@@ -7,8 +7,9 @@
 
 import UIKit
 
+let data = ["Toc! Toc! Quem é?", "Qual o sobrenome da sua avó?", "Qual o nome do seu primeiro cachorro?", "Qual é seu nome, broto?"]
+
 class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegate {
-    let data = ["Toc! Toc! Quem é?", "Qual o sobrenome da sua avó?", "Qual o nome do seu primeiro cachorro?", "Qual é seu nome, broto?"]
     
     let presenter = SecondSignUpPresenter()
     private var pickerView = UIPickerView()
@@ -262,7 +263,7 @@ extension SecondSignUpViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        self.data.count
+        data.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

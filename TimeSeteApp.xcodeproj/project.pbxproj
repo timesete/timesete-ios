@@ -27,6 +27,12 @@
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
+		7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */; };
+		7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */; };
+		7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */; };
+		7DE866BD265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866BC265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift */; };
+		7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866BF265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift */; };
+		7DE866C3265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866C2265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift */; };
 		7DEF863F265B8E98006254F1 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */; };
 		7DEF8641265B8E9C006254F1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */; };
 		7DEF8643265B8EA0006254F1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */; };
@@ -57,6 +63,12 @@
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
+		7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordConstraints.swift; sourceTree = "<group>"; };
+		7DE866BC265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		7DE866BF265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRecoverPasswordPresenter.swift; sourceTree = "<group>"; };
+		7DE866C2265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRecoverPasswordConstraints.swift; sourceTree = "<group>"; };
 		7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
@@ -90,6 +102,8 @@
 				7D322494265AEC360047C9E8 /* LoginConstraints.swift */,
 				7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */,
 				7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */,
+				7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */,
+				7DE866C2265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -145,6 +159,8 @@
 				7DB50E28265519A4004A62AC /* LoginPresenter.swift */,
 				7DACFEAD265687B500FD7853 /* SignUpPresenter.swift */,
 				7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */,
+				7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */,
+				7DE866BF265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -156,6 +172,8 @@
 				7D8E4A872653744A0095B88C /* LoginViewController.swift */,
 				7DACFEA726566C9C00FD7853 /* SignUpViewController.swift */,
 				7DAEEF542657B2AE00379EE3 /* SecondSignUpViewController.swift */,
+				7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */,
+				7DE866BC265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,17 +375,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE866C3265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift in Sources */,
+				7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */,
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
+				7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
+				7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
+				7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */,
 				7DACFEA826566C9C00FD7853 /* SignUpViewController.swift in Sources */,
 				7DAEEF582657B2C200379EE3 /* SecondSignUpPresenter.swift in Sources */,
 				7DACFEAE265687B500FD7853 /* SignUpPresenter.swift in Sources */,
 				7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */,
 				7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */,
+				7DE866BD265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift in Sources */,
 				7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */,
 				7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */,
 				7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */,
