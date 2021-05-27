@@ -182,4 +182,14 @@ extension SecondRecoverPasswordViewController {
             cancelButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
+    
+    // Alert
+    func setupCustomAlertViewConstraints() {
+        NSLayoutConstraint.activate([
+            customAlertView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            customAlertView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            customAlertView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            customAlertView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        ])
+    }
 }

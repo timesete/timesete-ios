@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswordPresenterDelegate {
+class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswordPresenterDelegate, AlertProtocol {
 
     let presenter = SecondRecoverPasswordPresenter()
     
@@ -273,6 +273,12 @@ class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswo
         return cancelButton
     }()
     
+    private(set) lazy var customAlertView: UIView = {
+        let customAlertView = CustomAlert()
+        customAlertView.translatesAutoresizingMaskIntoConstraints = false
+        return customAlertView
+    }()
+    
     // MARK: Actions
     
     @objc func showPasswordAction(sender: UIButton) {
@@ -307,6 +313,9 @@ class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswo
            passwordText == confirmPasswordText {
             // mostrar alerta
 //            presenter.backToLogin()
+            print("\n\ncustomAlertView\n\n")
+            self.view.insertSubview(customAlertView, aboveSubview: cancelButton)
+            setupCustomAlertViewConstraints()
         }
         if answerText.count == 0 {
             answerTextField.invalidField(titleLabel: questionLabel, errorImage: answerErrorImage, warningLabel: answerWarningLabel)
@@ -326,6 +335,10 @@ class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswo
    
     @objc func pageOneAction(sender: UIButton) {
         presenter.backToRecoverPassword()
+    }
+    
+    func backToLogin(_: UIButton) {
+        presenter.backToLogin()
     }
 }
 
