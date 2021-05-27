@@ -39,6 +39,7 @@
 		7DEF8643265B8EA0006254F1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */; };
 		7DFFF289265FB5C700C71E81 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */; };
 		7DFFF28C265FB7CF00C71E81 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */; };
+		7DFFF28F265FD62500C71E81 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFFF28E265FD62500C71E81 /* CustomTabBar.swift */; };
 		B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		7DFFF28E265FD62500C71E81 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.release.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.release.xcconfig"; sourceTree = "<group>"; };
 		CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.debug.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 				7DE866BC265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift */,
 				7D3742B1265D37B90092A49E /* CustomAlert.swift */,
 				7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */,
+				7DFFF28E265FD62500C71E81 /* CustomTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */,
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
+				7DFFF28F265FD62500C71E81 /* CustomTabBar.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
 				7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,

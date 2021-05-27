@@ -10,25 +10,42 @@ import UIKit
 class TabBarViewController: UITabBarController, TabPresenterDelegate {
 
     let presenter = TabBarPresenter()
+    private let tabBarKey = "tabBar"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
-        view.backgroundColor = .systemBackground
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .label
+        view.backgroundColor = .appGray04
+        
+        setValue(CustomTabBar(), forKey: tabBarKey)
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = .white
+        tabBar.shadowImage = UIImage()
+        tabBar.backgroundImage = UIImage()
+        tabBar.tintColor = .appCyan
+        
+        guard let viewWidth = presenter.getViewWidth() else { return }
+        tabBar.sizeThatFits(CGSize(width: viewWidth, height: 80.0))
+
         setupVCs()
     }
 
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String,
-                                         image: UIImage) -> UIViewController {
+                                         image: UIImage,
+                                         selectedImage: UIImage? = nil) -> UIViewController {
         
         let navController = UINavigationController(rootViewController: rootViewController)
-        navController.tabBarItem.title = title
+   
         navController.tabBarItem.image = image
+        navController.tabBarItem.selectedImage = selectedImage
         navController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = title
+        
+        if title == "Criar amigo" {
+            navController.tabBarItem.imageInsets = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
+        }
+        
         return navController
     }
     
@@ -36,14 +53,14 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
         viewControllers = [
             createNavController(for: UIViewController(),
                                 title: "Home",
-                                image: .selectOpen),
+                                image: .tabHome,
+                                selectedImage: .tabHomeSelected),
             
             createNavController(for: UIViewController(),
                                 title: "Criar amigo",
-                                image: UIImage(systemName: "house")!),
+                                image: .tabCreateFriend),
             
-            createNavController(for: UIViewController(), title: "Mundo", image: .selectClose)
+            createNavController(for: UIViewController(), title: "Mundo", image: .tabWorld)
         ]
     }
-
 }

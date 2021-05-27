@@ -80,4 +80,20 @@ extension UIImage {
     static var skipDarkButton: UIImage {
         return UIImage(named: "skip-dark-button") ?? UIImage()
     }
+    
+    static var tabCreateFriend: UIImage {
+        return UIImage(named: "tab-create-friend") ?? UIImage()
+    }
+    
+    static var tabHomeSelected: UIImage {
+        return UIImage(named: "tab-home-selected") ?? UIImage()
+    }
+    
+    static var tabHome: UIImage {
+        return UIImage(named: "tab-home") ?? UIImage()
+    }
+    
+    static var tabWorld: UIImage {
+        return UIImage(named: "tab-world") ?? UIImage()
+    }
 }
