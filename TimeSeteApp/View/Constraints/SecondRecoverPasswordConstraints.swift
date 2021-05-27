@@ -77,7 +77,7 @@ extension SecondRecoverPasswordViewController {
     
     func setupPageOneButtonConstraints() {
         guard let viewWidth = self.presenter.getViewWidth() else { return }
-        print("View Width = \(viewWidth)")
+        
         NSLayoutConstraint.activate([
             pageOneButton.bottomAnchor.constraint(equalTo: self.headerStackView.bottomAnchor),
             pageOneButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -viewWidth/2),

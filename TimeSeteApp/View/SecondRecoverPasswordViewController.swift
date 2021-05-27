@@ -311,9 +311,8 @@ class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswo
         if answerText.count > 0,
            passwordText.count >= 8,
            passwordText == confirmPasswordText {
-            // mostrar alerta
-//            presenter.backToLogin()
-            print("\n\ncustomAlertView\n\n")
+            
+            // Show alert
             self.view.insertSubview(customAlertView, aboveSubview: cancelButton)
             setupCustomAlertViewConstraints()
         }
