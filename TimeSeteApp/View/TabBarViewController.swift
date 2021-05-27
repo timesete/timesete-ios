@@ -15,6 +15,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
+    
         view.backgroundColor = .appGray04
         
         setValue(CustomTabBar(), forKey: tabBarKey)
@@ -56,11 +57,20 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
                                 image: .tabHome,
                                 selectedImage: .tabHomeSelected),
             
-            createNavController(for: UIViewController(),
+            createNavController(for: SignUpViewController(),
                                 title: "Criar amigo",
                                 image: .tabCreateFriend),
             
             createNavController(for: UIViewController(), title: "Mundo", image: .tabWorld)
         ]
     }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.image == UIImage.tabCreateFriend {
+            
+            self.modalPresentationStyle = .fullScreen
+            self.present(SignUpViewController(), animated: true, completion: nil)
+        }
+    }
+    
 }
