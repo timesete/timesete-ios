@@ -32,6 +32,7 @@ class LoginPresenter {
     
     public func goToHome() {
         // TODO: go to home view
+        self.delegate?.navigationController?.pushViewController(TabBarViewController(), animated: true)
     }
     
     public func goToSignUp() {

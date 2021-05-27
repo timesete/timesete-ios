@@ -37,6 +37,8 @@
 		7DEF863F265B8E98006254F1 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */; };
 		7DEF8641265B8E9C006254F1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */; };
 		7DEF8643265B8EA0006254F1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */; };
+		7DFFF289265FB5C700C71E81 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */; };
+		7DFFF28C265FB7CF00C71E81 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */; };
 		B51C964798D80FB3924652C3 /* Pods_TimeSeteApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		7DEF863C265B8E88006254F1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		7DEF863D265B8E88006254F1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		7DEF863E265B8E88006254F1 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		97E7BFF7FED6ADFE292372DD /* Pods-TimeSeteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.release.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.release.xcconfig"; sourceTree = "<group>"; };
 		CAA93AA6892685F2B6FBA8B0 /* Pods-TimeSeteApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeSeteApp.debug.xcconfig"; path = "Target Support Files/Pods-TimeSeteApp/Pods-TimeSeteApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +167,7 @@
 				7DAEEF572657B2C200379EE3 /* SecondSignUpPresenter.swift */,
 				7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */,
 				7DE866BF265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift */,
+				7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */,
 				7DE866BC265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift */,
 				7D3742B1265D37B90092A49E /* CustomAlert.swift */,
+				7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +397,8 @@
 				7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */,
 				7DACFEA826566C9C00FD7853 /* SignUpViewController.swift in Sources */,
 				7DAEEF582657B2C200379EE3 /* SecondSignUpPresenter.swift in Sources */,
+				7DFFF289265FB5C700C71E81 /* TabBarViewController.swift in Sources */,
+				7DFFF28C265FB7CF00C71E81 /* TabBarPresenter.swift in Sources */,
 				7DACFEAE265687B500FD7853 /* SignUpPresenter.swift in Sources */,
 				7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */,
 				7D3742B2265D37B90092A49E /* CustomAlert.swift in Sources */,
