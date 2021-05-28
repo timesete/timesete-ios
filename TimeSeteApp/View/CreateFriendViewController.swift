@@ -30,5 +30,37 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         friendView.translatesAutoresizingMaskIntoConstraints = false
         return friendView
     }()
+    
+    private(set) lazy var skinImage: UIImageView = {
+        let skinImage = UIImageView()
+        skinImage.image = .none
+        skinImage.contentMode = .scaleAspectFit
+        skinImage.translatesAutoresizingMaskIntoConstraints = false
+        return skinImage
+    }()
+    
+    private(set) lazy var legsImage: UIImageView = {
+        let legsImage = UIImageView()
+        legsImage.image = .none
+        legsImage.contentMode = .scaleAspectFit
+        legsImage.translatesAutoresizingMaskIntoConstraints = false
+        return legsImage
+    }()
+    
+    private(set) lazy var shirtImage: UIImageView = {
+        let shirtImage = UIImageView()
+        shirtImage.image = .none
+        shirtImage.contentMode = .scaleAspectFit
+        shirtImage.translatesAutoresizingMaskIntoConstraints = false
+        return shirtImage
+    }()
+    
+    private(set) lazy var headImage: UIImageView = {
+        let headImage = UIImageView()
+        headImage.image = .none
+        headImage.contentMode = .scaleAspectFit
+        headImage.translatesAutoresizingMaskIntoConstraints = false
+        return headImage
+    }()
 
 }
