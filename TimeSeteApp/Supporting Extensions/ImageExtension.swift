@@ -9,6 +9,30 @@ import UIKit
 
 extension UIImage {
     
+    // Accessory
+    
+    static var errorIcon: UIImage {
+        return UIImage(named: "error-icon") ?? UIImage()
+    }
+    
+    static var hidePassword: UIImage {
+        return UIImage(named: "hide-password") ?? UIImage()
+    }
+    
+    static var selectClose: UIImage {
+        return UIImage(named: "select-close") ?? UIImage()
+    }
+    
+    static var selectOpen: UIImage {
+        return UIImage(named: "select-open") ?? UIImage()
+    }
+    
+    static var showPassword: UIImage {
+        return UIImage(named: "show-password") ?? UIImage()
+    }
+    
+    // Buttons
+    
     static var cancelButton: UIImage {
         return UIImage(named: "cancel-button") ?? UIImage()
     }
@@ -23,26 +47,6 @@ extension UIImage {
     
     static var cyanDarkButton: UIImage {
         return UIImage(named: "cyan-dark-button") ?? UIImage()
-    }
-    
-    static var errorIcon: UIImage {
-        return UIImage(named: "error-icon") ?? UIImage()
-    }
-    
-    static var hidePassword: UIImage {
-        return UIImage(named: "hide-password") ?? UIImage()
-    }
-    
-    static var logoLogin: UIImage {
-        return UIImage(named: "logo-login") ?? UIImage()
-    }
-    
-    static var pageOne: UIImage {
-        return UIImage(named: "page-one") ?? UIImage()
-    }
-    
-    static var pageTwo: UIImage {
-        return UIImage(named: "page-two") ?? UIImage()
     }
     
     static var purpleButton: UIImage {
@@ -61,18 +65,6 @@ extension UIImage {
         return UIImage(named: "s-purple-dark-button") ?? UIImage()
     }
     
-    static var selectClose: UIImage {
-        return UIImage(named: "select-close") ?? UIImage()
-    }
-    
-    static var selectOpen: UIImage {
-        return UIImage(named: "select-open") ?? UIImage()
-    }
-    
-    static var showPassword: UIImage {
-        return UIImage(named: "show-password") ?? UIImage()
-    }
-
     static var skipButton: UIImage {
         return UIImage(named: "skip-button") ?? UIImage()
     }
@@ -80,6 +72,126 @@ extension UIImage {
     static var skipDarkButton: UIImage {
         return UIImage(named: "skip-dark-button") ?? UIImage()
     }
+    
+    // Header
+    
+    static var logoLogin: UIImage {
+        return UIImage(named: "logo-login") ?? UIImage()
+    }
+    
+    static var pageOne: UIImage {
+        return UIImage(named: "page-one") ?? UIImage()
+    }
+    
+    static var pageTwo: UIImage {
+        return UIImage(named: "page-two") ?? UIImage()
+    }
+    
+    // Parts - Head
+    
+    static var blackHair01: UIImage {
+        return UIImage(named: "black-hair-1") ?? UIImage()
+    }
+    
+    static var blackHair02: UIImage {
+        return UIImage(named: "black-hair-2") ?? UIImage()
+    }
+    
+    static var blackHair03: UIImage {
+        return UIImage(named: "black-hair-3") ?? UIImage()
+    }
+    
+    static var blondHair01: UIImage {
+        return UIImage(named: "blond-hair-1") ?? UIImage()
+    }
+    
+    static var blondHair02: UIImage {
+        return UIImage(named: "blond-hair-2") ?? UIImage()
+    }
+    
+    static var blondHair03: UIImage {
+        return UIImage(named: "blond-hair-3") ?? UIImage()
+    }
+    
+    static var brownHair01: UIImage {
+        return UIImage(named: "brown-hair-1") ?? UIImage()
+    }
+    
+    static var brownHair02: UIImage {
+        return UIImage(named: "brown-hair-2") ?? UIImage()
+    }
+    
+    static var brownHair03: UIImage {
+        return UIImage(named: "brown-hair-3") ?? UIImage()
+    }
+    
+    static var hijab: UIImage {
+        return UIImage(named: "hijab") ?? UIImage()
+    }
+    
+    static var redHair01: UIImage {
+        return UIImage(named: "red-hair-1") ?? UIImage()
+    }
+    
+    static var redHair02: UIImage {
+        return UIImage(named: "red-hair-2") ?? UIImage()
+    }
+    
+    static var redHair03: UIImage {
+        return UIImage(named: "red-hair-3") ?? UIImage()
+    }
+    
+    // Parts - Legs
+    
+    static var pants01: UIImage {
+        return UIImage(named: "pants-1") ?? UIImage()
+    }
+    
+    static var pantsAndGlasses: UIImage {
+        return UIImage(named: "pants-and-glasses") ?? UIImage()
+    }
+    
+    static var wheelchair: UIImage {
+        return UIImage(named: "wheelchair") ?? UIImage()
+    }
+    
+    // Parts - Shirt
+    
+    static var shirt01: UIImage {
+        return UIImage(named: "shirt-1") ?? UIImage()
+    }
+    
+    static var shirt02: UIImage {
+        return UIImage(named: "shirt-2") ?? UIImage()
+    }
+    
+    static var shirt03: UIImage {
+        return UIImage(named: "shirt-3") ?? UIImage()
+    }
+    
+    // Parts - Skin
+    
+    static var skin01: UIImage {
+        return UIImage(named: "skin-1") ?? UIImage()
+    }
+    
+    static var skin02: UIImage {
+        return UIImage(named: "skin-2") ?? UIImage()
+    }
+    
+    static var skin03: UIImage {
+        return UIImage(named: "skin-3") ?? UIImage()
+    }
+    
+    static var skin04: UIImage {
+        return UIImage(named: "skin-4") ?? UIImage()
+    }
+    
+    static var skin05: UIImage {
+        return UIImage(named: "skin-5") ?? UIImage()
+    }
+    
+    // TabBar
     
     static var tabCreateFriend: UIImage {
         return UIImage(named: "tab-create-friend") ?? UIImage()
