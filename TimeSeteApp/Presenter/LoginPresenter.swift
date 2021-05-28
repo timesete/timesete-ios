@@ -30,9 +30,8 @@ class LoginPresenter {
         self.delegate?.navigationController?.pushViewController(RecoverPasswordViewController(), animated: true)
     }
     
-    public func goToHome() {
-        // TODO: go to home view
-        self.delegate?.navigationController?.pushViewController(TabBarViewController(), animated: true)
+    public func goToCreateFriend() {
+        self.delegate?.navigationController?.pushViewController(CreateFriendViewController(), animated: true)
     }
     
     public func goToSignUp() {

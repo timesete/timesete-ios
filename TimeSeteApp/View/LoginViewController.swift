@@ -274,8 +274,7 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     }
     
     @objc func skipAction(sender: UIButton) {
-        // TODO: go to create a new character
-        presenter.goToHome()
+        presenter.goToCreateFriend()
     }
     
     @objc func signUpAction(sender: UIButton) {

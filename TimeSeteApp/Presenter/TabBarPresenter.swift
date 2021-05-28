@@ -28,8 +28,5 @@ class TabBarPresenter {
     public func goToSecondRecoverPassword() {
         self.delegate?.navigationController?.pushViewController(SecondRecoverPasswordViewController(), animated: true)
     }
-    
-    public func backToLogin() {
-        self.delegate?.navigationController?.popToRootViewController(animated: true)
-    }
+ 
 }
