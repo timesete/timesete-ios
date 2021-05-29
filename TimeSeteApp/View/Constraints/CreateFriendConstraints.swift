@@ -16,6 +16,10 @@ extension CreateFriendViewController {
         self.friendView.insertSubview(legsImage, aboveSubview: skinImage)
         self.friendView.insertSubview(shirtImage, aboveSubview: legsImage)
         self.friendView.insertSubview(headImage, aboveSubview: shirtImage)
+        
+        self.view.addSubview(partsView)
+        self.partsView.addSubview(partsCategoriesView)
+        self.partsView.addSubview(bottomView)
     }
     
     // MARK: Setup Constraints
@@ -25,14 +29,19 @@ extension CreateFriendViewController {
         setupLegsImageConstraints()
         setupShirtImageConstraints()
         setupHeadImageConstraints()
+        
+        setupPartsViewConstraints()
+        setupPartsCategoriesViewConstraints()
+        setupBottomViewConstraints()
     }
     
-    // Friend
+    // Friend created
     func setupFriendViewConstraints() {
         NSLayoutConstraint.activate([
             friendView.widthAnchor.constraint(equalToConstant: 110.27),
             friendView.heightAnchor.constraint(equalToConstant: 199),
-            friendView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+//            friendView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            friendView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
             friendView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
     }
@@ -72,5 +81,34 @@ extension CreateFriendViewController {
             headImage.rightAnchor.constraint(equalTo: self.friendView.rightAnchor, constant: -24.21)
         ])
     }
-
+    
+    // Parts
+    func setupPartsViewConstraints() {
+        NSLayoutConstraint.activate([
+            partsView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1.0/2),
+            partsView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            partsView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            partsView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        ])
+    }
+    
+    func setupPartsCategoriesViewConstraints() {
+        NSLayoutConstraint.activate([
+            partsCategoriesView.heightAnchor.constraint(equalToConstant: 96),
+            partsCategoriesView.topAnchor.constraint(equalTo: self.partsView.topAnchor),
+            partsCategoriesView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
+            partsCategoriesView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor)
+        ])
+    }
+    
+    func setupBottomViewConstraints() {
+        let bottomViewHeight = self.view.notchHeight + 84
+        
+        NSLayoutConstraint.activate([
+            bottomView.heightAnchor.constraint(equalToConstant: bottomViewHeight),
+            bottomView.bottomAnchor.constraint(equalTo: self.partsView.bottomAnchor),
+            bottomView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
+            bottomView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor)
+        ])
+    }
 }

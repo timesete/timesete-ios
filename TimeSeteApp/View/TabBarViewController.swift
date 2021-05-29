@@ -69,7 +69,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
         if item.image == UIImage.tabCreateFriend {
             
             self.modalPresentationStyle = .fullScreen
-            self.present(SignUpViewController(), animated: true, completion: nil)
+            self.present(CreateFriendViewController(), animated: true, completion: nil)
         }
     }
     
