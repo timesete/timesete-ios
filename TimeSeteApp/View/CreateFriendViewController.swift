@@ -92,4 +92,21 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         return bottomView
     }()
+    
+    private(set) lazy var createFriendButton: UIButton = {
+        let createFriendButton = UIButton()
+        createFriendButton.setTitle("Criar novo amigo", for: .normal)
+        createFriendButton.setTitleColor(.white, for: .normal)
+        createFriendButton.titleLabel?.font = UIFont(name: .nunitoBlack, size: 18)
+        createFriendButton.setBackgroundImage(.purpleButton, for: .normal)
+        createFriendButton.setBackgroundImage(.purpleDarkButton, for: .highlighted)
+        createFriendButton.addTarget(self, action: #selector(createFriendAction), for: .touchUpInside)
+        createFriendButton.translatesAutoresizingMaskIntoConstraints = false
+        return createFriendButton
+    }()
+    
+    // MARK: Actions
+    @objc func createFriendAction(sender: UIButton) {
+        // criar amigo
+    }
 }

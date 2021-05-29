@@ -20,6 +20,7 @@ extension CreateFriendViewController {
         self.view.addSubview(partsView)
         self.partsView.addSubview(partsCategoriesView)
         self.partsView.addSubview(bottomView)
+        self.bottomView.addSubview(createFriendButton)
     }
     
     // MARK: Setup Constraints
@@ -33,6 +34,7 @@ extension CreateFriendViewController {
         setupPartsViewConstraints()
         setupPartsCategoriesViewConstraints()
         setupBottomViewConstraints()
+        setupCreateFriendButtonConstraints()
     }
     
     // Friend created
@@ -109,6 +111,13 @@ extension CreateFriendViewController {
             bottomView.bottomAnchor.constraint(equalTo: self.partsView.bottomAnchor),
             bottomView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
             bottomView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor)
+        ])
+    }
+    
+    func setupCreateFriendButtonConstraints() {
+        NSLayoutConstraint.activate([
+            createFriendButton.topAnchor.constraint(equalTo: self.bottomView.topAnchor, constant: 10),
+            createFriendButton.centerXAnchor.constraint(equalTo: self.bottomView.centerXAnchor)
         ])
     }
 }
