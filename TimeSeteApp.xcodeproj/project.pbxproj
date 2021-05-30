@@ -31,6 +31,7 @@
 		7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3226553C0D004A62AC /* ColorExtension.swift */; };
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
+		7DB527802663CDED0099AF59 /* ColorsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5277F2663CDED0099AF59 /* ColorsCollectionViewCell.swift */; };
 		7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */; };
 		7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */; };
 		7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */; };
@@ -74,6 +75,7 @@
 		7DB50E3226553C0D004A62AC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		7DB5277F2663CDED0099AF59 /* ColorsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
 		7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordConstraints.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				7DFFF288265FB5C700C71E81 /* TabBarViewController.swift */,
 				7DFFF28E265FD62500C71E81 /* CustomTabBar.swift */,
 				7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */,
+				7DB5277F2663CDED0099AF59 /* ColorsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				7DACFEAE265687B500FD7853 /* SignUpPresenter.swift in Sources */,
 				7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */,
 				7D3742B2265D37B90092A49E /* CustomAlert.swift in Sources */,
+				7DB527802663CDED0099AF59 /* ColorsCollectionViewCell.swift in Sources */,
 				7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */,
 				7DE866BD265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift in Sources */,
 				7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */,

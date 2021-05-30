@@ -25,6 +25,10 @@ extension CreateFriendViewController {
         self.partsCategoriesStackView.addArrangedSubview(shirtButton)
         self.partsCategoriesStackView.addArrangedSubview(legsButton)
         
+        self.partsView.addSubview(partsCollectionView)
+        self.partsView.insertSubview(headView, aboveSubview: partsCollectionView)
+        self.headView.addSubview(partsCollectionView)
+        
         self.partsView.addSubview(bottomView)
         self.bottomView.addSubview(createFriendButton)
     }
@@ -40,6 +44,10 @@ extension CreateFriendViewController {
         setupPartsViewConstraints()
         setupPartsCategoriesViewConstraints()
         setupPartsCategoriesSatckViewConstraints()
+        
+        setupColorsCollectionViewConstraints()
+        setupHeadViewConstraints()
+        
         setupBottomViewConstraints()
         setupCreateFriendButtonConstraints()
     }
@@ -116,6 +124,24 @@ extension CreateFriendViewController {
             partsCategoriesStackView.bottomAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor, constant: -16),
             partsCategoriesStackView.leftAnchor.constraint(equalTo: self.partsCategoriesView.leftAnchor, constant: 16),
             partsCategoriesStackView.rightAnchor.constraint(equalTo: self.partsCategoriesView.rightAnchor, constant: -16)
+        ])
+    }
+    
+    func setupColorsCollectionViewConstraints() {
+        NSLayoutConstraint.activate([
+            partsCollectionView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor, constant: 16),
+            partsCollectionView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
+            partsCollectionView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
+            partsCollectionView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
+        ])
+    }
+    
+    func setupHeadViewConstraints() {
+        NSLayoutConstraint.activate([
+            headView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor),
+            headView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
+            headView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
+            headView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
         ])
     }
     
