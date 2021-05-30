@@ -86,6 +86,57 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         return partsCategoriesView
     }()
     
+    private(set) lazy var partsCategoriesStackView: UIStackView = {
+        let partsCategoriesStackView = UIStackView()
+        partsCategoriesStackView.setBackgroundColor(to: .systemPink)
+        partsCategoriesStackView.axis = .horizontal
+        partsCategoriesStackView.distribution = .fillEqually
+        partsCategoriesStackView.spacing = 29
+        partsCategoriesStackView.translatesAutoresizingMaskIntoConstraints = false
+        return partsCategoriesStackView
+    }()
+    
+    private(set) lazy var skinButton: UIButton = {
+        let skinButton = UIButton()
+        skinButton.setTitle(.none, for: .normal)
+        skinButton.setBackgroundImage(.skin01, for: .normal)
+        skinButton.setBackgroundImage(.skin04, for: .selected)
+        skinButton.addTarget(self, action: #selector(skinAction), for: .touchUpInside)
+        skinButton.translatesAutoresizingMaskIntoConstraints = false
+        return skinButton
+    }()
+    
+    private(set) lazy var headButton: UIButton = {
+        let headButton = UIButton()
+        headButton.setTitle(.none, for: .normal)
+        headButton.setBackgroundImage(.redHair01, for: .normal)
+        headButton.setBackgroundImage(.redHair02, for: .selected)
+        headButton.addTarget(self, action: #selector(headAction), for: .touchUpInside)
+        headButton.translatesAutoresizingMaskIntoConstraints = false
+        return headButton
+    }()
+    
+    private(set) lazy var shirtButton: UIButton = {
+        let shirtButton = UIButton()
+        shirtButton.setTitle(.none, for: .normal)
+        shirtButton.setBackgroundImage(.shirt01, for: .normal)
+        shirtButton.setBackgroundImage(.shirt02, for: .selected)
+        shirtButton.addTarget(self, action: #selector(shirtAction), for: .touchUpInside)
+        shirtButton.translatesAutoresizingMaskIntoConstraints = false
+        return shirtButton
+    }()
+    
+    private(set) lazy var legsButton: UIButton = {
+        let legsButton = UIButton()
+        legsButton.setTitle(.none, for: .normal)
+        legsButton.setBackgroundImage(.wheelchair, for: .normal)
+        legsButton.setBackgroundImage(.pants01, for: .selected)
+        legsButton.addTarget(self, action: #selector(legsAction), for: .touchUpInside)
+        legsButton.translatesAutoresizingMaskIntoConstraints = false
+        return legsButton
+    }()
+    
+    // Footer
     private(set) lazy var bottomView: UIView = {
         let bottomView = UIView()
         bottomView.setBackgroundColor(to: .white)
@@ -106,6 +157,46 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }()
     
     // MARK: Actions
+    @objc func skinAction(sender: UIButton) {
+        // pele
+        sender.isSelected ? (sender.isSelected = false) : (sender.isSelected = true)
+        headButton.isSelected = false
+        shirtButton.isSelected = false
+        legsButton.isSelected = false
+        // set categoria selecionada
+        // reload data
+    }
+    
+    @objc func headAction(sender: UIButton) {
+        // cabeça
+        sender.isSelected ? (sender.isSelected = false) : (sender.isSelected = true)
+        skinButton.isSelected = false
+        shirtButton.isSelected = false
+        legsButton.isSelected = false
+        // set categoria selecionada
+        // reload data
+    }
+    
+    @objc func shirtAction(sender: UIButton) {
+        // blusa
+        sender.isSelected ? (sender.isSelected = false) : (sender.isSelected = true)
+        skinButton.isSelected = false
+        headButton.isSelected = false
+        legsButton.isSelected = false
+        // set categoria selecionada
+        // reload data
+    }
+    
+    @objc func legsAction(sender: UIButton) {
+        // pernas
+        sender.isSelected ? (sender.isSelected = false) : (sender.isSelected = true)
+        skinButton.isSelected = false
+        headButton.isSelected = false
+        shirtButton.isSelected = false
+        // set categoria selecionada
+        // reload data
+    }
+    
     @objc func createFriendAction(sender: UIButton) {
         // criar amigo
     }

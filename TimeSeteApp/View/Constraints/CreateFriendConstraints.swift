@@ -19,6 +19,12 @@ extension CreateFriendViewController {
         
         self.view.addSubview(partsView)
         self.partsView.addSubview(partsCategoriesView)
+        self.partsCategoriesView.addSubview(partsCategoriesStackView)
+        self.partsCategoriesStackView.addArrangedSubview(skinButton)
+        self.partsCategoriesStackView.addArrangedSubview(headButton)
+        self.partsCategoriesStackView.addArrangedSubview(shirtButton)
+        self.partsCategoriesStackView.addArrangedSubview(legsButton)
+        
         self.partsView.addSubview(bottomView)
         self.bottomView.addSubview(createFriendButton)
     }
@@ -33,6 +39,7 @@ extension CreateFriendViewController {
         
         setupPartsViewConstraints()
         setupPartsCategoriesViewConstraints()
+        setupPartsCategoriesSatckViewConstraints()
         setupBottomViewConstraints()
         setupCreateFriendButtonConstraints()
     }
@@ -100,6 +107,15 @@ extension CreateFriendViewController {
             partsCategoriesView.topAnchor.constraint(equalTo: self.partsView.topAnchor),
             partsCategoriesView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
             partsCategoriesView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor)
+        ])
+    }
+    
+    func setupPartsCategoriesSatckViewConstraints() {
+        NSLayoutConstraint.activate([
+            partsCategoriesStackView.topAnchor.constraint(equalTo: self.partsCategoriesView.topAnchor, constant: 16),
+            partsCategoriesStackView.bottomAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor, constant: -16),
+            partsCategoriesStackView.leftAnchor.constraint(equalTo: self.partsCategoriesView.leftAnchor, constant: 16),
+            partsCategoriesStackView.rightAnchor.constraint(equalTo: self.partsCategoriesView.rightAnchor, constant: -16)
         ])
     }
     
