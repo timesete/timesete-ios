@@ -87,6 +87,40 @@ extension UIImage {
         return UIImage(named: "page-two") ?? UIImage()
     }
     
+    // Parts - Categories
+    
+    static var headCategorySelected: UIImage {
+        return UIImage(named: "head-category-selected") ?? UIImage()
+    }
+    
+    static var headCategory: UIImage {
+        return UIImage(named: "head-category") ?? UIImage()
+    }
+    
+    static var legsCategorySelected: UIImage {
+        return UIImage(named: "legs-category-selected") ?? UIImage()
+    }
+    
+    static var legsCategory: UIImage {
+        return UIImage(named: "legs-category") ?? UIImage()
+    }
+    
+    static var shirtCategorySelected: UIImage {
+        return UIImage(named: "shirt-category-selected") ?? UIImage()
+    }
+    
+    static var shirtCategory: UIImage {
+        return UIImage(named: "shirt-category") ?? UIImage()
+    }
+    
+    static var skinCategorySelected: UIImage {
+        return UIImage(named: "skin-category-selected") ?? UIImage()
+    }
+    
+    static var skinCategory: UIImage {
+        return UIImage(named: "skin-category") ?? UIImage()
+    }
+    
     // Parts - Head
     
     static var blackHair01: UIImage {
