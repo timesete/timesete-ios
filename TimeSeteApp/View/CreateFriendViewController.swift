@@ -102,8 +102,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let skinButton = UIButton()
         skinButton.setTitle(.none, for: .normal)
         skinButton.adjustsImageWhenHighlighted = false
-        skinButton.setBackgroundImage(.skinCategory, for: .normal)
-        skinButton.setBackgroundImage(.skinCategorySelected, for: .selected)
+        skinButton.imageView?.contentMode = .scaleAspectFit
+        skinButton.setImage(.skinCategory, for: .normal)
+        skinButton.setImage(.skinCategorySelected, for: .selected)
         skinButton.addTarget(self, action: #selector(skinAction), for: .touchUpInside)
         skinButton.translatesAutoresizingMaskIntoConstraints = false
         return skinButton
@@ -113,8 +114,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let headButton = UIButton()
         headButton.setTitle(.none, for: .normal)
         headButton.adjustsImageWhenHighlighted = false
-        headButton.setBackgroundImage(.headCategory, for: .normal)
-        headButton.setBackgroundImage(.headCategorySelected, for: .selected)
+        headButton.imageView?.contentMode = .scaleAspectFit
+        headButton.setImage(.headCategory, for: .normal)
+        headButton.setImage(.headCategorySelected, for: .selected)
         headButton.addTarget(self, action: #selector(headAction), for: .touchUpInside)
         headButton.translatesAutoresizingMaskIntoConstraints = false
         return headButton
@@ -124,8 +126,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let shirtButton = UIButton()
         shirtButton.setTitle(.none, for: .normal)
         shirtButton.adjustsImageWhenHighlighted = false
-        shirtButton.setBackgroundImage(.shirtCategory, for: .normal)
-        shirtButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        shirtButton.imageView?.contentMode = .scaleAspectFit
+        shirtButton.setImage(.shirtCategory, for: .normal)
+        shirtButton.setImage(.shirtCategorySelected, for: .selected)
         shirtButton.addTarget(self, action: #selector(shirtAction), for: .touchUpInside)
         shirtButton.translatesAutoresizingMaskIntoConstraints = false
         return shirtButton
@@ -135,8 +138,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let legsButton = UIButton()
         legsButton.setTitle(.none, for: .normal)
         legsButton.adjustsImageWhenHighlighted = false
-        legsButton.setBackgroundImage(.legsCategory, for: .normal)
-        legsButton.setBackgroundImage(.legsCategorySelected, for: .selected)
+        legsButton.imageView?.contentMode = .scaleAspectFit
+        legsButton.setImage(.legsCategory, for: .normal)
+        legsButton.setImage(.legsCategorySelected, for: .selected)
         legsButton.addTarget(self, action: #selector(legsAction), for: .touchUpInside)
         legsButton.translatesAutoresizingMaskIntoConstraints = false
         return legsButton
@@ -153,9 +157,66 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     
     private(set) lazy var headView: UIView = {
         let headView = UIView()
-        headView.setBackgroundColor(to: .appGray04)
+//        headView.setBackgroundColor(to: .appGray04)
+        headView.backgroundColor = .clear
         headView.translatesAutoresizingMaskIntoConstraints = false
         return headView
+    }()
+    
+    // Hair colors
+    private(set) lazy var colorsStackView: UIStackView = {
+        let colorsStackView = UIStackView()
+        colorsStackView.setBackgroundColor(to: .clear)
+        colorsStackView.axis = .horizontal
+        colorsStackView.distribution = .fillEqually
+        colorsStackView.alignment = .leading
+//        colorsStackView.spacing = 29
+        colorsStackView.translatesAutoresizingMaskIntoConstraints = false
+        return colorsStackView
+    }()
+    
+    private(set) lazy var brownColorButton: UIButton = {
+        let brownColorButton = UIButton()
+        brownColorButton.setTitle(.none, for: .normal)
+        brownColorButton.adjustsImageWhenHighlighted = false
+        brownColorButton.setBackgroundImage(.shirtCategory, for: .normal)
+        brownColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        brownColorButton.addTarget(self, action: #selector(brownColorAction), for: .touchUpInside)
+        brownColorButton.translatesAutoresizingMaskIntoConstraints = false
+        return brownColorButton
+    }()
+    
+    private(set) lazy var blackColorButton: UIButton = {
+        let blackColorButton = UIButton()
+        blackColorButton.setTitle(.none, for: .normal)
+        blackColorButton.adjustsImageWhenHighlighted = false
+        blackColorButton.setBackgroundImage(.shirtCategory, for: .normal)
+        blackColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        blackColorButton.addTarget(self, action: #selector(blackColorAction), for: .touchUpInside)
+        blackColorButton.translatesAutoresizingMaskIntoConstraints = false
+        return blackColorButton
+    }()
+    
+    private(set) lazy var blondColorButton: UIButton = {
+        let blondColorButton = UIButton()
+        blondColorButton.setTitle(.none, for: .normal)
+        blondColorButton.adjustsImageWhenHighlighted = false
+        blondColorButton.setBackgroundImage(.shirtCategory, for: .normal)
+        blondColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        blondColorButton.addTarget(self, action: #selector(blondColorAction), for: .touchUpInside)
+        blondColorButton.translatesAutoresizingMaskIntoConstraints = false
+        return blondColorButton
+    }()
+    
+    private(set) lazy var redColorButton: UIButton = {
+        let redColorButton = UIButton()
+        redColorButton.setTitle(.none, for: .normal)
+        redColorButton.adjustsImageWhenHighlighted = false
+        redColorButton.setBackgroundImage(.shirtCategory, for: .normal)
+        redColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        redColorButton.addTarget(self, action: #selector(redColorAction), for: .touchUpInside)
+        redColorButton.translatesAutoresizingMaskIntoConstraints = false
+        return redColorButton
     }()
     
     // Footer
@@ -223,18 +284,35 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         partsCollectionView.reloadData()
     }
     
+    // Hair Colors Actions
+    @objc func brownColorAction(sender: UIButton) {
+        // cabelo
+    }
+    
+    @objc func blackColorAction(sender: UIButton) {
+        // cabelo
+    }
+    
+    @objc func blondColorAction(sender: UIButton) {
+        // cabelo
+    }
+    
+    @objc func redColorAction(sender: UIButton) {
+        // cabelo
+    }
+    
     @objc func createFriendAction(sender: UIButton) {
         // criar amigo
     }
     
     func getKey(of dictionary: [String: String], at index: Int) -> String? {
-        let index = dictionary.index(dictionary.startIndex, offsetBy: index)
-        return dictionary.keys[index]
+        let orderedDictionary = dictionary.keys.sorted()
+        return orderedDictionary[index]
     }
     
     func getValue(of dictionary: [String: String], at index: Int) -> String? {
-        let index = dictionary.index(dictionary.startIndex, offsetBy: index)
-        return dictionary.values[index]
+        let orderedDictionary = dictionary.values.sorted()
+        return orderedDictionary[index]
     }
 }
 
@@ -310,6 +388,8 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         
         case .skin:
             guard let key = getKey(of: selectedSkins, at: indexPath.row) else { return UICollectionViewCell() }
+            print(indexPath.row)
+            print(key)
             cell.partImage.image = UIImage(named: key)
             
         case .head:
@@ -330,10 +410,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        guard let cell = partsCollectionView.dequeueReusableCell(
-                    withReuseIdentifier: "cell",
-                    for: indexPath) as? ColorsCollectionViewCell else { return }
-        
+        guard let cell = cell as? ColorsCollectionViewCell else { return }
         switch cat.getCategoriaSelecionada() {
         
         case .skin:
@@ -452,6 +529,12 @@ extension CreateFriendViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let selectedCategory = cat.getCategoriaSelecionada()
+        if selectedCategory == .legs {
+            return CGSize(width: 88, height: 88)
+        }
+        
         return CGSize(width: 56, height: 56)
     }
     

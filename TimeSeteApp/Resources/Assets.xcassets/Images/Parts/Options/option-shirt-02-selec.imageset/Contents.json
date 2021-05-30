@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "option-shirt-02-selec.png",
+      "filename" : "option-shirt-03-selec.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "option-shirt-02-selec@2x.png",
+      "filename" : "option-shirt-03-selec@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "option-shirt-02-selec@3x.png",
+      "filename" : "option-shirt-03-selec@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

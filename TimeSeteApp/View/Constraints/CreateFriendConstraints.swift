@@ -26,8 +26,13 @@ extension CreateFriendViewController {
         self.partsCategoriesStackView.addArrangedSubview(legsButton)
         
         self.partsView.addSubview(partsCollectionView)
-        self.partsView.insertSubview(headView, aboveSubview: partsCollectionView)
-        self.headView.addSubview(partsCollectionView)
+//        self.partsView.insertSubview(headView, aboveSubview: partsCollectionView)
+//        self.headView.addSubview(partsCollectionView)
+//        self.headView.addSubview(colorsStackView)
+//        self.colorsStackView.addArrangedSubview(brownColorButton)
+//        self.colorsStackView.addArrangedSubview(blackColorButton)
+//        self.colorsStackView.addArrangedSubview(blondColorButton)
+//        self.colorsStackView.addArrangedSubview(redColorButton)
         
         self.partsView.addSubview(bottomView)
         self.bottomView.addSubview(createFriendButton)
@@ -46,7 +51,8 @@ extension CreateFriendViewController {
         setupPartsCategoriesSatckViewConstraints()
         
         setupColorsCollectionViewConstraints()
-        setupHeadViewConstraints()
+//        setupHeadViewConstraints()
+//        setupColorsStackViewConstraints()
         
         setupBottomViewConstraints()
         setupCreateFriendButtonConstraints()
@@ -144,6 +150,15 @@ extension CreateFriendViewController {
             headView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
         ])
     }
+    
+//    func setupColorsStackViewConstraints() {
+//        NSLayoutConstraint.activate([
+//            headView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor),
+//            headView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
+//            headView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
+//            headView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
+//        ])
+//    }
     
     func setupBottomViewConstraints() {
         let bottomViewHeight = self.view.notchHeight + 84
