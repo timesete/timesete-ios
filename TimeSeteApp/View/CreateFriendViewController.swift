@@ -268,8 +268,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }()
     
     // MARK: Actions
+    
+    // Parts
     @objc func skinAction(sender: UIButton) {
-        // pele
         sender.isSelected = true
         headButton.isSelected = false
         shirtButton.isSelected = false
@@ -281,7 +282,6 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func headAction(sender: UIButton) {
-        // cabeça
         sender.isSelected  = true
         skinButton.isSelected = false
         shirtButton.isSelected = false
@@ -295,7 +295,6 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func shirtAction(sender: UIButton) {
-        // blusa
         sender.isSelected  = true
         skinButton.isSelected = false
         headButton.isSelected = false
@@ -307,7 +306,6 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func legsAction(sender: UIButton) {
-        // pernas
         sender.isSelected = true
         skinButton.isSelected = false
         headButton.isSelected = false
@@ -368,6 +366,24 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let orderedDictionary = dictionary.values.sorted()
         return orderedDictionary[index]
     }
+    
+    func verifyHair(index: Int) -> UIImage {
+        let selectedColor = hairColor.getSelectedHairColor()
+        var head = UIImage()
+        
+        switch selectedColor {
+        case .brown:
+            head = UIImage(named: brownHairFriend[index]) ?? UIImage()
+        case .black:
+            head = UIImage(named: blackHairFriend[index]) ?? UIImage()
+        case .blond:
+            head = UIImage(named: blondHairFriend[index]) ?? UIImage()
+        default:
+            head = UIImage(named: redHairFriend[index]) ?? UIImage()
+        }
+        
+        return head
+    }
 }
 
 enum HairColor {
@@ -422,8 +438,13 @@ struct CategoriaSelecionada {
 let skinFriend = ["skin-1", "skin-2", "skin-3", "skin-4", "skin-5"]
 let shirtFriend = ["shirt-1", "shirt-2", "shirt-3"]
 let legsFriend = ["pants-1", "pants-and-glasses", "wheelchair"]
-
-// let headFriend = []
+let brownHairFriend = ["brown-hair-1", "brown-hair-2",
+                       "brown-hair-3", "hijab"]
+let blackHairFriend = ["black-hair-1", "black-hair-2",
+                       "black-hair-3", "hijab"]
+let blondHairFriend = ["blond-hair-1", "blond-hair-2",
+                       "blond-hair-3", "hijab"]
+let redHairFriend = ["red-hair-1", "red-hair-2", "red-hair-3", "hijab"]
 
 // key: opções no menu
 // value: opções no menu selecionadas
@@ -438,6 +459,10 @@ let selectedSkins = ["option-skin-1": "option-skin-01-selec",
 let selectedLegs = ["option-pants-1": "option-pants-01-selec",
                     "option-pg": "option-pg-selec",
                     "option-wheelchair": "option-wheelchair-selec"]
+let selectedHair = ["option-hair-1": "option-hair-01-selec",
+                      "option-hair-2": "option-hair-02-selec",
+                      "option-hair-3": "option-hair-03-selec",
+                      "option-hijab": "option-hijab-selec"]
 
 var cat = CategoriaSelecionada(categoriaSelectionada: .skin)
 
@@ -449,7 +474,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         case .skin:
             return selectedSkins.count
         case .head:
-            return selectedShirts.count
+            return selectedHair.count
         case .shirt:
             return selectedShirts.count
         default:
@@ -472,7 +497,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
             cell.partImage.image = UIImage(named: key)
             
         case .head:
-            guard let key = getKey(of: selectedShirts, at: indexPath.row) else { return UICollectionViewCell() }
+            guard let key = getKey(of: selectedHair, at: indexPath.row) else { return UICollectionViewCell() }
             cell.partImage.image = UIImage(named: key)
             
         case .shirt:
@@ -505,9 +530,9 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
             }
             
         case .head:
-            guard let deselectedPart = getKey(of: selectedSkins, at: indexPath.row)
+            guard let deselectedPart = getKey(of: selectedHair, at: indexPath.row)
             else { return }
-            guard let selectedPart = getValue(of: selectedSkins, at: indexPath.row)
+            guard let selectedPart = getValue(of: selectedHair, at: indexPath.row)
             else { return }
             
             if cell.isSelected {
@@ -555,9 +580,10 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
             self.skinImage.image = UIImage(named: skinFriend[indexPath.row])
             
         case .head:
-            guard let selectedPart = getValue(of: selectedSkins, at: indexPath.row)
+            guard let selectedPart = getValue(of: selectedHair, at: indexPath.row)
             else { return }
             currentCell.partImage.image = UIImage(named: selectedPart)
+            self.headImage.image = verifyHair(index: indexPath.row)
             
         case .shirt:
             guard let selectedPart = getValue(of: selectedShirts, at: indexPath.row)
@@ -586,7 +612,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
             currentCell.partImage.image = UIImage(named: deselectedPart)
             
         case .head:
-            guard let deselectedPart = getKey(of: selectedSkins, at: indexPath.row)
+            guard let deselectedPart = getKey(of: selectedHair, at: indexPath.row)
             else { return }
             currentCell.partImage.image = UIImage(named: deselectedPart)
             
