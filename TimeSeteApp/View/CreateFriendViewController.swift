@@ -29,6 +29,21 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         partsCollectionView.dataSource = self
     }
     
+    // Header
+    private(set) lazy var headerView: UIView = {
+        let headerView = UIView()
+        headerView.setBackgroundColor(to: .white)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        return headerView
+    }()
+    
+    private(set) lazy var auxiliaryView: UIView = {
+        let auxiliaryView = UIView()
+        auxiliaryView.setBackgroundColor(to: .clear)
+        auxiliaryView.translatesAutoresizingMaskIntoConstraints = false
+        return auxiliaryView
+    }()
+    
     // MARK: Friend created
     private(set) lazy var friendView: UIView = {
         let friendView = UIView()

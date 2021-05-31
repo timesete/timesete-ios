@@ -11,7 +11,10 @@ extension CreateFriendViewController {
     
     // MARK: Subviews
     func addSubviews() {
-        self.view.addSubview(friendView)
+        self.view.addSubview(headerView)
+        self.view.addSubview(auxiliaryView)
+        
+        self.view.insertSubview(friendView, aboveSubview: auxiliaryView)
         self.friendView.addSubview(skinImage)
         self.friendView.insertSubview(legsImage, aboveSubview: skinImage)
         self.friendView.insertSubview(shirtImage, aboveSubview: legsImage)
@@ -40,6 +43,9 @@ extension CreateFriendViewController {
     
     // MARK: Setup Constraints
     func setupConstraints() {
+        setupHeaderViewConstraints()
+        setupAuxiliaryViewConstraints()
+        
         setupFriendViewConstraints()
         setupSkinImageConstraints()
         setupLegsImageConstraints()
@@ -58,14 +64,34 @@ extension CreateFriendViewController {
         setupCreateFriendButtonConstraints()
     }
     
+    // Header
+    func setupHeaderViewConstraints() {
+        let headerHeight = self.view.notchHeight + 116
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: headerHeight)
+        ])
+    }
+    
+    func setupAuxiliaryViewConstraints() {
+        NSLayoutConstraint.activate([
+            auxiliaryView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor),
+            auxiliaryView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            auxiliaryView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            auxiliaryView.bottomAnchor.constraint(equalTo: self.partsView.topAnchor)
+        ])
+    }
+    
     // Friend created
     func setupFriendViewConstraints() {
         NSLayoutConstraint.activate([
             friendView.widthAnchor.constraint(equalToConstant: 110.27),
             friendView.heightAnchor.constraint(equalToConstant: 199),
-//            friendView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            friendView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            friendView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            friendView.centerXAnchor.constraint(equalTo: self.auxiliaryView.centerXAnchor),
+            friendView.centerYAnchor.constraint(equalTo: self.auxiliaryView.centerYAnchor)
         ])
     }
     
