@@ -8,7 +8,6 @@
 import UIKit
 
 class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
-
     let presenter = CreateFriendPresenter()
     
     override func viewDidLoad() {
@@ -473,12 +472,12 @@ let skinFriend = ["skin-1", "skin-2", "skin-3", "skin-4", "skin-5"]
 let shirtFriend = ["shirt-1", "shirt-2", "shirt-3"]
 let legsFriend = ["pants-1", "pants-and-glasses", "wheelchair"]
 let brownHairFriend = ["brown-hair-1", "brown-hair-2",
-                       "brown-hair-3", "hijab"]
+                       "brown-hair-3", "hairless", "hijab"]
 let blackHairFriend = ["black-hair-1", "black-hair-2",
-                       "black-hair-3", "hijab"]
+                       "black-hair-3", "hairless", "hijab"]
 let blondHairFriend = ["blond-hair-1", "blond-hair-2",
-                       "blond-hair-3", "hijab"]
-let redHairFriend = ["red-hair-1", "red-hair-2", "red-hair-3", "hijab"]
+                       "blond-hair-3", "hairless", "hijab"]
+let redHairFriend = ["red-hair-1", "red-hair-2", "red-hair-3", "hairless", "hijab"]
 
 // key: opções no menu
 // value: opções no menu selecionadas
@@ -496,6 +495,7 @@ let selectedLegs = ["option-pants-1": "option-pants-01-selec",
 let selectedHair = ["option-hair-1": "option-hair-01-selec",
                       "option-hair-2": "option-hair-02-selec",
                       "option-hair-3": "option-hair-03-selec",
+                      "option-hairless": "option-hairless-selec",
                       "option-hijab": "option-hijab-selec"]
 
 var cat = CategoriaSelecionada(categoriaSelectionada: .skin)

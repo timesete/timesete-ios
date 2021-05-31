@@ -32,7 +32,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
     }
 
     fileprivate func createNavController(for rootViewController: UIViewController,
-                                         title: String,
+                                         title: String?,
                                          image: UIImage,
                                          selectedImage: UIImage? = nil) -> UIViewController {
         
@@ -61,7 +61,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
                                 title: "Criar amigo",
                                 image: .tabCreateFriend),
             
-            createNavController(for: UIViewController(), title: "Mundo", image: .tabWorld)
+            createNavController(for: WorldViewController(), title: nil, image: .tabWorld)
         ]
     }
     

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D322495265AEC360047C9E8 /* LoginConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D322494265AEC360047C9E8 /* LoginConstraints.swift */; };
 		7D3742B2265D37B90092A49E /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3742B1265D37B90092A49E /* CustomAlert.swift */; };
+		7D3EACBA26651FB6000E1D4A /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EACB926651FB6000E1D4A /* WorldViewController.swift */; };
+		7D3EACBD26651FD9000E1D4A /* WorldConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */; };
+		7D3EACC026651FE6000E1D4A /* WorldPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EACBF26651FE6000E1D4A /* WorldPresenter.swift */; };
 		7D57A51F2660E2C4006719BD /* CreateFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */; };
 		7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */; };
 		7D57A5252660E369006719BD /* CreateFriendPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A5242660E369006719BD /* CreateFriendPresenter.swift */; };
@@ -51,6 +54,9 @@
 		47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeSeteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D322494265AEC360047C9E8 /* LoginConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstraints.swift; sourceTree = "<group>"; };
 		7D3742B1265D37B90092A49E /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		7D3EACB926651FB6000E1D4A /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
+		7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldConstraints.swift; sourceTree = "<group>"; };
+		7D3EACBF26651FE6000E1D4A /* WorldPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldPresenter.swift; sourceTree = "<group>"; };
 		7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendViewController.swift; sourceTree = "<group>"; };
 		7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendConstraints.swift; sourceTree = "<group>"; };
 		7D57A5242660E369006719BD /* CreateFriendPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendPresenter.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				7DE866B9265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift */,
 				7DE866C2265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift */,
 				7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */,
+				7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 				7DE866BF265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift */,
 				7DFFF28B265FB7CF00C71E81 /* TabBarPresenter.swift */,
 				7D57A5242660E369006719BD /* CreateFriendPresenter.swift */,
+				7D3EACBF26651FE6000E1D4A /* WorldPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 				7DFFF28E265FD62500C71E81 /* CustomTabBar.swift */,
 				7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */,
 				7DB5277F2663CDED0099AF59 /* ColorsCollectionViewCell.swift */,
+				7D3EACB926651FB6000E1D4A /* WorldViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
 				7D57A5252660E369006719BD /* CreateFriendPresenter.swift in Sources */,
+				7D3EACC026651FE6000E1D4A /* WorldPresenter.swift in Sources */,
 				7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */,
 				7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
@@ -426,10 +436,12 @@
 				7DE866BD265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift in Sources */,
 				7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */,
 				7DB50E3326553C0D004A62AC /* ColorExtension.swift in Sources */,
+				7D3EACBA26651FB6000E1D4A /* WorldViewController.swift in Sources */,
 				7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */,
 				7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */,
 				7D322495265AEC360047C9E8 /* LoginConstraints.swift in Sources */,
 				7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */,
+				7D3EACBD26651FD9000E1D4A /* WorldConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
