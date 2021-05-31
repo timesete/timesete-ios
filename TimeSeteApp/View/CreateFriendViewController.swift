@@ -15,6 +15,10 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
         self.view.setBackgroundColor(to: .appGray04)
+        
+        // First category is selected
+        cat.setCategoriaSelecionada(categoriaSelectionada: .skin)
+        skinButton.isSelected = true
     }
     
     override func loadView() {
@@ -161,6 +165,18 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         return legsButton
     }()
     
+    private(set) lazy var optionsStackView: UIStackView = {
+        let optionsStackView = UIStackView()
+        optionsStackView.setBackgroundColor(to: .clear)
+        optionsStackView.axis = .vertical
+        optionsStackView.alignment = .leading
+        optionsStackView.distribution = .fillProportionally
+
+        optionsStackView.spacing = 16
+        optionsStackView.translatesAutoresizingMaskIntoConstraints = false
+        return optionsStackView
+    }()
+    
     private(set) lazy var partsCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let colorsCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
@@ -170,22 +186,15 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         return colorsCollectionView
     }()
     
-    private(set) lazy var headView: UIView = {
-        let headView = UIView()
-//        headView.setBackgroundColor(to: .appGray04)
-        headView.backgroundColor = .clear
-        headView.translatesAutoresizingMaskIntoConstraints = false
-        return headView
-    }()
-    
     // Hair colors
     private(set) lazy var colorsStackView: UIStackView = {
         let colorsStackView = UIStackView()
         colorsStackView.setBackgroundColor(to: .clear)
         colorsStackView.axis = .horizontal
-        colorsStackView.distribution = .fillEqually
-        colorsStackView.alignment = .leading
-//        colorsStackView.spacing = 29
+        colorsStackView.alignment = .fill
+        colorsStackView.distribution = .fillProportionally
+        colorsStackView.spacing = 16
+        colorsStackView.isHidden = true
         colorsStackView.translatesAutoresizingMaskIntoConstraints = false
         return colorsStackView
     }()
@@ -194,8 +203,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let brownColorButton = UIButton()
         brownColorButton.setTitle(.none, for: .normal)
         brownColorButton.adjustsImageWhenHighlighted = false
-        brownColorButton.setBackgroundImage(.shirtCategory, for: .normal)
-        brownColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        brownColorButton.imageView?.contentMode = .scaleAspectFit
+        brownColorButton.setImage(UIImage(named: "brown-color"), for: .normal)
+        brownColorButton.setImage(UIImage(named: "brown-color-selec"), for: .selected)
         brownColorButton.addTarget(self, action: #selector(brownColorAction), for: .touchUpInside)
         brownColorButton.translatesAutoresizingMaskIntoConstraints = false
         return brownColorButton
@@ -205,8 +215,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let blackColorButton = UIButton()
         blackColorButton.setTitle(.none, for: .normal)
         blackColorButton.adjustsImageWhenHighlighted = false
-        blackColorButton.setBackgroundImage(.shirtCategory, for: .normal)
-        blackColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        blackColorButton.imageView?.contentMode = .scaleAspectFit
+        blackColorButton.setImage(UIImage(named: "black-color"), for: .normal)
+        blackColorButton.setImage(UIImage(named: "black-color-selec"), for: .selected)
         blackColorButton.addTarget(self, action: #selector(blackColorAction), for: .touchUpInside)
         blackColorButton.translatesAutoresizingMaskIntoConstraints = false
         return blackColorButton
@@ -216,8 +227,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let blondColorButton = UIButton()
         blondColorButton.setTitle(.none, for: .normal)
         blondColorButton.adjustsImageWhenHighlighted = false
-        blondColorButton.setBackgroundImage(.shirtCategory, for: .normal)
-        blondColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        blondColorButton.imageView?.contentMode = .scaleAspectFit
+        blondColorButton.setImage(UIImage(named: "blond-color"), for: .normal)
+        blondColorButton.setImage(UIImage(named: "blond-color-selec"), for: .selected)
         blondColorButton.addTarget(self, action: #selector(blondColorAction), for: .touchUpInside)
         blondColorButton.translatesAutoresizingMaskIntoConstraints = false
         return blondColorButton
@@ -227,8 +239,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let redColorButton = UIButton()
         redColorButton.setTitle(.none, for: .normal)
         redColorButton.adjustsImageWhenHighlighted = false
-        redColorButton.setBackgroundImage(.shirtCategory, for: .normal)
-        redColorButton.setBackgroundImage(.shirtCategorySelected, for: .selected)
+        redColorButton.imageView?.contentMode = .scaleAspectFit
+        redColorButton.setImage(UIImage(named: "red-color"), for: .normal)
+        redColorButton.setImage(UIImage(named: "red-color-selec"), for: .selected)
         redColorButton.addTarget(self, action: #selector(redColorAction), for: .touchUpInside)
         redColorButton.translatesAutoresizingMaskIntoConstraints = false
         return redColorButton
@@ -262,6 +275,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         shirtButton.isSelected = false
         legsButton.isSelected = false
         
+        colorsStackView.isHidden = true
         cat.setCategoriaSelecionada(categoriaSelectionada: .skin)
         partsCollectionView.reloadData()
     }
@@ -273,6 +287,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         shirtButton.isSelected = false
         legsButton.isSelected = false
         
+        colorsStackView.isHidden = false
+        brownColorButton.isSelected = true
+        hairColor.setSelectedHairColor(selectedHairColor: .brown)
         cat.setCategoriaSelecionada(categoriaSelectionada: .head)
         partsCollectionView.reloadData()
     }
@@ -284,6 +301,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         headButton.isSelected = false
         legsButton.isSelected = false
         
+        colorsStackView.isHidden = true
         cat.setCategoriaSelecionada(categoriaSelectionada: .shirt)
         partsCollectionView.reloadData()
     }
@@ -295,25 +313,46 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         headButton.isSelected = false
         shirtButton.isSelected = false
         
+        colorsStackView.isHidden = true
         cat.setCategoriaSelecionada(categoriaSelectionada: .legs)
         partsCollectionView.reloadData()
     }
     
     // Hair Colors Actions
     @objc func brownColorAction(sender: UIButton) {
-        // cabelo
+        sender.isSelected  = true
+        blackColorButton.isSelected = false
+        blondColorButton.isSelected = false
+        redColorButton.isSelected = false
+        
+        hairColor.setSelectedHairColor(selectedHairColor: .brown)
     }
     
     @objc func blackColorAction(sender: UIButton) {
-        // cabelo
+        sender.isSelected  = true
+        brownColorButton.isSelected = false
+        blondColorButton.isSelected = false
+        redColorButton.isSelected = false
+        
+        hairColor.setSelectedHairColor(selectedHairColor: .black)
     }
     
     @objc func blondColorAction(sender: UIButton) {
-        // cabelo
+        sender.isSelected  = true
+        brownColorButton.isSelected = false
+        blackColorButton.isSelected = false
+        redColorButton.isSelected = false
+        
+        hairColor.setSelectedHairColor(selectedHairColor: .blond)
     }
     
     @objc func redColorAction(sender: UIButton) {
-        // cabelo
+        sender.isSelected  = true
+        brownColorButton.isSelected = false
+        blackColorButton.isSelected = false
+        blondColorButton.isSelected = false
+        
+        hairColor.setSelectedHairColor(selectedHairColor: .red)
     }
     
     @objc func createFriendAction(sender: UIButton) {
@@ -330,6 +369,31 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         return orderedDictionary[index]
     }
 }
+
+enum HairColor {
+    case brown
+    case black
+    case blond
+    case red
+}
+
+struct SelectedHairColor {
+    var selectedHairColor: HairColor
+
+    init(selectedHairColor: HairColor) {
+        self.selectedHairColor = selectedHairColor
+    }
+    
+    func getSelectedHairColor() -> HairColor {
+        selectedHairColor
+    }
+    
+    mutating func setSelectedHairColor(selectedHairColor: HairColor) {
+        self.selectedHairColor = selectedHairColor
+    }
+}
+
+var hairColor = SelectedHairColor(selectedHairColor: .brown)
 
 enum Category {
     case skin

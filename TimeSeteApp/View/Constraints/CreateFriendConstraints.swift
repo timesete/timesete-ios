@@ -28,14 +28,14 @@ extension CreateFriendViewController {
         self.partsCategoriesStackView.addArrangedSubview(shirtButton)
         self.partsCategoriesStackView.addArrangedSubview(legsButton)
         
-        self.partsView.addSubview(partsCollectionView)
-//        self.partsView.insertSubview(headView, aboveSubview: partsCollectionView)
-//        self.headView.addSubview(partsCollectionView)
-//        self.headView.addSubview(colorsStackView)
-//        self.colorsStackView.addArrangedSubview(brownColorButton)
-//        self.colorsStackView.addArrangedSubview(blackColorButton)
-//        self.colorsStackView.addArrangedSubview(blondColorButton)
-//        self.colorsStackView.addArrangedSubview(redColorButton)
+        self.view.addSubview(optionsStackView)
+        self.optionsStackView.addArrangedSubview(colorsStackView)
+        self.optionsStackView.addArrangedSubview(partsCollectionView)
+        
+        self.colorsStackView.addArrangedSubview(brownColorButton)
+        self.colorsStackView.addArrangedSubview(blackColorButton)
+        self.colorsStackView.addArrangedSubview(blondColorButton)
+        self.colorsStackView.addArrangedSubview(redColorButton)
         
         self.partsView.addSubview(bottomView)
         self.bottomView.addSubview(createFriendButton)
@@ -56,9 +56,9 @@ extension CreateFriendViewController {
         setupPartsCategoriesViewConstraints()
         setupPartsCategoriesSatckViewConstraints()
         
-        setupColorsCollectionViewConstraints()
-//        setupHeadViewConstraints()
-//        setupColorsStackViewConstraints()
+        setupOptionsStackViewConstrains()
+        setupColorsStackViewConstraints()
+        setupPartsCollectionViewConstraints()
         
         setupBottomViewConstraints()
         setupCreateFriendButtonConstraints()
@@ -159,32 +159,37 @@ extension CreateFriendViewController {
         ])
     }
     
-    func setupColorsCollectionViewConstraints() {
+    func setupOptionsStackViewConstrains() {
         NSLayoutConstraint.activate([
-            partsCollectionView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor, constant: 16),
+            optionsStackView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor, constant: 16),
+            optionsStackView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor, constant: 16),
+            optionsStackView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor, constant: -16),
+            optionsStackView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
+        ])
+    }
+    
+    func setupColorsStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            colorsStackView.heightAnchor.constraint(equalToConstant: 56)
+        ])
+    }
+    
+    func setupPartsCollectionViewConstraints() {
+        NSLayoutConstraint.activate([
+            partsCollectionView.rightAnchor.constraint(equalTo: optionsStackView.rightAnchor),
+            partsCollectionView.leftAnchor.constraint(equalTo: optionsStackView.leftAnchor),
+            partsCollectionView.heightAnchor.constraint(equalToConstant: 220)
+        ])
+    }
+    
+    func setupPartsCollectionViewSecondConstraints() {
+        NSLayoutConstraint.activate([
+            partsCollectionView.topAnchor.constraint(equalTo: self.colorsStackView.bottomAnchor, constant: 16),
             partsCollectionView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
             partsCollectionView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
             partsCollectionView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
         ])
     }
-    
-    func setupHeadViewConstraints() {
-        NSLayoutConstraint.activate([
-            headView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor),
-            headView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
-            headView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
-            headView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
-        ])
-    }
-    
-//    func setupColorsStackViewConstraints() {
-//        NSLayoutConstraint.activate([
-//            headView.topAnchor.constraint(equalTo: self.partsCategoriesView.bottomAnchor),
-//            headView.leftAnchor.constraint(equalTo: self.partsView.leftAnchor),
-//            headView.rightAnchor.constraint(equalTo: self.partsView.rightAnchor),
-//            headView.bottomAnchor.constraint(equalTo: self.bottomView.topAnchor)
-//        ])
-//    }
     
     func setupBottomViewConstraints() {
         let bottomViewHeight = self.view.notchHeight + 84
