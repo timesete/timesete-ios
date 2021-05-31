@@ -12,6 +12,9 @@ extension CreateFriendViewController {
     // MARK: Subviews
     func addSubviews() {
         self.view.addSubview(headerView)
+        self.headerView.addSubview(navStackView)
+        self.navStackView.addArrangedSubview(navLabel)
+        self.navStackView.addArrangedSubview(navCloseButton)
         self.view.addSubview(auxiliaryView)
         
         self.view.insertSubview(friendView, aboveSubview: auxiliaryView)
@@ -44,6 +47,7 @@ extension CreateFriendViewController {
     // MARK: Setup Constraints
     func setupConstraints() {
         setupHeaderViewConstraints()
+        setupNavStackViewConstraints()
         setupAuxiliaryViewConstraints()
         
         setupFriendViewConstraints()
@@ -73,6 +77,15 @@ extension CreateFriendViewController {
             headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             headerView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             headerView.heightAnchor.constraint(equalToConstant: headerHeight)
+        ])
+    }
+    
+    func setupNavStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            navStackView.rightAnchor.constraint(equalTo: self.headerView.rightAnchor, constant: -24),
+            navStackView.leftAnchor.constraint(equalTo: self.headerView.leftAnchor, constant: 24),
+            navStackView.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: -16),
+            navStackView.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     

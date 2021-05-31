@@ -41,6 +41,36 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         return headerView
     }()
     
+    private(set) lazy var navStackView: UIStackView = {
+        let navStackView = UIStackView()
+        navStackView.setBackgroundColor(to: .clear)
+        navStackView.axis = .horizontal
+        navStackView.alignment = .center
+        navStackView.distribution = .fillProportionally
+        navStackView.spacing = 8
+        navStackView.translatesAutoresizingMaskIntoConstraints = false
+        return navStackView
+    }()
+    
+    private(set) lazy var navLabel: UILabel = {
+        let navLabel = UILabel()
+        navLabel.text = "Que tal criar um amigo para brincar?"
+        navLabel.font = UIFont(name: .nunitoBold, size: 16)
+        navLabel.textColor = .appPurple
+        navLabel.translatesAutoresizingMaskIntoConstraints = false
+        return navLabel
+    }()
+    
+    private(set) lazy var navCloseButton: UIButton = {
+        let navCloseButton = UIButton()
+        navCloseButton.imageView?.contentMode = .scaleAspectFit
+        navCloseButton.setImage(.closeButton, for: .normal)
+        navCloseButton.setTitle(.none, for: .normal)
+        navCloseButton.addTarget(self, action: #selector(navCloseAction), for: .touchUpInside)
+        navCloseButton.translatesAutoresizingMaskIntoConstraints = false
+        return navCloseButton
+    }()
+    
     private(set) lazy var auxiliaryView: UIView = {
         let auxiliaryView = UIView()
         auxiliaryView.setBackgroundColor(to: .clear)
@@ -268,6 +298,10 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }()
     
     // MARK: Actions
+    @objc func navCloseAction(sender: UIButton) {
+        // fechar tela
+        presenter.goToHome()
+    }
     
     // Parts
     @objc func skinAction(sender: UIButton) {
@@ -492,8 +526,6 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         
         case .skin:
             guard let key = getKey(of: selectedSkins, at: indexPath.row) else { return UICollectionViewCell() }
-            print(indexPath.row)
-            print(key)
             cell.partImage.image = UIImage(named: key)
             
         case .head:

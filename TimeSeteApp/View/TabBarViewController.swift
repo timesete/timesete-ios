@@ -57,7 +57,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
                                 image: .tabHome,
                                 selectedImage: .tabHomeSelected),
             
-            createNavController(for: SignUpViewController(),
+            createNavController(for: UIViewController(),
                                 title: "Criar amigo",
                                 image: .tabCreateFriend),
             

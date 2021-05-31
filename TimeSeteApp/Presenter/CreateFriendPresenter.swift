@@ -24,5 +24,9 @@ class CreateFriendPresenter {
     public func getViewWidth() -> CGFloat? {
         self.delegate?.view.frame.size.width
     }
+    
+    public func goToHome() {
+        self.delegate?.navigationController?.show(TabBarViewController(), sender: nil)
+    }
  
 }

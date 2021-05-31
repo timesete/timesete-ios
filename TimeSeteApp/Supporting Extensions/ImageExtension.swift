@@ -41,6 +41,10 @@ extension UIImage {
         return UIImage(named: "cancel-dark-button") ?? UIImage()
     }
     
+    static var closeButton: UIImage {
+        return UIImage(named: "close-button") ?? UIImage()
+    }
+    
     static var cyanButton: UIImage {
         return UIImage(named: "cyan-button") ?? UIImage()
     }
