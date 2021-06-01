@@ -30,14 +30,6 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
 
         setupVCs()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        print("viewWillAppear")
-//        
-//        if firstView != nil {
-//            tabBar.fir
-//        }
-//    }
 
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String?,

@@ -29,7 +29,6 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
 
     func presentLogin(credentials: Login) {
         print("presentLogin")
-        print(credentials)
     }
     
     // Header
