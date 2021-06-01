@@ -39,6 +39,10 @@ extension UIImage {
     
     // Buttons
     
+    static var backButton: UIImage {
+        return UIImage(named: "back-button") ?? UIImage()
+    }
+    
     static var cancelButton: UIImage {
         return UIImage(named: "cancel-button") ?? UIImage()
     }

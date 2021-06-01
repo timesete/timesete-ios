@@ -32,17 +32,6 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
         return headerView
     }()
     
-    private(set) lazy var navStackView: UIStackView = {
-        let navStackView = UIStackView()
-        navStackView.setBackgroundColor(to: .clear)
-        navStackView.axis = .horizontal
-        navStackView.alignment = .center
-        navStackView.distribution = .fillProportionally
-        navStackView.spacing = 8
-        navStackView.translatesAutoresizingMaskIntoConstraints = false
-        return navStackView
-    }()
-    
     private(set) lazy var profileButton: UIButton = {
         let profileButton = UIButton()
         profileButton.imageView?.contentMode = .scaleAspectFit
