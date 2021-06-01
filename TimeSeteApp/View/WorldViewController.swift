@@ -136,6 +136,7 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
     
     @objc func friend01Action(sender: UIButton) {
         print("Perfil")
+        presenter.goToContents()
     }
     
     @objc func friend02Action(sender: UIButton) {

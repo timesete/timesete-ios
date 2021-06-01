@@ -28,4 +28,8 @@ class WorldPresenter {
     public func getViewHeight() -> CGFloat? {
         self.delegate?.view.frame.size.height
     }
+    
+    public func goToContents() {
+        self.delegate?.navigationController?.pushViewController(ContentsViewController(), animated: true)
+    }
 }
