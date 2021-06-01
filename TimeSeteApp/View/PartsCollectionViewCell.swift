@@ -1,5 +1,5 @@
 //
-//  ColorsCollectionViewCell.swift
+//  PartsCollectionViewCell.swift
 //  TimeSeteApp
 //
 //  Created by Mayara Ferreira de Oliveira on 30/05/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorsCollectionViewCell: UICollectionViewCell {
+class PartsCollectionViewCell: UICollectionViewCell {
     
     private(set) lazy var partImage: UIImageView = {
         let partImage = UIImageView()

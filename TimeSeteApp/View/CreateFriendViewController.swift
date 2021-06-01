@@ -210,7 +210,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         let flowLayout = UICollectionViewFlowLayout()
         let colorsCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
         colorsCollectionView.backgroundColor = .appGray04
-        colorsCollectionView.register(ColorsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        colorsCollectionView.register(PartsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         colorsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         return colorsCollectionView
     }()
@@ -520,7 +520,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         
         guard let cell = partsCollectionView.dequeueReusableCell(
                     withReuseIdentifier: "cell",
-                    for: indexPath) as? ColorsCollectionViewCell else { return UICollectionViewCell() }
+                    for: indexPath) as? PartsCollectionViewCell else { return UICollectionViewCell() }
         
         switch cat.getCategoriaSelecionada() {
         
@@ -546,7 +546,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        guard let cell = cell as? ColorsCollectionViewCell else { return }
+        guard let cell = cell as? PartsCollectionViewCell else { return }
         switch cat.getCategoriaSelecionada() {
         
         case .skin:
@@ -600,7 +600,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let currentCell = collectionView.cellForItem(at: indexPath) as? ColorsCollectionViewCell else { return }
+        guard let currentCell = collectionView.cellForItem(at: indexPath) as? PartsCollectionViewCell else { return }
         currentCell.isSelected = true
         
         switch cat.getCategoriaSelecionada() {
@@ -633,7 +633,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        guard let currentCell = collectionView.cellForItem(at: indexPath) as? ColorsCollectionViewCell else { return }
+        guard let currentCell = collectionView.cellForItem(at: indexPath) as? PartsCollectionViewCell else { return }
         currentCell.isSelected = false
         
         switch cat.getCategoriaSelecionada() {
