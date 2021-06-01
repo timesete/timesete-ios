@@ -15,6 +15,8 @@
 		7D47123B266628C5000A4FFD /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47123A266628C5000A4FFD /* ContentsViewController.swift */; };
 		7D47123E266628DF000A4FFD /* ContentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47123D266628DF000A4FFD /* ContentsPresenter.swift */; };
 		7D471241266629FA000A4FFD /* ContentsConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D471240266629FA000A4FFD /* ContentsConstraints.swift */; };
+		7D47124426662E2A000A4FFD /* ContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47124326662E2A000A4FFD /* ContentsTableViewCell.swift */; };
+		7D47124726663D37000A4FFD /* LayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47124626663D37000A4FFD /* LayerExtension.swift */; };
 		7D57A51F2660E2C4006719BD /* CreateFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */; };
 		7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */; };
 		7D57A5252660E369006719BD /* CreateFriendPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57A5242660E369006719BD /* CreateFriendPresenter.swift */; };
@@ -64,6 +66,8 @@
 		7D47123A266628C5000A4FFD /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		7D47123D266628DF000A4FFD /* ContentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsPresenter.swift; sourceTree = "<group>"; };
 		7D471240266629FA000A4FFD /* ContentsConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsConstraints.swift; sourceTree = "<group>"; };
+		7D47124326662E2A000A4FFD /* ContentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsTableViewCell.swift; sourceTree = "<group>"; };
+		7D47124626663D37000A4FFD /* LayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExtension.swift; sourceTree = "<group>"; };
 		7D57A51E2660E2C4006719BD /* CreateFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendViewController.swift; sourceTree = "<group>"; };
 		7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendConstraints.swift; sourceTree = "<group>"; };
 		7D57A5242660E369006719BD /* CreateFriendPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFriendPresenter.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				7DB50E3926554200004A62AC /* ViewExtension.swift */,
 				7D652EAF265840D500FC7822 /* StringExtension.swift */,
 				7D652EB22658A42700FC7822 /* TextFieldExtension.swift */,
+				7D47124626663D37000A4FFD /* LayerExtension.swift */,
 			);
 			path = "Supporting Extensions";
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				7DB5277F2663CDED0099AF59 /* PartsCollectionViewCell.swift */,
 				7D3EACB926651FB6000E1D4A /* WorldViewController.swift */,
 				7D47123A266628C5000A4FFD /* ContentsViewController.swift */,
+				7D47124326662E2A000A4FFD /* ContentsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -429,12 +435,14 @@
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
 				7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */,
 				7D47123B266628C5000A4FFD /* ContentsViewController.swift in Sources */,
+				7D47124726663D37000A4FFD /* LayerExtension.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
 				7D57A5252660E369006719BD /* CreateFriendPresenter.swift in Sources */,
 				7D3EACC026651FE6000E1D4A /* WorldPresenter.swift in Sources */,
 				7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */,
 				7D471241266629FA000A4FFD /* ContentsConstraints.swift in Sources */,
+				7D47124426662E2A000A4FFD /* ContentsTableViewCell.swift in Sources */,
 				7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
 				7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */,

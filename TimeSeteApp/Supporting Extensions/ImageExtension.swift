@@ -63,6 +63,18 @@ extension UIImage {
         return UIImage(named: "cyan-dark-button") ?? UIImage()
     }
     
+    static var cyanMiddleButton: UIImage {
+        return UIImage(named: "cyan-middle-button") ?? UIImage()
+    }
+    
+    static var cyanMiddleDarkButton: UIImage {
+        return UIImage(named: "cyan-middle-dark-button") ?? UIImage()
+    }
+    
+    static var playButton: UIImage {
+        return UIImage(named: "play-button") ?? UIImage()
+    }
+    
     static var purpleButton: UIImage {
         return UIImage(named: "purple-button") ?? UIImage()
     }

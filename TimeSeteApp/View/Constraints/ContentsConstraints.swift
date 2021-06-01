@@ -13,12 +13,15 @@ extension ContentsViewController {
     func addSubviews() {
         self.view.addSubview(headerView)
         self.headerView.addSubview(backButton)
+        self.view.addSubview(contentsTableView)
     }
     
     // MARK: Setup Constraints
     func setupConstraints() {
         setupHeaderViewConstraints()
         setupBackButtonConstraints()
+        
+        setupContentsTableViewConstraints()
     }
 
     // Header
@@ -41,5 +44,14 @@ extension ContentsViewController {
             backButton.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
-
+    
+    // Main
+    func setupContentsTableViewConstraints() {
+        NSLayoutConstraint.activate([
+            contentsTableView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor),
+            contentsTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            contentsTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            contentsTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
