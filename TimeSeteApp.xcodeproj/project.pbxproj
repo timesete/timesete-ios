@@ -40,6 +40,7 @@
 		7DB50E3626553C2F004A62AC /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3526553C2F004A62AC /* ImageExtension.swift */; };
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
 		7DB527802663CDED0099AF59 /* PartsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5277F2663CDED0099AF59 /* PartsCollectionViewCell.swift */; };
+		7DDA127A2666989200F8F457 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA12792666989200F8F457 /* HTTPMethod.swift */; };
 		7DE7C9CF2666246B00BCCBDD /* PartsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7C9CE2666246B00BCCBDD /* PartsCollectionViewController.swift */; };
 		7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */; };
 		7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */; };
@@ -93,6 +94,7 @@
 		7DB50E3526553C2F004A62AC /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		7DB5277F2663CDED0099AF59 /* PartsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DDA12792666989200F8F457 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		7DE7C9CE2666246B00BCCBDD /* PartsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCollectionViewController.swift; sourceTree = "<group>"; };
 		7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		7D8E4A822653744A0095B88C /* TimeSeteApp */ = {
 			isa = PBXGroup;
 			children = (
+				7DDA12782666986400F8F457 /* Networking */,
 				7DCDFBD1265500BA008391BD /* Model */,
 				7DCDFBD0265500B3008391BD /* View */,
 				7DCDFBCF2655009B008391BD /* Presenter */,
@@ -270,6 +273,14 @@
 				7D8E4A912653744B0095B88C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DDA12782666986400F8F457 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7DDA12792666989200F8F457 /* HTTPMethod.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		7DEF863B265B8E70006254F1 /* Fonts */ = {
@@ -430,6 +441,7 @@
 				7DE866C3265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift in Sources */,
 				7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */,
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
+				7DDA127A2666989200F8F457 /* HTTPMethod.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
 				7DFFF28F265FD62500C71E81 /* CustomTabBar.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
