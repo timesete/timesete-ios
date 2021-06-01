@@ -18,9 +18,10 @@ extension WorldViewController {
         self.messageView.addSubview(messageLabel)
 
         self.view.insertSubview(sceneryImage, belowSubview: headerView)
-        self.sceneryImage.addSubview(friend01Image)
-        self.sceneryImage.addSubview(friend02Image)
-        self.sceneryImage.addSubview(friend03Image)
+        self.view.insertSubview(friend01Button, aboveSubview: sceneryImage)
+        self.view.insertSubview(friend02Button, aboveSubview: sceneryImage)
+        self.view.insertSubview(friend03Button, aboveSubview: sceneryImage)
+        self.view.insertSubview(myFriendButton, aboveSubview: sceneryImage)
     }
     
     // MARK: Setup Constraints
@@ -33,9 +34,10 @@ extension WorldViewController {
         setupMessageLabelConstraints()
         
         setupSceneryImageConstraints()
-        setupFriend03ImageConstraints()
-        setupFriend02ImageConstraints()
-        setupFriend01ImageConstraints()
+        setupFriend01ButtonConstraints()
+        setupFriend02ButtonConstraints()
+        setupFriend03ButtonConstraints()
+        setupMyFriendButtonConstraints()
     }
 
     // Header
@@ -94,36 +96,45 @@ extension WorldViewController {
         ])
     }
     
-    func setupFriend03ImageConstraints() {
-        NSLayoutConstraint.activate([
-            friend03Image.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -17),
-            friend03Image.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -33.8),
-            friend03Image.heightAnchor.constraint(equalToConstant: 180),
-            friend03Image.widthAnchor.constraint(equalToConstant: 106.5)
-        ])
-    }
-    
-    func setupFriend02ImageConstraints() {
+    func setupFriend01ButtonConstraints() {
         guard let viewHeight = self.presenter.getViewHeight()
         else { return }
         
         NSLayoutConstraint.activate([
-            friend02Image.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: viewHeight * -0.3),
-            friend02Image.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -41.8),
-            friend02Image.heightAnchor.constraint(equalToConstant: 180),
-            friend02Image.widthAnchor.constraint(equalToConstant: 106.5)
+            friend01Button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: viewHeight * -0.2),
+            friend01Button.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 111),
+            friend01Button.heightAnchor.constraint(equalToConstant: 180),
+            friend01Button.widthAnchor.constraint(equalToConstant: 106.5)
         ])
     }
     
-    func setupFriend01ImageConstraints() {
+    func setupFriend02ButtonConstraints() {
         guard let viewHeight = self.presenter.getViewHeight()
         else { return }
         
         NSLayoutConstraint.activate([
-            friend01Image.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: viewHeight * -0.2),
-            friend01Image.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 111),
-            friend01Image.heightAnchor.constraint(equalToConstant: 180),
-            friend01Image.widthAnchor.constraint(equalToConstant: 106.5)
+            friend02Button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: viewHeight * -0.3),
+            friend02Button.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -41.8),
+            friend02Button.heightAnchor.constraint(equalToConstant: 180),
+            friend02Button.widthAnchor.constraint(equalToConstant: 106.5)
+        ])
+    }
+    
+    func setupFriend03ButtonConstraints() {
+        NSLayoutConstraint.activate([
+            friend03Button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -17),
+            friend03Button.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -33.8),
+            friend03Button.heightAnchor.constraint(equalToConstant: 180),
+            friend03Button.widthAnchor.constraint(equalToConstant: 106.5)
+        ])
+    }
+    
+    func setupMyFriendButtonConstraints() {
+        NSLayoutConstraint.activate([
+            myFriendButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
+            myFriendButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 33.8),
+            myFriendButton.heightAnchor.constraint(equalToConstant: 180),
+            myFriendButton.widthAnchor.constraint(equalToConstant: 106.5)
         ])
     }
     

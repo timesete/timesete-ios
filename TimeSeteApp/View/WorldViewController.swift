@@ -89,32 +89,64 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
     }()
     
     // Friends
-    private(set) lazy var friend01Image: UIImageView = {
-        let friend01Image = UIImageView()
-        friend01Image.image = .friend01
-        friend01Image.contentMode = .scaleAspectFit
-        friend01Image.translatesAutoresizingMaskIntoConstraints = false
-        return friend01Image
+    private(set) lazy var friend01Button: UIButton = {
+        let friend01Button = UIButton()
+        friend01Button.setImage(.friend01, for: .normal)
+        friend01Button.imageView?.contentMode = .scaleAspectFit
+        friend01Button.setTitle(.none, for: .normal)
+        friend01Button.translatesAutoresizingMaskIntoConstraints = false
+        friend01Button.addTarget(self, action: #selector(friend01Action), for: .touchUpInside)
+        return friend01Button
     }()
     
-    private(set) lazy var friend02Image: UIImageView = {
-        let friend02Image = UIImageView()
-        friend02Image.image = .friend02
-        friend02Image.contentMode = .scaleAspectFit
-        friend02Image.translatesAutoresizingMaskIntoConstraints = false
-        return friend02Image
+    private(set) lazy var friend02Button: UIButton = {
+        let friend02Button = UIButton()
+        friend02Button.setImage(.friend02, for: .normal)
+        friend02Button.imageView?.contentMode = .scaleAspectFit
+        friend02Button.setTitle(.none, for: .normal)
+        friend02Button.translatesAutoresizingMaskIntoConstraints = false
+        friend02Button.addTarget(self, action: #selector(friend02Action), for: .touchUpInside)
+        return friend02Button
     }()
     
-    private(set) lazy var friend03Image: UIImageView = {
-        let friend03Image = UIImageView()
-        friend03Image.image = .friend03
-        friend03Image.contentMode = .scaleAspectFit
-        friend03Image.translatesAutoresizingMaskIntoConstraints = false
-        return friend03Image
+    private(set) lazy var friend03Button: UIButton = {
+        let friend03Button = UIButton()
+        friend03Button.setImage(.friend03, for: .normal)
+        friend03Button.imageView?.contentMode = .scaleAspectFit
+        friend03Button.setTitle(.none, for: .normal)
+        friend03Button.translatesAutoresizingMaskIntoConstraints = false
+        friend03Button.addTarget(self, action: #selector(friend03Action), for: .touchUpInside)
+        return friend03Button
     }()
     
+    private(set) lazy var myFriendButton: UIButton = {
+        let myFriendButton = UIButton()
+        myFriendButton.setImage(.friend04, for: .normal)
+        myFriendButton.imageView?.contentMode = .scaleAspectFit
+        myFriendButton.setTitle(.none, for: .normal)
+        myFriendButton.translatesAutoresizingMaskIntoConstraints = false
+        myFriendButton.addTarget(self, action: #selector(myFriendAction), for: .touchUpInside)
+        return myFriendButton
+    }()
+    
+    // MARK: Actions
     @objc func profileAction(sender: UIButton) {
         print("Perfil")
     }
-
+    
+    @objc func friend01Action(sender: UIButton) {
+        print("Perfil")
+    }
+    
+    @objc func friend02Action(sender: UIButton) {
+        print("Perfil2")
+    }
+    
+    @objc func friend03Action(sender: UIButton) {
+        print("Perfil3")
+    }
+    
+    @objc func myFriendAction(sender: UIButton) {
+        print("Perfil4")
+    }
 }

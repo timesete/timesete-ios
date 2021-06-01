@@ -96,6 +96,10 @@ extension UIImage {
         return UIImage(named: "friend-3") ?? UIImage()
     }
     
+    static var friend04: UIImage {
+        return UIImage(named: "friend-4") ?? UIImage()
+    }
+    
     // Header
     
     static var logoLogin: UIImage {
