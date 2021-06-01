@@ -16,7 +16,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         self.view.setBackgroundColor(to: .appGray04)
         
         // First category is selected
-        cat.setCategoriaSelecionada(categoriaSelectionada: .skin)
+        category.setSelectedCategory(selectedCategory: .skin)
         skinButton.isSelected = true
     }
     
@@ -298,7 +298,6 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     
     // MARK: Actions
     @objc func navCloseAction(sender: UIButton) {
-        // fechar tela
         presenter.goToHome()
     }
     
@@ -310,7 +309,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         legsButton.isSelected = false
         
         colorsStackView.isHidden = true
-        cat.setCategoriaSelecionada(categoriaSelectionada: .skin)
+        category.setSelectedCategory(selectedCategory: .skin)
         partsCollectionView.reloadData()
     }
     
@@ -323,7 +322,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         colorsStackView.isHidden = false
         brownColorButton.isSelected = true
         hairColor.setSelectedHairColor(selectedHairColor: .brown)
-        cat.setCategoriaSelecionada(categoriaSelectionada: .head)
+        category.setSelectedCategory(selectedCategory: .head)
         partsCollectionView.reloadData()
     }
     
@@ -334,7 +333,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         legsButton.isSelected = false
         
         colorsStackView.isHidden = true
-        cat.setCategoriaSelecionada(categoriaSelectionada: .shirt)
+        category.setSelectedCategory(selectedCategory: .shirt)
         partsCollectionView.reloadData()
     }
     
@@ -345,7 +344,7 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         shirtButton.isSelected = false
         
         colorsStackView.isHidden = true
-        cat.setCategoriaSelecionada(categoriaSelectionada: .legs)
+        category.setSelectedCategory(selectedCategory: .legs)
         partsCollectionView.reloadData()
     }
     

@@ -39,23 +39,23 @@ enum Category {
     case legs
 }
 
-struct CategoriaSelecionada {
-    var categoriaSelectionada: Category
+struct SelectedCategory {
+    var selectedCategory: Category
 
-    init(categoriaSelectionada: Category) {
-        self.categoriaSelectionada = categoriaSelectionada
+    init(selectedCategory: Category) {
+        self.selectedCategory = selectedCategory
     }
     
-    func getCategoriaSelecionada() -> Category {
-        categoriaSelectionada
+    func getSelectedCategory() -> Category {
+        selectedCategory
     }
     
-    mutating func setCategoriaSelecionada(categoriaSelectionada: Category) {
-        self.categoriaSelectionada = categoriaSelectionada
+    mutating func setSelectedCategory(selectedCategory: Category) {
+        self.selectedCategory = selectedCategory
     }
 }
 
-// Assets que "vestem" o personagem
+// Assets that "dress" the character
 let skinFriend = ["skin-1", "skin-2", "skin-3", "skin-4", "skin-5"]
 let shirtFriend = ["shirt-1", "shirt-2", "shirt-3"]
 let legsFriend = ["pants-1", "pants-and-glasses", "wheelchair"]
@@ -67,8 +67,8 @@ let blondHairFriend = ["blond-hair-1", "blond-hair-2",
                        "blond-hair-3", "hairless", "hijab"]
 let redHairFriend = ["red-hair-1", "red-hair-2", "red-hair-3", "hairless", "hijab"]
 
-// key: opções no menu
-// value: opções no menu selecionadas
+// key: menu options
+// value: selected menu options
 let selectedShirts = ["option-shirt-1": "option-shirt-01-selec",
                       "option-shirt-2": "option-shirt-02-selec",
                       "option-shirt-3": "option-shirt-03-selec"]
@@ -86,13 +86,13 @@ let selectedHair = ["option-hair-1": "option-hair-01-selec",
                       "option-hairless": "option-hairless-selec",
                       "option-hijab": "option-hijab-selec"]
 
-var cat = CategoriaSelecionada(categoriaSelectionada: .skin)
+var category = SelectedCategory(selectedCategory: .skin)
 
 extension CreateFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        switch cat.getCategoriaSelecionada() {
+        switch category.getSelectedCategory() {
         case .skin:
             return selectedSkins.count
         case .head:
@@ -110,7 +110,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
                     withReuseIdentifier: "cell",
                     for: indexPath) as? PartsCollectionViewCell else { return UICollectionViewCell() }
         
-        switch cat.getCategoriaSelecionada() {
+        switch category.getSelectedCategory() {
         
         case .skin:
             guard let key = getKey(of: selectedSkins, at: indexPath.row) else { return UICollectionViewCell() }
@@ -135,7 +135,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         guard let cell = cell as? PartsCollectionViewCell else { return }
-        switch cat.getCategoriaSelecionada() {
+        switch category.getSelectedCategory() {
         
         case .skin:
             guard let deselectedPart = getKey(of: selectedSkins, at: indexPath.row)
@@ -191,7 +191,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         guard let currentCell = collectionView.cellForItem(at: indexPath) as? PartsCollectionViewCell else { return }
         currentCell.isSelected = true
         
-        switch cat.getCategoriaSelecionada() {
+        switch category.getSelectedCategory() {
         
         case .skin:
             guard let selectedPart = getValue(of: selectedSkins, at: indexPath.row)
@@ -224,7 +224,7 @@ extension CreateFriendViewController: UICollectionViewDelegate, UICollectionView
         guard let currentCell = collectionView.cellForItem(at: indexPath) as? PartsCollectionViewCell else { return }
         currentCell.isSelected = false
         
-        switch cat.getCategoriaSelecionada() {
+        switch category.getSelectedCategory() {
         
         case .skin:
             guard let deselectedPart = getKey(of: selectedSkins, at: indexPath.row)
@@ -255,7 +255,7 @@ extension CreateFriendViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let selectedCategory = cat.getCategoriaSelecionada()
+        let selectedCategory = category.getSelectedCategory()
         if selectedCategory == .legs {
             return CGSize(width: 88, height: 88)
         }
