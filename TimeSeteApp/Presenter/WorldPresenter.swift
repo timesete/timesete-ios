@@ -30,6 +30,7 @@ class WorldPresenter {
     }
     
     public func goToContents(contents: [String], contentsTitle: [String]) {
-        self.delegate?.navigationController?.pushViewController(ContentsViewController(contents: contents, contentsTitle: contentsTitle), animated: true)
+        self.delegate?.navigationController?.pushViewController(
+            ContentsViewController(contents: contents, contentsTitle: contentsTitle), animated: true)
     }
 }
