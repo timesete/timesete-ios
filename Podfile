@@ -9,5 +9,6 @@ target 'TimeSeteApp' do
 
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftLint'
+  pod 'youtube-ios-player-helper'
 
 end

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class ContentsTableViewCell: UITableViewCell {
 
@@ -24,31 +25,13 @@ class ContentsTableViewCell: UITableViewCell {
         return contentsView
     }()
     
-    private(set) lazy var thumbImage: UIImageView = {
-        let thumbImage = UIImageView()
-        thumbImage.image = .blondHair01
-        thumbImage.contentMode = .scaleAspectFit
-        thumbImage.translatesAutoresizingMaskIntoConstraints = false
-        return thumbImage
-    }()
-    
-    private(set) lazy var thumbView: UIView = {
-        let thumbView = UIView()
-        thumbView.setBackgroundColor(to: .appBlack40)
+    private(set) lazy var thumbView: YTPlayerView = {
+        let thumbView = YTPlayerView()
         thumbView.clipsToBounds = true
         thumbView.layer.cornerRadius = 8
         thumbView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         thumbView.translatesAutoresizingMaskIntoConstraints = false
         return thumbView
-    }()
-    
-    private(set) lazy var playButton: UIButton = {
-        let playButton = UIButton()
-        playButton.setTitle(.none, for: .normal)
-        playButton.imageView?.contentMode = .scaleAspectFit
-        playButton.setImage(.playButton, for: .normal)
-        playButton.translatesAutoresizingMaskIntoConstraints = false
-        return playButton
     }()
     
     private(set) lazy var contentTitle: UILabel = {
@@ -69,6 +52,7 @@ class ContentsTableViewCell: UITableViewCell {
         openOnYoutubeButton.titleLabel?.font = UIFont(name: .nunitoBlack, size: 18)
         openOnYoutubeButton.setBackgroundImage(.cyanMiddleButton, for: .normal)
         openOnYoutubeButton.setBackgroundImage(.cyanMiddleDarkButton, for: .highlighted)
+        openOnYoutubeButton.addTarget(self, action: #selector(openOnYoutubeAction), for: .touchUpInside)
         openOnYoutubeButton.translatesAutoresizingMaskIntoConstraints = false
         return openOnYoutubeButton
     }()
@@ -77,17 +61,13 @@ class ContentsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.setBackgroundColor(to: .appGray04)
         self.contentView.addSubview(contentsView)
-        self.contentsView.addSubview(thumbImage)
-        self.thumbImage.addSubview(thumbView)
-        self.thumbView.addSubview(playButton)
+        self.contentsView.addSubview(thumbView)
         self.contentsView.addSubview(contentTitle)
         self.contentsView.addSubview(openOnYoutubeButton)
         
         setupContentsViewConstraints()
-        setupThumbImageConstraints()
         setupThumbViewConstraints()
         setupContentTitleConstraints()
-        setupPlayButtonConstraints()
         setupOpenOnYoutubeButtonConstraints()
     }
     
@@ -104,6 +84,28 @@ class ContentsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // MARK: Actions
+    
+    @objc func playAction(sender: UIButton) {
+    
+        switch sender.tag {
+        case 0:
+            thumbView.playVideo()
+        default:
+            print("teste")
+        }
+        
+    }
+    
+    @objc func openOnYoutubeAction(sender: UIButton) {
+    
+        guard let urls = videosURL.getVideosURL() else { return }
+        let urlBase = "https://www.youtube.com/watch?v="
+
+        guard let url = URL(string: urlBase + urls[sender.tag]) else { return }
+        UIApplication.shared.open(url)
+    }
 
     func setupContentsViewConstraints() {
         NSLayoutConstraint.activate([
@@ -114,34 +116,18 @@ class ContentsTableViewCell: UITableViewCell {
         ])
     }
     
-    func setupThumbImageConstraints() {
-        NSLayoutConstraint.activate([
-            thumbImage.topAnchor.constraint(equalTo: self.contentsView.topAnchor),
-            thumbImage.rightAnchor.constraint(equalTo: self.contentsView.rightAnchor),
-            thumbImage.leftAnchor.constraint(equalTo: self.contentsView.leftAnchor),
-            thumbImage.heightAnchor.constraint(equalToConstant: 180)
-        ])
-    }
-    
     func setupThumbViewConstraints() {
         NSLayoutConstraint.activate([
-            thumbView.topAnchor.constraint(equalTo: self.thumbImage.topAnchor),
-            thumbView.rightAnchor.constraint(equalTo: self.thumbImage.rightAnchor),
-            thumbView.leftAnchor.constraint(equalTo: self.thumbImage.leftAnchor),
-            thumbView.bottomAnchor.constraint(equalTo: self.thumbImage.bottomAnchor)
-        ])
-    }
-    
-    func setupPlayButtonConstraints() {
-        NSLayoutConstraint.activate([
-            playButton.centerXAnchor.constraint(equalTo: self.thumbView.centerXAnchor),
-            playButton.centerYAnchor.constraint(equalTo: self.thumbView.centerYAnchor)
+            thumbView.topAnchor.constraint(equalTo: self.contentsView.topAnchor),
+            thumbView.rightAnchor.constraint(equalTo: self.contentsView.rightAnchor),
+            thumbView.leftAnchor.constraint(equalTo: self.contentsView.leftAnchor),
+            thumbView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     
     func setupContentTitleConstraints() {
         NSLayoutConstraint.activate([
-            contentTitle.topAnchor.constraint(equalTo: self.thumbImage.bottomAnchor, constant: 20),
+            contentTitle.topAnchor.constraint(equalTo: self.thumbView.bottomAnchor, constant: 20),
             contentTitle.rightAnchor.constraint(equalTo: self.contentsView.rightAnchor, constant: -20),
             contentTitle.leftAnchor.constraint(equalTo: self.contentsView.leftAnchor, constant: 20)
         ])
@@ -152,7 +138,6 @@ class ContentsTableViewCell: UITableViewCell {
             openOnYoutubeButton.rightAnchor.constraint(equalTo: self.contentsView.rightAnchor, constant: -20),
             openOnYoutubeButton.leftAnchor.constraint(equalTo: self.contentsView.leftAnchor, constant: 20),
             openOnYoutubeButton.bottomAnchor.constraint(equalTo: self.contentsView.bottomAnchor, constant: -20)
-//            openOnYoutubeButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
 }

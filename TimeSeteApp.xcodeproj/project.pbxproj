@@ -298,8 +298,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D8E4A942653744B0095B88C /* Build configuration list for PBXNativeTarget "TimeSeteApp" */;
 			buildPhases = (
-				7DCDFBDF26550638008391BD /* ShellScript */,
 				B66002E4DFA2BED8E6DFC2F6 /* [CP] Check Pods Manifest.lock */,
+				7DCDFBDF26550638008391BD /* ShellScript */,
 				7D8E4A7C2653744A0095B88C /* Sources */,
 				7D8E4A7D2653744A0095B88C /* Frameworks */,
 				7D8E4A7E2653744A0095B88C /* Resources */,

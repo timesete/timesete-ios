@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import AVKit
 
 class ContentsViewController: UIViewController, ContentsPresenterDelegate {
 
     let presenter = ContentsPresenter()
-    private var amountOfContent = 5
+    private var contents: [String]?
+    private var contentsTitle: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +28,20 @@ class ContentsViewController: UIViewController, ContentsPresenterDelegate {
         contentsTableView.delegate = self
         contentsTableView.dataSource = self
     }
-
+    
+    init(contents: [String], contentsTitle: [String]) {
+        super.init(nibName: nil, bundle: nil)
+        self.contents = contents
+        self.contentsTitle = contentsTitle
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return.lightContent
     }
-    
-    func playVideo(url: URL) {
-            let player = AVPlayer(url: url)
-            
-            let vc = AVPlayerViewController()
-            vc.player = player
-            
-            self.present(vc, animated: true) { vc.player?.play() }
-        }
     
     // Header
     private(set) lazy var headerView: UIView = {
@@ -83,14 +84,25 @@ extension ContentsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.amountOfContent
+        guard let amountOfContent = contents else { return 1 }
+        return amountOfContent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = contentsTableView.dequeueReusableCell(
                 withIdentifier: "tableCell",
-                for: indexPath) as? ContentsTableViewCell else { return UITableViewCell() }
+                for: indexPath) as? ContentsTableViewCell
+        else { return UITableViewCell() }
         
+        guard let videoId = contents?[indexPath.row]
+        else { return UITableViewCell() }
+        
+        guard let videoTitle = contentsTitle?[indexPath.row]
+        else { return UITableViewCell() }
+        
+        cell.thumbView.load(withVideoId: videoId)
+        cell.contentTitle.text = videoTitle
+        cell.openOnYoutubeButton.tag = indexPath.row
         return cell
     }
     
@@ -100,7 +112,8 @@ extension ContentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let url = URL(string: "https://www.youtube.com/watch?v=6W2vuwWTAU4") ?? nil
-        playVideo(url: url!)
+        guard let cell = tableView.cellForRow(at: indexPath) as? ContentsTableViewCell else { return }
+        
+        cell.thumbView.playVideo()
     }
 }

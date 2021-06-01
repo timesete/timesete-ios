@@ -124,19 +124,57 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
     }
     
     @objc func friend01Action(sender: UIButton) {
-        print("Perfil")
-        presenter.goToContents()
+        let contents = ["O9tp2lmWC-M", "zWhGS-AzSQ0", "_Y2eIi5HlDw"]
+        let contentsTitle = ["BLACK BLACK- MÚSICA INFANTIL DE RESPEITO ÀS DIFERENÇAS E DIVERSIDADE - DIA DA CONSCIÊNCIA NEGRA",
+            "O que é LGBTQIA+ para crianças!",
+            "Turma da Mônica - Pessoas com deficiência"]
+            
+        videosURL.setVideosURL(videosURL: contents)
+        presenter.goToContents(contents: contents, contentsTitle: contentsTitle)
     }
     
     @objc func friend02Action(sender: UIButton) {
-        print("Perfil2")
+        let contents = ["Entcc3mI0QI", "O79Xxl7RzkE"]
+        let contentsTitle = ["Crianças desenham deus",
+            "Eu vou para a escola de cadeira de rodas | Eu perdi as minhas pernas | História animada"]
+        
+        videosURL.setVideosURL(videosURL: contents)
+        presenter.goToContents(contents: contents, contentsTitle: contentsTitle)
     }
-    
+
     @objc func friend03Action(sender: UIButton) {
-        print("Perfil3")
+        let contents = ["O9tp2lmWC-M", "h4TKJ8AemB8"]
+        let contentsTitle = ["BLACK BLACK- MÚSICA INFANTIL DE RESPEITO ÀS DIFERENÇAS E DIVERSIDADE - DIA DA CONSCIÊNCIA NEGRA",
+            "Autismo - Coisas Fantásticas Acontecem"]
+        
+        videosURL.setVideosURL(videosURL: contents)
+        presenter.goToContents(contents: contents, contentsTitle: contentsTitle)
     }
     
     @objc func myFriendAction(sender: UIButton) {
-        print("Perfil4")
+        let contents = ["h4TKJ8AemB8", "O79Xxl7RzkE"]
+        let contentsTitle = ["Autismo - Coisas Fantásticas Acontecem",
+            "Eu vou para a escola de cadeira de rodas | Eu perdi as minhas pernas | História animada"]
+        
+        videosURL.setVideosURL(videosURL: contents)
+        presenter.goToContents(contents: contents, contentsTitle: contentsTitle)
     }
 }
+ 
+struct VideosURL {
+    var videosURL: [String]?
+
+    init(videosURL: [String]?) {
+        self.videosURL = videosURL
+    }
+    
+    func getVideosURL() -> [String]? {
+        videosURL
+    }
+    
+    mutating func setVideosURL(videosURL: [String]?) {
+        self.videosURL = videosURL
+    }
+}
+
+var videosURL = VideosURL(videosURL: [])

@@ -29,7 +29,7 @@ class WorldPresenter {
         self.delegate?.view.frame.size.height
     }
     
-    public func goToContents() {
-        self.delegate?.navigationController?.pushViewController(ContentsViewController(), animated: true)
+    public func goToContents(contents: [String], contentsTitle: [String]) {
+        self.delegate?.navigationController?.pushViewController(ContentsViewController(contents: contents, contentsTitle: contentsTitle), animated: true)
     }
 }
