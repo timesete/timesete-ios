@@ -13,6 +13,10 @@ extension UIColor {
         return UIColor(named: "appBlack") ?? UIColor()
     }
     
+    static var appBlack40: UIColor {
+        return UIColor(named: "appBlack40") ?? UIColor()
+    }
+    
     static var appCyan: UIColor {
         return UIColor(named: "appCyan") ?? UIColor()
     }

@@ -31,6 +31,12 @@ extension UIImage {
         return UIImage(named: "show-password") ?? UIImage()
     }
     
+    // Background
+    
+    static var scenery: UIImage {
+        return UIImage(named: "scenery") ?? UIImage()
+    }
+    
     // Buttons
     
     static var cancelButton: UIImage {
@@ -75,6 +81,19 @@ extension UIImage {
     
     static var skipDarkButton: UIImage {
         return UIImage(named: "skip-dark-button") ?? UIImage()
+    }
+    
+    // Friends
+    static var friend01: UIImage {
+        return UIImage(named: "friend-1") ?? UIImage()
+    }
+    
+    static var friend02: UIImage {
+        return UIImage(named: "friend-2") ?? UIImage()
+    }
+    
+    static var friend03: UIImage {
+        return UIImage(named: "friend-3") ?? UIImage()
     }
     
     // Header

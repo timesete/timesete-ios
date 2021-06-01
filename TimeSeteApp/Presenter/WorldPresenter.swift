@@ -25,4 +25,7 @@ class WorldPresenter {
         self.delegate?.view.frame.size.width
     }
  
+    public func getViewHeight() -> CGFloat? {
+        self.delegate?.view.frame.size.height
+    }
 }
