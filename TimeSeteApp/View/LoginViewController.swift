@@ -258,7 +258,7 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         
         if emailText.isValidEmail,
            passwordText.count >= 8 {
-//            presenter.goToHome
+            presenter.goToHome()
         }
         
         if !emailText.isValidEmail {

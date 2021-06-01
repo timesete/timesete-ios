@@ -30,6 +30,14 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
 
         setupVCs()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        print("viewWillAppear")
+//        
+//        if firstView != nil {
+//            tabBar.fir
+//        }
+//    }
 
     fileprivate func createNavController(for rootViewController: UIViewController,
                                          title: String?,
@@ -52,7 +60,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
     
     func setupVCs() {
         viewControllers = [
-            createNavController(for: UIViewController(),
+            createNavController(for: ArticlesViewController(),
                                 title: "Home",
                                 image: .tabHome,
                                 selectedImage: .tabHomeSelected),

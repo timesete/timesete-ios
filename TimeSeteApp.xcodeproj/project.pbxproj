@@ -41,6 +41,11 @@
 		7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB50E3926554200004A62AC /* ViewExtension.swift */; };
 		7DB527802663CDED0099AF59 /* PartsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB5277F2663CDED0099AF59 /* PartsCollectionViewCell.swift */; };
 		7DDA127A2666989200F8F457 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA12792666989200F8F457 /* HTTPMethod.swift */; };
+		7DDA12822666A13800F8F457 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA12812666A13800F8F457 /* ArticlesViewController.swift */; };
+		7DDA12852666A14700F8F457 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA12842666A14700F8F457 /* ArticlesPresenter.swift */; };
+		7DDA12882666A30B00F8F457 /* ArticlesConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA12872666A30B00F8F457 /* ArticlesConstraints.swift */; };
+		7DDA128B2666A47E00F8F457 /* ArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA128A2666A47E00F8F457 /* ArticlesTableViewCell.swift */; };
+		7DDA128E2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA128D2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift */; };
 		7DE7C9CF2666246B00BCCBDD /* PartsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7C9CE2666246B00BCCBDD /* PartsCollectionViewController.swift */; };
 		7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */; };
 		7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */; };
@@ -95,6 +100,11 @@
 		7DB50E3926554200004A62AC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		7DB5277F2663CDED0099AF59 /* PartsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DDA12792666989200F8F457 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		7DDA12812666A13800F8F457 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		7DDA12842666A14700F8F457 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
+		7DDA12872666A30B00F8F457 /* ArticlesConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesConstraints.swift; sourceTree = "<group>"; };
+		7DDA128A2666A47E00F8F457 /* ArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewCell.swift; sourceTree = "<group>"; };
+		7DDA128D2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DE7C9CE2666246B00BCCBDD /* PartsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCollectionViewController.swift; sourceTree = "<group>"; };
 		7DE866B3265BDDE700DBFDBD /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		7DE866B6265BDE0100DBFDBD /* RecoverPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordPresenter.swift; sourceTree = "<group>"; };
@@ -143,6 +153,7 @@
 				7D57A5212660E2EA006719BD /* CreateFriendConstraints.swift */,
 				7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */,
 				7D471240266629FA000A4FFD /* ContentsConstraints.swift */,
+				7DDA12872666A30B00F8F457 /* ArticlesConstraints.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 				7D57A5242660E369006719BD /* CreateFriendPresenter.swift */,
 				7D3EACBF26651FE6000E1D4A /* WorldPresenter.swift */,
 				7D47123D266628DF000A4FFD /* ContentsPresenter.swift */,
+				7DDA12842666A14700F8F457 /* ArticlesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -228,6 +240,9 @@
 				7D3EACB926651FB6000E1D4A /* WorldViewController.swift */,
 				7D47123A266628C5000A4FFD /* ContentsViewController.swift */,
 				7D47124326662E2A000A4FFD /* ContentsTableViewCell.swift */,
+				7DDA12812666A13800F8F457 /* ArticlesViewController.swift */,
+				7DDA128A2666A47E00F8F457 /* ArticlesTableViewCell.swift */,
+				7DDA128D2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,12 +455,15 @@
 				7D57A51F2660E2C4006719BD /* CreateFriendViewController.swift in Sources */,
 				7DE866C3265BE84400DBFDBD /* SecondRecoverPasswordConstraints.swift in Sources */,
 				7DE866BA265BE2EB00DBFDBD /* RecoverPasswordConstraints.swift in Sources */,
+				7DDA12822666A13800F8F457 /* ArticlesViewController.swift in Sources */,
+				7DDA128E2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift in Sources */,
 				7DAEEF552657B2AE00379EE3 /* SecondSignUpViewController.swift in Sources */,
 				7DDA127A2666989200F8F457 /* HTTPMethod.swift in Sources */,
 				7DB50E3A26554200004A62AC /* ViewExtension.swift in Sources */,
 				7DFFF28F265FD62500C71E81 /* CustomTabBar.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
 				7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */,
+				7DDA128B2666A47E00F8F457 /* ArticlesTableViewCell.swift in Sources */,
 				7D47123B266628C5000A4FFD /* ContentsViewController.swift in Sources */,
 				7D47124726663D37000A4FFD /* LayerExtension.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
@@ -455,6 +473,7 @@
 				7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */,
 				7D471241266629FA000A4FFD /* ContentsConstraints.swift in Sources */,
 				7D47124426662E2A000A4FFD /* ContentsTableViewCell.swift in Sources */,
+				7DDA12882666A30B00F8F457 /* ArticlesConstraints.swift in Sources */,
 				7DE866B7265BDE0100DBFDBD /* RecoverPasswordPresenter.swift in Sources */,
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
 				7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */,
@@ -467,6 +486,7 @@
 				7D652EB0265840D500FC7822 /* StringExtension.swift in Sources */,
 				7D3742B2265D37B90092A49E /* CustomAlert.swift in Sources */,
 				7DB527802663CDED0099AF59 /* PartsCollectionViewCell.swift in Sources */,
+				7DDA12852666A14700F8F457 /* ArticlesPresenter.swift in Sources */,
 				7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */,
 				7DE866BD265BE7A000DBFDBD /* SecondRecoverPasswordViewController.swift in Sources */,
 				7DB50E29265519A4004A62AC /* LoginPresenter.swift in Sources */,

@@ -87,17 +87,6 @@ class ContentsTableViewCell: UITableViewCell {
     
     // MARK: Actions
     
-    @objc func playAction(sender: UIButton) {
-    
-        switch sender.tag {
-        case 0:
-            thumbView.playVideo()
-        default:
-            print("teste")
-        }
-        
-    }
-    
     @objc func openOnYoutubeAction(sender: UIButton) {
     
         guard let urls = videosURL.getVideosURL() else { return }

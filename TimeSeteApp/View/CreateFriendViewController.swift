@@ -386,7 +386,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func createFriendAction(sender: UIButton) {
-        // criar amigo
+        let tabController = TabBarViewController()
+        tabController.selectedIndex = 2
+        self.present(tabController, animated: true)
     }
     
     func getKey(of dictionary: [String: String], at index: Int) -> String? {

@@ -37,4 +37,8 @@ class LoginPresenter {
     public func goToSignUp() {
         self.delegate?.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
+    
+    public func goToHome() {
+        self.delegate?.navigationController?.pushViewController(TabBarViewController(), animated: true)
+    }
 }

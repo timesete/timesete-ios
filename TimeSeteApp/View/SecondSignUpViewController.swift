@@ -7,8 +7,6 @@
 
 import UIKit
 
-let data = ["Toc! Toc! Quem é?", "Qual o sobrenome da sua avó?", "Qual o nome do seu primeiro cachorro?", "Qual é seu nome, broto?"]
-
 class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegate {
     
     let presenter = SecondSignUpPresenter()
@@ -104,7 +102,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
     
     private(set) lazy var questionTextField: UITextField = {
         let questionTextField = UITextField()
-        questionTextField.text = data[0]
+        questionTextField.text = "Qual o sobrenome da sua avó?"
         questionTextField.font = UIFont(name: .nunitoRegular, size: 16)
         questionTextField.inputView = pickerView
         questionTextField.borderStyle = .none
@@ -222,7 +220,7 @@ class SecondSignUpViewController: UIViewController, SecondSignUpPresenterDelegat
         guard let answerText = answerTextField.text else { return }
         
         if answerText.count > 0 {
-            // TODO: go to home
+            presenter.goToHome()
         } else {
             answerTextField.invalidField(titleLabel: answerLabel)
         }
@@ -263,14 +261,14 @@ extension SecondSignUpViewController: UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        data.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        questionTextField.text = data[row]
+        questionTextField.text = "Qual o sobrenome da sua avó?"
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[row]
+        return "Qual o sobrenome da sua avó?"
     }
 }

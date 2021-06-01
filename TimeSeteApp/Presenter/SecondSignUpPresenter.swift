@@ -32,4 +32,8 @@ class SecondSignUpPresenter {
     public func backToLogin() {
         self.delegate?.navigationController?.popToRootViewController(animated: true)
     }
+    
+    public func goToHome() {
+        self.delegate?.navigationController?.pushViewController(TabBarViewController(), animated: true)
+    }
 }

@@ -80,7 +80,7 @@ class SecondRecoverPasswordViewController: UIViewController, SecondRecoverPasswo
     
     private(set) lazy var questionLabel: UILabel = {
         let questionLabel = UILabel()
-        questionLabel.text = data[0]
+        questionLabel.text = "Qual o sobrenome da sua avó?"
         questionLabel.textAlignment = .left
         questionLabel.textColor = .appBlack
         questionLabel.font = UIFont(name: .nunitoRegular, size: 16)
