@@ -24,7 +24,17 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
         tabBar.shadowImage = UIImage()
         tabBar.backgroundImage = UIImage()
         tabBar.tintColor = .appCyan
-        
+
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        } else {
+            // Fallback on earlier versions
+        }
+
         guard let viewWidth = presenter.getViewWidth() else { return }
         tabBar.sizeThatFits(CGSize(width: viewWidth, height: 80.0))
 
@@ -68,8 +78,9 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.image == UIImage.tabCreateFriend {
             
-            self.modalPresentationStyle = .fullScreen
-            self.present(CreateFriendViewController(), animated: true, completion: nil)
+            let createFriendViewController = CreateFriendViewController()
+            createFriendViewController.modalPresentationStyle = .fullScreen
+            self.present(createFriendViewController, animated: true, completion: nil)
         }
     }
     

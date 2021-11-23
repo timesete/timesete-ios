@@ -26,6 +26,7 @@ class CreateFriendPresenter {
     }
     
     public func goToHome() {
+        delegate?.dismiss(animated: true, completion: nil)
         self.delegate?.navigationController?.show(TabBarViewController(), sender: nil)
     }
  
