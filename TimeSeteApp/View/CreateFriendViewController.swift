@@ -295,7 +295,15 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
         createFriendButton.translatesAutoresizingMaskIntoConstraints = false
         return createFriendButton
     }()
-    
+
+    // Alert
+    func presentCustomAlert() {
+        let alertView = CustomAlertViewController()
+        alertView.modalPresentationStyle = .overCurrentContext
+        alertView.modalTransitionStyle = .crossDissolve
+        present(alertView, animated: true)
+    }
+
     // MARK: Actions
     @objc func navCloseAction(sender: UIButton) {
         presenter.goToHome()
@@ -386,9 +394,10 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func createFriendAction(sender: UIButton) {
-        let tabController = TabBarViewController()
-        tabController.selectedIndex = 2
-        self.present(tabController, animated: true)
+        presentCustomAlert()
+//        let tabController = TabBarViewController()
+//        tabController.selectedIndex = 2
+//        self.present(tabController, animated: true)
     }
     
     func getKey(of dictionary: [String: String], at index: Int) -> String? {
