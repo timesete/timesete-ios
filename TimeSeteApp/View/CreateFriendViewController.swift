@@ -396,6 +396,13 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
     }
     
     @objc func createFriendAction(sender: UIButton) {
+        let coreDataManager = CoreDataManager.shared
+        let users = coreDataManager.fetchUsers()
+
+        guard let users = users else { return }
+        for user in users where user.isLogged {
+            presenter.goToHome()
+        }
         presentCustomAlert()
     }
     

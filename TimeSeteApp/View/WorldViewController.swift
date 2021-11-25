@@ -10,12 +10,23 @@ import UIKit
 class WorldViewController: UIViewController, WorldPresenterDelegate {
 
     let presenter = WorldPresenter()
+    private var username = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
         self.view.setBackgroundColor(to: .appGray04)
         self.navigationController?.isNavigationBarHidden = true
+
+        // Get logged username
+        let coreDataManager = CoreDataManager.shared
+        let users = coreDataManager.fetchUsers()
+
+        guard let users = users else { return }
+        for user in users where user.isLogged {
+            self.username = user.name ?? "amigo"
+        }
+
         addSubviews()
         setupConstraints()
     }
@@ -44,7 +55,8 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
     
     private(set) lazy var navLabel: UILabel = {
         let navLabel = UILabel()
-        navLabel.text = "Olá, amigo!"
+        print("\n\n\(self.username)\n\n")
+        navLabel.text = "Olá, \(username)!" // "Olá, amigo!"
         navLabel.font = UIFont(name: .nunitoBlack, size: 18)
         navLabel.textColor = .white
         navLabel.translatesAutoresizingMaskIntoConstraints = false

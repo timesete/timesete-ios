@@ -23,7 +23,7 @@ extension WorldViewController {
         self.view.insertSubview(friend03Button, aboveSubview: sceneryImage)
         self.view.insertSubview(myFriendButton, aboveSubview: sceneryImage)
     }
-    
+
     // MARK: Setup Constraints
     func setupConstraints() {
         setupHeaderViewConstraints()
@@ -43,7 +43,7 @@ extension WorldViewController {
     // Header
     func setupHeaderViewConstraints() {
         let headerHeight = self.view.notchHeight + 116
-        
+
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: self.view.topAnchor),
             headerView.rightAnchor.constraint(equalTo: self.view.rightAnchor),

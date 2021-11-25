@@ -23,15 +23,16 @@ internal struct CoreDataManager {
     }()
 
     // MARK: Create
-    func createUser(name: String, email: String, password: String) -> User? {
+    func createUser(email: String, password: String, isLogged: Bool = true) -> User? {
 
         let context = persistentContainer.viewContext
 
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as? User
 
-        user?.name = name
         user?.email = email
         user?.password = password
+        user?.name = email
+        user?.isLogged = isLogged
 
         do {
             try context.save()
@@ -41,6 +42,34 @@ internal struct CoreDataManager {
         }
 
         return nil
+    }
+
+    func logoutAll(_ users: [User]) {
+
+        let context = persistentContainer.viewContext
+
+        for user in users {
+            user.isLogged = false
+        }
+
+        do {
+            try context.save()
+        } catch let updateError {
+            print("Failed to update password: \(updateError)")
+        }
+    }
+
+    func login(_ user: User?) {
+
+        let context = persistentContainer.viewContext
+
+        user?.isLogged = true
+
+        do {
+            try context.save()
+        } catch let updateError {
+            print("Failed to update user login: \(updateError)")
+        }
     }
 
     // MARK: Fetch Users

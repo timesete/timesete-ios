@@ -32,4 +32,9 @@ class SignUpPresenter {
     public func backToLogin() {
         self.delegate?.navigationController?.popViewController(animated: true)
     }
+
+    public func signUpWith(email: String, password: String) {
+        let coreDataManager = CoreDataManager.shared
+        let _ = coreDataManager.createUser(email: email, password: password)
+    }
 }

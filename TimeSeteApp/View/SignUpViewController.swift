@@ -318,6 +318,7 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         if emailText.isValidEmail,
            passwordText.count >= 8,
            passwordText == confirmPasswordText {
+            presenter.signUpWith(email: emailText, password: passwordText)
             presenter.goToSecondSignUp()
         }
         if !emailText.isValidEmail {

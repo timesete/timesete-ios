@@ -25,6 +25,16 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         self.navigationController?.isNavigationBarHidden = true
+
+        let coreDataManager = CoreDataManager.shared
+        let users = coreDataManager.fetchUsers()
+
+        guard let users = users else { return }
+        coreDataManager.logoutAll(users)
+
+        for user in users {
+            print("\(String(describing: user.name)) = \(user.isLogged)")
+        }
     }
 
 //    func presentLogin(credentials: Login) {
@@ -256,26 +266,26 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         guard let passwordText = passwordTextField.text else { return }
 
         let coreDataManager = CoreDataManager.shared
+        let user = coreDataManager.fetchUser(with: emailText)
 
-        let user = coreDataManager.createUser(name: "John", email: emailText, password: passwordText)
-        print("\n\nUser = \(user)\n\n")
-        let users = coreDataManager.fetchUsers()
-        print("\n\n\(users?[0].email)\n\n")
-//        if emailText.isValidEmail,
-//           passwordText.count >= 8 {
-//            presenter.goToHome()
-//        }
-//
-//        if !emailText.isValidEmail {
-//            emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
-//        }
-//
-//        if passwordText.count < 8 {
-//            passwordTextField.invalidField(titleLabel: passwordLabel,
-//                                           errorImage: passwordErrorImage,
-//                                           warningLabel: passwordWarningLabel,
-//                                           showPasswordButton: showPasswordButton)
-//        }
+        if emailText.isValidEmail,
+           passwordText.count >= 8,
+           user?.email == emailText,
+           user?.password == passwordText {
+            coreDataManager.login(user)
+            presenter.goToHome()
+        }
+
+        if !emailText.isValidEmail || user?.email != emailText {
+            emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
+        }
+
+        if passwordText.count < 8 || user?.password != passwordText {
+            passwordTextField.invalidField(titleLabel: passwordLabel,
+                                           errorImage: passwordErrorImage,
+                                           warningLabel: passwordWarningLabel,
+                                           showPasswordButton: showPasswordButton)
+        }
     }
     
     @objc func skipAction(sender: UIButton) {

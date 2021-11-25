@@ -10,6 +10,7 @@ import UIKit
 class ArticlesViewController: UIViewController, ArticlesPresenterDelegate {
 
     let presenter = ArticlesPresenter()
+    private var username = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,16 @@ class ArticlesViewController: UIViewController, ArticlesPresenterDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+
+        // Get logged username
+        let coreDataManager = CoreDataManager.shared
+        let users = coreDataManager.fetchUsers()
+
+        guard let users = users else { return }
+        for user in users where user.isLogged {
+            self.username = user.name ?? "amigo"
+        }
+
         addSubviews()
         setupConstraints()
         articlesTableView.delegate = self
@@ -50,7 +61,7 @@ class ArticlesViewController: UIViewController, ArticlesPresenterDelegate {
     
     private(set) lazy var navLabel: UILabel = {
         let navLabel = UILabel()
-        navLabel.text = "Olá, amigo!"
+        navLabel.text = "Olá, \(username)!"
         navLabel.font = UIFont(name: .nunitoBlack, size: 18)
         navLabel.textColor = .white
         navLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +82,6 @@ class ArticlesViewController: UIViewController, ArticlesPresenterDelegate {
         let flowLayout = UICollectionViewFlowLayout()
         let articlesCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: flowLayout)
         articlesCollectionView.backgroundColor = .appGray04
-//        articlesCollectionView.register(ArticlesCollectionViewCell.self, forCellWithReuseIdentifier: "articleCell")
         articlesCollectionView.register(ArticleFirstCollectionViewCell.self, forCellWithReuseIdentifier: "articleCell")
         articlesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         return articlesCollectionView
