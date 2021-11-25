@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LoginPresenterDelegate: AnyObject {
-    func presentLogin(credentials: Login)
+//    func presentLogin(credentials: Login)
 //    func presentAlert(title: String, message: String)
 }
 
@@ -19,7 +19,7 @@ class LoginPresenter {
     weak var delegate: PresenterDelegate?
     
     public func getLogin() {
-        self.delegate?.presentLogin(credentials: Login(email: "oi", senha: "olá"))
+//        self.delegate?.presentLogin(credentials: Login(email: "oi", senha: "olá"))
     }
     
     public func setViewDelegate(delegate: PresenterDelegate) {

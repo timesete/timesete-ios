@@ -24,6 +24,9 @@
 		7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB22658A42700FC7822 /* TextFieldExtension.swift */; };
 		7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */; };
 		7D652EBA265ACE1000FC7822 /* SignUpConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */; };
+		7D8095E4274CFAF000D8EF5A /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8095E3274CFAF000D8EF5A /* CustomAlertViewController.swift */; };
+		7D8095E7274CFDEA00D8EF5A /* time_sete_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D8095E5274CFDEA00D8EF5A /* time_sete_app.xcdatamodeld */; };
+		7D8095EA274D044E00D8EF5A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8095E9274D044E00D8EF5A /* CoreDataManager.swift */; };
 		7D8E4A842653744A0095B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A832653744A0095B88C /* AppDelegate.swift */; };
 		7D8E4A862653744A0095B88C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A852653744A0095B88C /* SceneDelegate.swift */; };
 		7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E4A872653744A0095B88C /* LoginViewController.swift */; };
@@ -81,6 +84,9 @@
 		7D652EB22658A42700FC7822 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		7D652EB6265ACB3000FC7822 /* SecondSignUpConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpConstraints.swift; sourceTree = "<group>"; };
 		7D652EB9265ACE1000FC7822 /* SignUpConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConstraints.swift; sourceTree = "<group>"; };
+		7D8095E3274CFAF000D8EF5A /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		7D8095E6274CFDEA00D8EF5A /* time_sete_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = time_sete_app.xcdatamodel; sourceTree = "<group>"; };
+		7D8095E9274D044E00D8EF5A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7D8E4A802653744A0095B88C /* TimeSeteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeSeteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8E4A832653744A0095B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D8E4A852653744A0095B88C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 			path = Constraints;
 			sourceTree = "<group>";
 		};
+		7D8095E8274D042D00D8EF5A /* CommonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7D8095E9274D044E00D8EF5A /* CoreDataManager.swift */,
+			);
+			path = CommonUtil;
+			sourceTree = "<group>";
+		};
 		7D8E4A772653744A0095B88C = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +202,8 @@
 				7DB50E3126553B79004A62AC /* Supporting Extensions */,
 				7DCDFBD326550111008391BD /* System Delegate */,
 				7DCDFBD6265502AA008391BD /* Supporting Files */,
+				7D8095E8274D042D00D8EF5A /* CommonUtil */,
+				7D8095E5274CFDEA00D8EF5A /* time_sete_app.xcdatamodeld */,
 			);
 			path = TimeSeteApp;
 			sourceTree = "<group>";
@@ -243,6 +259,7 @@
 				7DDA12812666A13800F8F457 /* ArticlesViewController.swift */,
 				7DDA128A2666A47E00F8F457 /* ArticlesTableViewCell.swift */,
 				7DDA128D2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift */,
+				7D8095E3274CFAF000D8EF5A /* CustomAlertViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,12 +480,15 @@
 				7DFFF28F265FD62500C71E81 /* CustomTabBar.swift in Sources */,
 				7D652EB7265ACB3000FC7822 /* SecondSignUpConstraints.swift in Sources */,
 				7DE866C0265BE7E600DBFDBD /* SecondRecoverPasswordPresenter.swift in Sources */,
+				7D8095E4274CFAF000D8EF5A /* CustomAlertViewController.swift in Sources */,
 				7DDA128B2666A47E00F8F457 /* ArticlesTableViewCell.swift in Sources */,
 				7D47123B266628C5000A4FFD /* ContentsViewController.swift in Sources */,
 				7D47124726663D37000A4FFD /* LayerExtension.swift in Sources */,
 				7D652EB32658A42700FC7822 /* TextFieldExtension.swift in Sources */,
 				7D8E4A882653744A0095B88C /* LoginViewController.swift in Sources */,
+				7D8095E7274CFDEA00D8EF5A /* time_sete_app.xcdatamodeld in Sources */,
 				7D57A5252660E369006719BD /* CreateFriendPresenter.swift in Sources */,
+				7D8095EA274D044E00D8EF5A /* CoreDataManager.swift in Sources */,
 				7D3EACC026651FE6000E1D4A /* WorldPresenter.swift in Sources */,
 				7D57A5222660E2EA006719BD /* CreateFriendConstraints.swift in Sources */,
 				7D471241266629FA000A4FFD /* ContentsConstraints.swift in Sources */,
@@ -646,13 +666,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 58RN6U59UJ;
+				DEVELOPMENT_TEAM = 5W4YV675A3;
 				INFOPLIST_FILE = "TimeSeteApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = campIoasys.TimeSeteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = campIoasys.TimeSeteAppB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -666,13 +686,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 58RN6U59UJ;
+				DEVELOPMENT_TEAM = 5W4YV675A3;
 				INFOPLIST_FILE = "TimeSeteApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = campIoasys.TimeSeteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = campIoasys.TimeSeteAppB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -701,6 +721,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D8095E5274CFDEA00D8EF5A /* time_sete_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D8095E6274CFDEA00D8EF5A /* time_sete_app.xcdatamodel */,
+			);
+			currentVersion = 7D8095E6274CFDEA00D8EF5A /* time_sete_app.xcdatamodel */;
+			path = time_sete_app.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7D8E4A782653744A0095B88C /* Project object */;
 }

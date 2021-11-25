@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SignUpPresenterDelegate: AnyObject {
-    func presentSignUp(credentials: Login)
+//    func presentSignUp(credentials: Login)
 }
 
 typealias SignPresenterDelegate = SignUpPresenterDelegate & UIViewController
@@ -18,7 +18,7 @@ class SignUpPresenter {
     weak var delegate: SignPresenterDelegate?
     
     public func getLogin() {
-        self.delegate?.presentSignUp(credentials: Login(email: "oi", senha: "olá"))
+//        self.delegate?.presentSignUp(credentials: Login(email: "oi", senha: "olá"))
     }
     
     public func setViewDelegate(delegate: SignPresenterDelegate) {

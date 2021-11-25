@@ -26,9 +26,9 @@ class SignUpViewController: UIViewController, SignUpPresenterDelegate {
         self.view = UIView()
     }
     
-    func presentSignUp(credentials: Login) {
-        print("Presenter")
-    }
+//    func presentSignUp(credentials: Login) {
+//        print("Presenter")
+//    }
     
     // MARK: Define elements
     private(set) lazy var headerStackView: UIStackView = {

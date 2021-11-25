@@ -298,7 +298,9 @@ class CreateFriendViewController: UIViewController, CreatePresenterDelegate {
 
     // Alert
     func presentCustomAlert() {
-        let alertView = CustomAlertViewController()
+        let alertView = CustomAlertViewController {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
         alertView.modalPresentationStyle = .overCurrentContext
         alertView.modalTransitionStyle = .crossDissolve
         present(alertView, animated: true)

@@ -9,6 +9,8 @@ import UIKit
 
 class CustomAlertViewController: UIViewController {
 
+    private var action: (() -> Void)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundColor(to: .appBlack40)
@@ -17,6 +19,15 @@ class CustomAlertViewController: UIViewController {
 
         addSubviews()
         setupConstraints()
+    }
+
+    init(_ completion: @escaping () -> Void) {
+        self.action = completion
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private(set) lazy var alertView: UIView = {
@@ -92,8 +103,7 @@ class CustomAlertViewController: UIViewController {
 
     @objc func loginAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
-//        guard let viewController = self.next as? UIViewController else { return }
-//        viewController.dismiss(animated: true, completion: nil)
+        self.action()
     }
 }
 

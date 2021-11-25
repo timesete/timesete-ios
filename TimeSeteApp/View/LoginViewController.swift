@@ -27,9 +27,9 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    func presentLogin(credentials: Login) {
-        print("presentLogin")
-    }
+//    func presentLogin(credentials: Login) {
+//        print("presentLogin")
+//    }
     
     // Header
     private(set) lazy var logoImage: UIImageView = {
@@ -254,22 +254,28 @@ class LoginViewController: UIViewController, LoginPresenterDelegate {
     @objc func signInAction(sender: UIButton) {
         guard let emailText = emailTextField.text else { return }
         guard let passwordText = passwordTextField.text else { return }
-        
-        if emailText.isValidEmail,
-           passwordText.count >= 8 {
-            presenter.goToHome()
-        }
-        
-        if !emailText.isValidEmail {
-            emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
-        }
-        
-        if passwordText.count < 8 {
-            passwordTextField.invalidField(titleLabel: passwordLabel,
-                                           errorImage: passwordErrorImage,
-                                           warningLabel: passwordWarningLabel,
-                                           showPasswordButton: showPasswordButton)
-        }
+
+        let coreDataManager = CoreDataManager.shared
+
+        let user = coreDataManager.createUser(name: "John", email: emailText, password: passwordText)
+        print("\n\nUser = \(user)\n\n")
+        let users = coreDataManager.fetchUsers()
+        print("\n\n\(users?[0].email)\n\n")
+//        if emailText.isValidEmail,
+//           passwordText.count >= 8 {
+//            presenter.goToHome()
+//        }
+//
+//        if !emailText.isValidEmail {
+//            emailTextField.invalidField(titleLabel: emailLabel, errorImage: emailErrorImage, warningLabel: emailWarningLabel)
+//        }
+//
+//        if passwordText.count < 8 {
+//            passwordTextField.invalidField(titleLabel: passwordLabel,
+//                                           errorImage: passwordErrorImage,
+//                                           warningLabel: passwordWarningLabel,
+//                                           showPasswordButton: showPasswordButton)
+//        }
     }
     
     @objc func skipAction(sender: UIButton) {
