@@ -54,6 +54,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
         rootViewController.navigationItem.title = title
         
         if title == "Criar amigo" {
+            rootViewController.navigationItem.titleView?.tintColor = .appGray04
             navController.tabBarItem.imageInsets = UIEdgeInsets(top: -30, left: 0, bottom: 0, right: 0)
         }
         
@@ -67,7 +68,7 @@ class TabBarViewController: UITabBarController, TabPresenterDelegate {
                                 image: .tabHome,
                                 selectedImage: .tabHomeSelected),
             
-            createNavController(for: UIViewController(),
+            createNavController(for: BlankViewController(),
                                 title: "Criar amigo",
                                 image: .tabCreateFriend),
             

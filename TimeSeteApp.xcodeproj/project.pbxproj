@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D322495265AEC360047C9E8 /* LoginConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D322494265AEC360047C9E8 /* LoginConstraints.swift */; };
+		7D353C22274FA24B00BF0E74 /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D353C21274FA24B00BF0E74 /* BlankViewController.swift */; };
 		7D3742B2265D37B90092A49E /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3742B1265D37B90092A49E /* CustomAlert.swift */; };
 		7D3EACBA26651FB6000E1D4A /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EACB926651FB6000E1D4A /* WorldViewController.swift */; };
 		7D3EACBD26651FD9000E1D4A /* WorldConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		47EC050E45288211A4D6C61D /* Pods_TimeSeteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeSeteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D322494265AEC360047C9E8 /* LoginConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstraints.swift; sourceTree = "<group>"; };
+		7D353C21274FA24B00BF0E74 /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
 		7D3742B1265D37B90092A49E /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		7D3EACB926651FB6000E1D4A /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
 		7D3EACBC26651FD9000E1D4A /* WorldConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldConstraints.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				7DDA128A2666A47E00F8F457 /* ArticlesTableViewCell.swift */,
 				7DDA128D2666AC0400F8F457 /* ArticleFirstCollectionViewCell.swift */,
 				7D8095E3274CFAF000D8EF5A /* CustomAlertViewController.swift */,
+				7D353C21274FA24B00BF0E74 /* BlankViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				7DB50E2C26552348004A62AC /* Login.swift in Sources */,
 				7DE866B4265BDDE700DBFDBD /* RecoverPasswordViewController.swift in Sources */,
 				7DACFEA826566C9C00FD7853 /* SignUpViewController.swift in Sources */,
+				7D353C22274FA24B00BF0E74 /* BlankViewController.swift in Sources */,
 				7DAEEF582657B2C200379EE3 /* SecondSignUpPresenter.swift in Sources */,
 				7DFFF289265FB5C700C71E81 /* TabBarViewController.swift in Sources */,
 				7DE7C9CF2666246B00BCCBDD /* PartsCollectionViewController.swift in Sources */,

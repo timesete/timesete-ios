@@ -7,7 +7,7 @@
 
 import Foundation
 
-//struct Login: Codable {
-//    let email: String
-//    let senha: String
-//}
+// struct Login: Codable {
+//     let email: String
+//     let senha: String
+// }
