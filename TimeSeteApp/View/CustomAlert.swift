@@ -59,6 +59,11 @@ class CustomAlert: UIView {
         return signInButton
     }()
 
+    private lazy var tap: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        return tap
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
@@ -72,13 +77,19 @@ class CustomAlert: UIView {
     
     // MARK: Actions
     @objc func signInAction(sender: UIButton) {
-        self.delegate?.backToLogin(sender)
+//        self.delegate?.backToLogin(sender)
+        self.removeFromSuperview()
     }
-    
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.removeFromSuperview()
+    }
+
 }
 
 extension CustomAlert {
     func addSubviews() {
+        self.addGestureRecognizer(tap)
         self.addSubview(alertView)
         alertView.addSubview(titleLabel)
         alertView.addSubview(messageLabel)

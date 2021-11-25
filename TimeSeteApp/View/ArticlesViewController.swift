@@ -31,6 +31,10 @@ class ArticlesViewController: UIViewController, ArticlesPresenterDelegate {
             self.username = user.name ?? "amigo"
         }
 
+        if self.username.isEmpty {
+            self.username = "amigo"
+        }
+
         addSubviews()
         setupConstraints()
         articlesTableView.delegate = self

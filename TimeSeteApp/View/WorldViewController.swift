@@ -27,6 +27,10 @@ class WorldViewController: UIViewController, WorldPresenterDelegate {
             self.username = user.name ?? "amigo"
         }
 
+        if self.username.isEmpty {
+            self.username = "amigo"
+        }
+
         addSubviews()
         setupConstraints()
     }
